@@ -4,10 +4,10 @@ import { join } from 'path';
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const projectId = params.id;
+    const { id: projectId } = await params;
     
     // Read the current projects file
     const projectsFilePath = join(process.cwd(), 'lib', 'customerProjects.ts');

@@ -15,7 +15,7 @@ export default function Header() {
           </div>
           <div className="hiring-info">
             <span className="hiring-text">Now Hiring:</span>
-            <span>We're looking for motivated installers. No experience necessary.</span>
+            <span>We&apos;re looking for motivated installers. No experience necessary.</span>
           </div>
           <div className="social-icons">
             <a href="#" className="social-icon facebook" aria-label="Facebook">

@@ -197,7 +197,7 @@ export default function CustomerProjectModal({ project, isOpen, onClose }: Custo
                   <span className="rating-number">({project.testimonial.rating}/5)</span>
                 </div>
                 <blockquote className="testimonial-quote">
-                  "{project.testimonial.quote}"
+                  &quot;{project.testimonial.quote}&quot;
                 </blockquote>
                 <cite className="testimonial-author">
                   — {project.testimonial.customerName}, {project.testimonial.location}
