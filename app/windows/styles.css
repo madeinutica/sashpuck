@@ -1,0 +1,89 @@
+/* CSS for Windows page animations and styling */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0,0,0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -10px, 0);
+  }
+  70% {
+    transform: translate3d(0, -5px, 0);
+  }
+  90% {
+    transform: translate3d(0, -1px, 0);
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Responsive styles for windows page */
+@media (max-width: 768px) {
+  .windows-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .windows-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .windows-installation-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Window card hover effects */
+.window-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.window-card:hover {
+  transform: translateY(-4px);
+  border-color: #DC143C;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Feature icon styles */
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background: #DC143C;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  margin: 0 auto 1rem;
+}
+
+/* Video embed responsiveness */
+.video-embed {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+/* Blueprint overlay effect */
+.blueprint-overlay {
+  position: relative;
+}
+
+.blueprint-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 40px 40px;
+  pointer-events: none;
+}
