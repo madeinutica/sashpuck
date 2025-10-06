@@ -1,9 +1,19 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <div className="header">
       {/* Top black bar */}
@@ -11,7 +21,7 @@ export default function Header() {
         <div className="top-bar-content">
           <div className="contact-info">
             <span className="phone-icon">📞</span>
-            <span>Call Us: (315) 624-7344 • Our Operators Are Standing By</span>
+            <span>Call Us: (315) 624-7344</span>
           </div>
           <div className="hiring-info">
             <span className="hiring-text">Now Hiring:</span>
@@ -36,7 +46,7 @@ export default function Header() {
       <div className="nav-bar">
         <div className="nav-content">
           {/* Logo */}
-          <Link href="/" className="logo">
+          <Link href="/" className="logo" onClick={closeMobileMenu}>
             <svg width="240" height="65" viewBox="0 0 180 50" fill="none">
               {/* Grid pattern for SASH logo */}
               <rect x="5" y="8" width="6" height="6" fill="#D32F2F"/>
@@ -65,8 +75,8 @@ export default function Header() {
             </svg>
           </Link>
 
-          {/* Navigation menu */}
-          <nav className="nav-menu">
+          {/* Desktop Navigation menu */}
+          <nav className="nav-menu desktop-nav">
             <Link href="/about" className="nav-item dropdown">
               <span>About Us</span>
               <span className="dropdown-arrow">⌄</span>
@@ -89,8 +99,8 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Action buttons */}
-          <div className="action-buttons">
+          {/* Desktop Action buttons */}
+          <div className="action-buttons desktop-actions">
             <button className="chat-button">
               Chat with AI
             </button>
@@ -98,7 +108,59 @@ export default function Header() {
               Client Login
             </button>
           </div>
+
+          {/* Mobile hamburger menu button */}
+          <button 
+            className="mobile-menu-toggle"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <div className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        <div className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
+          <div className="mobile-nav-content">
+            <Link href="/about" className="mobile-nav-item" onClick={closeMobileMenu}>
+              About Us
+            </Link>
+            <Link href="/windows" className="mobile-nav-item" onClick={closeMobileMenu}>
+              Windows
+            </Link>
+            <Link href="/siding" className="mobile-nav-item" onClick={closeMobileMenu}>
+              Siding
+            </Link>
+            <Link href="/baths" className="mobile-nav-item" onClick={closeMobileMenu}>
+              Baths
+            </Link>
+            <Link href="/doors" className="mobile-nav-item" onClick={closeMobileMenu}>
+              Doors
+            </Link>
+            
+            {/* Mobile Action Buttons */}
+            <div className="mobile-actions">
+              <button className="mobile-chat-button" onClick={closeMobileMenu}>
+                Chat with AI
+              </button>
+              <button className="mobile-login-button" onClick={closeMobileMenu}>
+                Client Login
+              </button>
+              <a href="tel:315-624-7344" className="mobile-phone-button" onClick={closeMobileMenu}>
+                📞 Call (315) 624-7344
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile menu overlay */}
+        {isMobileMenuOpen && (
+          <div className="mobile-menu-overlay" onClick={closeMobileMenu}></div>
+        )}
       </div>
     </div>
   );
