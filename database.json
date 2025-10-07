@@ -16,7 +16,6 @@
           "secondaryCtaText": "(315) 624-7344",
           "secondaryCtaLink": "tel:+13156247344",
           "badge": "Trusted Since 1988 | 10,000+ Projects Completed",
-          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
           "id": "HeroSection-home"
         }
       },
@@ -30,6 +29,37 @@
         }
       },
       {
+        "type": "StatsSection",
+        "props": {
+          "title": "Why Choose New York Sash",
+          "subtitle": "Family-owned and operated since 1988, serving Central New York with unmatched expertise",
+          "stats": [
+            {
+              "number": "10K+",
+              "label": "Projects Completed",
+              "description": "Successful installations across Central NY"
+            },
+            {
+              "number": "35+",
+              "label": "Years Experience",
+              "description": "Trusted since 1988"
+            },
+            {
+              "number": "98%",
+              "label": "Customer Satisfaction",
+              "description": "Rated excellent by our customers"
+            },
+            {
+              "number": "50+",
+              "label": "Local Communities",
+              "description": "Serving Central New York"
+            }
+          ],
+          "backgroundColor": "#1a1a1a",
+          "id": "StatsSection-home"
+        }
+      },
+      {
         "type": "ServicesGrid",
         "props": {
           "title": "Our Premium Services",
@@ -37,8 +67,8 @@
           "services": [
             {
               "title": "Windows",
-              "beforeImage": "/images/services/windows-before.jpg",
-              "afterImage": "/images/services/windows.jpg",
+              "beforeImage": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center",
+              "afterImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&crop=center",
               "features": [
                 "Fusion welded frames",
                 "LowE with Argon gas",
@@ -51,8 +81,8 @@
             },
             {
               "title": "Siding",
-              "beforeImage": "/images/services/siding-before.jpg",
-              "afterImage": "/images/services/siding.jpg",
+              "beforeImage": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=300&fit=crop&crop=center",
+              "afterImage": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&h=300&fit=crop&crop=center",
               "features": [
                 "Insulated vinyl siding",
                 "Maintenance-free",
@@ -65,8 +95,8 @@
             },
             {
               "title": "Bathroom Remodeling",
-              "beforeImage": "/images/services/bathrooms-before.jpg",
-              "afterImage": "/images/services/bathrooms.jpg",
+              "beforeImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&h=300&fit=crop&crop=center",
+              "afterImage": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop&crop=center",
               "features": [
                 "Acrylic bath liners",
                 "Walk-in tubs",
@@ -74,13 +104,13 @@
                 "2-day installation"
               ],
               "ctaText": "Learn More",
-              "ctaLink": "/bathrooms",
+              "ctaLink": "/baths",
               "description": "Complete bathroom transformations with modern fixtures and expert craftsmanship."
             },
             {
               "title": "Entry Doors",
-              "beforeImage": "/images/services/doors-before.jpg",
-              "afterImage": "/images/services/doors.jpg",
+              "beforeImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center",
+              "afterImage": "https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=400&h=300&fit=crop&crop=center",
               "features": [
                 "Fiberglass & steel",
                 "Decorative glass options",
@@ -96,120 +126,76 @@
         }
       },
       {
-        "type": "StatsSection",
-        "props": {
-          "title": "Why Choose New York Sash",
-          "subtitle": "Family-owned and operated since 1988, serving Central New York with unmatched expertise and commitment",
-          "stats": [
-            {
-              "number": "35+",
-              "label": "Years in Business",
-              "description": "Since 1988"
-            },
-            {
-              "number": "10,000+",
-              "label": "Happy Customers",
-              "description": "Across Central NY"
-            },
-            {
-              "number": "4.9★",
-              "label": "Customer Rating",
-              "description": "847+ Reviews"
-            }
-          ],
-          "backgroundColor": "#1a1a1a",
-          "id": "StatsSection-home"
-        }
-      },
-      {
-        "type": "FeaturesWithImage",
-        "props": {
-          "title": "What Sets Us Apart",
-          "features": [
-            "Family-owned and operated since 1988",
-            "EPA certified lead-safe installation practices",
-            "Custom manufactured products for perfect fit",
-            "Year-round installation capability",
-            "Comprehensive warranties and guarantees",
-            "Local Central New York expertise"
-          ],
-          "imageUrl": "/images/team/epa-certified-team.jpg",
-          "badgeText": "EPA Certified",
-          "backgroundColor": "#1a1a1a",
-          "id": "FeaturesWithImage-what-sets-us-apart"
-        }
-      },
-      {
         "type": "TestimonialsGrid",
         "props": {
-          "title": "Real Customer Stories",
-          "subtitle": "Hear directly from our satisfied customers across Central New York",
+          "title": "Local Homeowners Trust New York Sash",
+          "subtitle": "We Proudly serve communities throughout Central New York with expert home improvement services",
           "testimonials": [
             {
-              "name": "Teresa",
+              "name": "Sarah Johnson",
+              "location": "Syracuse, NY",
+              "service": "Window Replacement",
+              "testimonial": "New York Sash did an amazing job replacing all the windows in our home. The quality is exceptional and the installation team was professional and clean. Our energy bills have already decreased significantly!",
+              "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+            },
+            {
+              "name": "Mike Rodriguez",
               "location": "Utica, NY",
-              "service": "Window Installation",
-              "testimonial": "I enjoyed my time with the New York Sash installers so much I had breakfast with them!",
-              "videoUrl": ""
+              "service": "Bathroom Remodel",
+              "testimonial": "We're thrilled with our new bathroom! The team at New York Sash transformed our outdated space into a beautiful, functional room. The attention to detail was impressive.",
+              "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
             },
             {
-              "name": "Mary Ann",
+              "name": "Jennifer Davis",
               "location": "Rome, NY",
-              "service": "Tub-to-Shower Conversion",
-              "testimonial": "We were concerned about safety in the bathroom, so we called New York Sash.",
-              "videoUrl": ""
-            },
-            {
-              "name": "Gerald Edwards",
-              "location": "Lowville, NY",
-              "service": "Siding & Windows",
-              "testimonial": "New York Sash did an excellent job on our siding and windows in Lowville. The quality and professionalism were outstanding.",
-              "videoUrl": ""
+              "service": "Siding Installation",
+              "testimonial": "Our home looks brand new after the siding installation. The crew was punctual, respectful, and did excellent work. Highly recommend New York Sash for any home improvement project.",
+              "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
             }
           ],
           "id": "TestimonialsGrid-home"
         }
       },
       {
-        "type": "StatsSection",
+        "type": "ServiceAreas",
         "props": {
           "title": "Serving Central New York",
           "subtitle": "Proudly serving communities throughout Central New York with expert home improvement services",
-          "customClass": "city-stats-section",
-          "stats": [
+          "areas": [
             {
-              "number": "Utica",
-              "label": "Population: 62,000+",
-              "description": ""
+              "name": "Syracuse",
+              "population": "148,000"
             },
             {
-              "number": "Syracuse",
-              "label": "Population: 148,000+",
-              "description": ""
+              "name": "Utica",
+              "population": "65,000"
             },
             {
-              "number": "Rome",
-              "label": "Population: 32,000+",
-              "description": ""
+              "name": "Rome",
+              "population": "34,000"
             },
             {
-              "number": "New Hartford",
-              "label": "Population: 22,000+",
-              "description": ""
+              "name": "Auburn",
+              "population": "28,000"
+            },
+            {
+              "name": "Oneida",
+              "population": "11,000"
+            },
+            {
+              "name": "Fulton",
+              "population": "12,000"
             }
           ],
-          "additionalText": "Also serving: Sauquoit, Lowville, Frankfort, Whitesboro, Copenhagen, West Winfield, Weedsport, Ilion, Laurens, Sylvan Beach, and surrounding communities",
-          "ctaText": "View All Service Areas",
-          "ctaLink": "#service-areas",
-          "backgroundColor": "#dc143c",
-          "id": "StatsSection-service-areas"
+          "additionalText": "Also serving surrounding communities throughout Onondaga, Oneida, Madison, Oswego, and Cayuga counties",
+          "id": "ServiceAreas-home"
         }
       },
       {
         "type": "CallToAction",
         "props": {
           "title": "Ready to Transform Your Home?",
-          "description": "Contact New York Sash today for a free, no-obligation consultation. Our expert team will help you choose the perfect solutions for your home improvement needs. Whether you're planning a complete exterior makeover or just updating a single room, we're here to make your vision a reality.",
+          "description": "Contact New York Sash today for a free, no-obligation consultation. Our expert team will help you choose the perfect solutions for your home improvement needs.",
           "buttonText": "Get Free Consultation",
           "buttonLink": "#contact",
           "secondaryButtonText": "Call (315) 624-7344",
@@ -224,203 +210,221 @@
   "/about": {
     "root": {
       "props": {
-        "title": "About New York Sash | Your Trusted Local Partner"
+        "title": "About Us - New York Sash | Central NY's Home Improvement Experts"
       }
     },
     "content": [
       {
-        "type": "HeroSection",
+        "type": "AboutHero",
         "props": {
-          "title": "Your Trusted Local Partner",
-          "subtitle": "For over four decades, New York Sash has been Central New York's premier home improvement company. What started as a small family business has grown into the region's most trusted provider of windows, siding, bathrooms, and entry doors.",
-          "ctaText": "Get Free Estimate",
+          "title": "Your Trusted Home Improvement Partner",
+          "subtitle": "For over four decades, New York Sash has been transforming homes throughout Central New York with premium windows, siding, bathrooms, and entry doors.",
+          "badge": "Family-Owned Since 1979",
+          "ctaText": "Get Free Consultation",
           "ctaLink": "#contact",
-          "secondaryCtaText": "Call (315) 624-7344",
-          "secondaryCtaLink": "tel:+13156247344",
-          "badge": "Family-Owned Since 1988 • Better Business Bureau A+ Rating",
-          "videoUrl": "",
-          "id": "HeroSection-about"
-        }
-      },
-      {
-        "type": "CompanyOverview",
-        "props": {
-          "title": "Your Trusted Local Partner",
-          "description": "For over four decades, New York Sash has been Central New York's premier home improvement company. What started as a small family business has grown into the region's most trusted provider of windows, siding, bathrooms, and entry doors.",
-          "additionalText": "We understand that your home is your most important investment. That's why we're committed to providing the highest quality products, expert installation, and exceptional customer service that has earned us an A+ rating with the Better Business Bureau.",
-          "image": "/images/about/company-building.jpg",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
           "stats": [
             {
               "number": "5,000+",
-              "label": "Happy Customers"
-            },
-            {
-              "number": "100%",
-              "label": "Customer Owned"
+              "label": "Homes Transformed"
             },
             {
               "number": "45+",
               "label": "Years Experience"
             },
             {
+              "number": "100%",
+              "label": "Satisfaction Guarantee"
+            },
+            {
               "number": "A+",
               "label": "BBB Rating"
             }
           ],
-          "id": "CompanyOverview-about"
+          "videoUrl": "https://www.youtube.com/embed/_ToUrLnN0w4",
+          "id": "AboutHero-main"
+        }
+      },
+      {
+        "type": "CompanyOverview",
+        "props": {
+          "title": "Your Trusted Local Partner",
+          "description": "For over four decades, New York Sash has been Central New York's premier home improvement company. What started as a small family business has grown into the region's most trusted name for windows, siding, bathrooms, and entry doors.",
+          "additionalText": "We understand that your home is your most important investment. That's why we're committed to providing the highest quality products, expert installation, and exceptional customer service that has earned us thousands of satisfied customers and an A+ rating with the Better Business Bureau.",
+          "image": "https://placehold.co/600x400/000000/FFFFFF?text=Company+Building",
+          "stats": [
+            {
+              "number": "5,000+",
+              "label": "Homes Transformed"
+            },
+            {
+              "number": "45+",
+              "label": "Years Experience"
+            },
+            {
+              "number": "100%",
+              "label": "Satisfaction Guarantee"
+            },
+            {
+              "number": "A+",
+              "label": "BBB Rating"
+            }
+          ],
+          "id": "CompanyOverview-main"
         }
       },
       {
         "type": "CompanyTimeline",
         "props": {
           "title": "Our Story",
-          "subtitle": "From humble beginnings to regional leader - see how we've grown while improving our commitment to quality and service",
+          "subtitle": "From humble beginnings to regional leader - see how we've grown while maintaining our commitment to quality and service.",
           "timelineItems": [
             {
-              "year": "1988",
+              "year": "1979",
               "title": "Company Founded",
-              "description": "New York Sash was established as a small, family-owned business with a simple goal: to bring quality home improvement services to Central New York families at fair prices."
+              "description": "New York Sash was established as a family-owned business with a simple mission: provide quality home improvement products and exceptional service to Central New York homeowners."
+            },
+            {
+              "year": "1985",
+              "title": "First Showroom Opens",
+              "description": "Opened our first showroom in Whitesboro, NY, allowing customers to see and touch our products before making decisions. This hands-on approach became a cornerstone of our business."
             },
             {
               "year": "1995",
-              "title": "First Showroom Opens",
-              "description": "We opened our first showroom, allowing customers to see and touch our products before making their investment decision."
-            },
-            {
-              "year": "2002",
               "title": "Expanding Services",
-              "description": "Added bathroom remodeling to our services, becoming a full-service home improvement company."
+              "description": "Added bathroom remodeling and entry door installation to our services, becoming a full-service home improvement company."
             },
             {
-              "year": "2008",
+              "year": "2000",
               "title": "ENERGY STAR Partnership",
-              "description": "Became an ENERGY STAR partner, committing to energy-efficient products that help homeowners save money and protect the environment."
+              "description": "Became an ENERGY STAR partner, focusing on energy-efficient products that help homeowners save money and reduce environmental impact."
             },
             {
-              "year": "2015",
+              "year": "2010",
               "title": "Advanced Installation Training",
-              "description": "Implemented comprehensive training program for our installation teams, raising every project team to the highest standards of craftsmanship."
+              "description": "Implemented comprehensive training programs for our installation teams, ensuring every project meets the highest standards of quality and craftsmanship."
             },
             {
               "year": "2020",
               "title": "Digital Innovation",
-              "description": "Enhanced digital tools and virtual consultations to better serve customers while maintaining our personal touch and commitment to service."
+              "description": "Embraced digital tools and virtual consultations to better serve customers while maintaining our personal touch and commitment to excellence."
             },
             {
               "year": "Today",
               "title": "Leading the Industry",
-              "description": "Continuing to lead Central New York's home improvement industry with innovative products, expert installation, and exceptional customer service."
+              "description": "Continuing to lead Central New York's home improvement industry with innovative products, expert installation, and unmatched customer service."
             }
           ],
-          "id": "CompanyTimeline-about"
+          "id": "CompanyTimeline-main"
         }
       },
       {
         "type": "CoreValues",
         "props": {
           "title": "Our Core Values",
-          "subtitle": "These principles guide everything we do and ensure exceptional experience they deserve",
+          "subtitle": "These principles guide everything we do and ensure every customer receives the exceptional experience they deserve.",
           "values": [
             {
               "icon": "🤝",
               "title": "Integrity",
-              "description": "We believe in honest communication, fair pricing and transparent business practices with every customer."
+              "description": "We believe in honest communication, fair pricing, and always doing what's right for our customers."
             },
             {
               "icon": "⭐",
               "title": "Quality",
-              "description": "We use only the finest products and employ skilled, experienced professionals with years of proven expertise."
+              "description": "We use only the finest products and employ skilled craftsmen who take pride in their work."
             },
             {
               "icon": "🛡️",
               "title": "Service",
-              "description": "Every customer deserves our full attention to exceed customer expectations from start to finish."
+              "description": "Every customer interaction is an opportunity to exceed expectations and build lasting relationships."
             },
             {
               "icon": "🏘️",
               "title": "Community",
-              "description": "We're proud part of Central New York and work hard to give back through our community service efforts."
+              "description": "We're proud to be part of Central New York and support our local communities."
             },
             {
               "icon": "🔧",
               "title": "Expertise",
-              "description": "Continuous learning and product innovation to keep our team educated on the latest technologies and best installation practices."
+              "description": "Continuous training and education ensure our team stays at the forefront of industry innovations."
             },
             {
               "icon": "🌱",
               "title": "Sustainability",
-              "description": "We prioritize eco-friendly products and practices that reduce environmental impact and provide long-term value for our customers."
+              "description": "We promote energy-efficient solutions that benefit both our customers and the environment."
             }
           ],
-          "id": "CoreValues-about"
+          "id": "CoreValues-main"
         }
       },
       {
         "type": "CertificationsAwards",
         "props": {
           "title": "Certifications & Recognition",
-          "subtitle": "Our commitment to excellence and quality is evident through the industry recognitions and the trust of thousands of customers",
+          "subtitle": "Our commitment to excellence has earned us industry recognition and the trust of our customers.",
           "certifications": [
             {
-              "image": "/images/certifications/bbb-logo.png",
+              "image": "https://placehold.co/150x100/000000/FFFFFF?text=BBB+A%2B",
               "title": "Better Business Bureau",
               "description": "A+ Rating"
             },
             {
-              "image": "/images/certifications/guildquality-logo.png",
-              "title": "GuildQuality",
-              "description": "Guildmaster Award"
-            },
-            {
-              "image": "/images/certifications/lead-safe-logo.png",
-              "title": "EPA Lead-Safe",
-              "description": "Certified Firm"
-            },
-            {
-              "image": "/images/certifications/energystar-logo.png",
+              "image": "https://placehold.co/150x100/000000/FFFFFF?text=ENERGY+STAR",
               "title": "ENERGY STAR",
-              "description": "Certified Products"
+              "description": "Certified Partner"
+            },
+            {
+              "image": "https://placehold.co/150x100/000000/FFFFFF?text=Licensed",
+              "title": "Licensed",
+              "description": "Fully Licensed Contractor"
+            },
+            {
+              "image": "https://placehold.co/150x100/000000/FFFFFF?text=Insured",
+              "title": "Insured",
+              "description": "Comprehensive Coverage"
             }
           ],
-          "id": "CertificationsAwards-about"
+          "id": "CertificationsAwards-main"
         }
       },
       {
         "type": "TeamSection",
         "props": {
           "title": "Meet Our Team",
-          "subtitle": "Dedicated professionals who bring expertise, passion, and personal attention to every project",
+          "subtitle": "Dedicated professionals who bring expertise, passion, and personal attention to every project.",
           "teamMembers": [
             {
-              "name": "Lead Manager",
-              "position": "Lead Manager",
-              "role": "Leadership & Strategy",
-              "description": "Over 15 years leading home improvement projects and exceeding customer expectations.",
-              "image": "/images/team/lead-manager.jpg"
+              "name": "Sales Manager",
+              "position": "Lead Consultant",
+              "role": "Sales Manager",
+              "description": "Over 15 years helping homeowners choose the perfect solutions for their homes.",
+              "image": "https://placehold.co/200x200/000000/FFFFFF?text=Team+Member"
             },
             {
-              "name": "Operations Manager",
-              "position": "Operations Manager",
-              "role": "Project Coordination",
-              "description": "20+ years of experience ensuring smooth installation projects with attention to detail.",
-              "image": "/images/team/operations-manager.jpg"
+              "name": "Installation Manager",
+              "position": "Master Craftsman",
+              "role": "Installation Manager",
+              "description": "20+ years of installation expertise ensuring every project exceeds expectations.",
+              "image": "https://placehold.co/200x200/000000/FFFFFF?text=Team+Member"
             },
             {
               "name": "Customer Service Manager",
-              "position": "Customer Service Manager",
-              "role": "Customer Relations",
-              "description": "Dedicated to providing exceptional support and ensuring total customer satisfaction.",
-              "image": "/images/team/customer-service-manager.jpg"
+              "position": "Customer Advocate",
+              "role": "Customer Service Manager",
+              "description": "Dedicated to ensuring every customer has an exceptional experience from start to finish.",
+              "image": "https://placehold.co/200x200/000000/FFFFFF?text=Team+Member"
             }
           ],
-          "id": "TeamSection-about"
+          "id": "TeamSection-main"
         }
       },
       {
         "type": "CommunityInvolvement",
         "props": {
           "title": "Community Commitment",
-          "subtitle": "We're proud to be part of Central New York. From sponsoring local youth sports teams through supporting families in need, we're committed to giving back to the communities we serve.",
+          "subtitle": "We're proud to support our Central New York communities through sponsorships, charitable giving, and volunteer work.",
           "description": "Supporting Our Neighbors",
           "activities": [
             "Annual sponsorship of local youth sports teams",
@@ -429,19 +433,19 @@
             "Emergency home repairs for seniors and veterans",
             "Participation in community festivals and events"
           ],
-          "image": "/images/about/community-support.jpg",
-          "id": "CommunityInvolvement-about"
+          "image": "https://placehold.co/600x400/000000/FFFFFF?text=Community+Support",
+          "id": "CommunityInvolvement-main"
         }
       },
       {
         "type": "CallToAction",
         "props": {
-          "title": "Experience the New York Sash Difference",
-          "description": "Join thousands of satisfied customers who have trusted us with their home improvement needs. Schedule a FREE in-home consultation today and see why we're Central New York's premier home improvement company.",
-          "buttonText": "Get Free Estimate",
+          "title": "Ready to Transform Your Home?",
+          "description": "Contact New York Sash today for a free, no-obligation consultation. Our expert team will help you choose the perfect solutions for your home improvement needs.",
+          "buttonText": "Get Free Consultation",
           "buttonLink": "#contact",
           "secondaryButtonText": "Call (315) 624-7344",
-          "secondaryButtonLink": "tel:+13156247344",
+          "secondaryButtonLink": "tel:315-624-7344",
           "backgroundColor": "#dc143c",
           "id": "CallToAction-about"
         }
@@ -452,7 +456,7 @@
   "/windows": {
     "root": {
       "props": {
-        "title": "Experience the Window Revolution | New York Sash | Central NY"
+        "title": "Premium Replacement Windows | New York Sash | Central New York"
       }
     },
     "content": [
@@ -465,7 +469,7 @@
           "ctaText": "Schedule Free Consultation",
           "ctaLink": "#contact",
           "secondaryCtaText": "(315) 624-7344",
-          "secondaryCtaLink": "tel:+13156247344",
+          "secondaryCtaLink": "tel:315-624-7344",
           "features": [
             {
               "icon": "✓",
@@ -488,12 +492,9 @@
               "description": "Peace of mind guarantee"
             }
           ],
-          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
-          "backgroundImages": [
-            "/images/windows/window-detail-1.jpg",
-            "/images/windows/window-detail-2.jpg"
-          ],
-          "id": "WindowsHero-windows"
+          "videoUrl": "https://www.youtube.com/embed/_ToUrLnN0w4",
+          "backgroundImages": [],
+          "id": "WindowsHero-main"
         }
       },
       {
@@ -518,7 +519,7 @@
               "description": "Built to last with premium materials",
               "items": [
                 "Fusion welded frames & sashes",
-                "Welded steel insert system",
+                "Stainless steel balance system",
                 "Custom sized to fit any opening"
               ]
             },
@@ -533,27 +534,27 @@
               ]
             }
           ],
-          "id": "WindowsFeatures-windows"
+          "id": "WindowsFeatures-main"
         }
       },
       {
         "type": "WindowsInstallation",
         "props": {
           "title": "Year-Round Installation Available",
-          "subtitle": "Don't wait for summer weather",
-          "description": "Our certified installers use special techniques to install windows in any season while protecting your home from the elements.",
+          "subtitle": "Professional installation in any season",
+          "description": "Don't wait for warmer weather - our certified installers use special techniques to install windows in any season while protecting your home from the elements.",
           "processTitle": "Our Winter Installation Process:",
           "processSteps": [
-            "Warm-up room installations to maintain heat loss",
+            "Room-by-room installation to minimize heat loss",
             "Complete one window before moving to next",
-            "Special winterization techniques"
+            "Special weatherization techniques"
           ],
-          "videoUrl": "",
-          "id": "WindowsInstallation-windows"
+          "videoUrl": "https://www.youtube.com/embed/_kYToIDvzfU",
+          "id": "WindowsInstallation-main"
         }
       },
       {
-        "type": "TestimonialsGrid",
+        "type": "WindowsTestimonials",
         "props": {
           "title": "What Our Customers Say",
           "subtitle": "Hear from homeowners throughout Central New York",
@@ -561,37 +562,34 @@
             {
               "name": "Sarah H.",
               "location": "Utica, NY",
-              "service": "Window Installation",
-              "testimonial": "Sarah from Utica shares her experience with our window installation service.",
-              "videoUrl": ""
+              "description": "Sarah from Utica shares her experience with our window installation",
+              "videoUrl": "https://www.youtube.com/embed/7eLjAxEJCuU"
             },
             {
-              "name": "Joe A.",
-              "location": "Herkimer, NY",
-              "service": "Window Installation",
-              "testimonial": "Joe discusses his window replacement project in Herkimer.",
-              "videoUrl": ""
+              "name": "Joe B.",
+              "location": "Sauquoit, NY",
+              "description": "Joe discusses his window replacement project",
+              "videoUrl": "https://www.youtube.com/embed/FF1r77f850c"
             },
             {
               "name": "Raymond & Laura B.",
               "location": "New Hartford, NY",
-              "service": "Window Installation",
-              "testimonial": "Raymond and Laura talk about their energy savings after window replacement.",
-              "videoUrl": ""
+              "description": "Raymond and Laura talk about their energy savings",
+              "videoUrl": "https://www.youtube.com/embed/I9Gm7wyXTIo"
             }
           ],
-          "id": "TestimonialsGrid-windows"
+          "id": "WindowsTestimonials-main"
         }
       },
       {
         "type": "CallToAction",
         "props": {
-          "title": "Ready for Beautiful, Energy-Efficient Windows?",
-          "description": "Get your free, no-obligation window estimate today. Our window experts will help you choose the perfect windows for your Central New York home with professional installation and warranty protection.",
-          "buttonText": "Get Free Window Estimate",
+          "title": "Ready for New Windows?",
+          "description": "Contact New York Sash today for a free, no-obligation consultation. Our expert team will help you choose the perfect windows for your home.",
+          "buttonText": "Schedule Free Consultation",
           "buttonLink": "#contact",
           "secondaryButtonText": "Call (315) 624-7344",
-          "secondaryButtonLink": "tel:+13156247344",
+          "secondaryButtonLink": "tel:315-624-7344",
           "backgroundColor": "#dc143c",
           "id": "CallToAction-windows"
         }
