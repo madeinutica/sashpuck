@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
 }
 
 /* Header Styles */
@@ -122,6 +123,61 @@ body {
   opacity: 0.7;
 }
 
+/* Dropdown Menu Styles */
+.nav-item.dropdown {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-top: 3px solid #dc143c;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #f8f8f8;
+  color: #dc143c;
+  padding-left: 24px;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
 .action-buttons {
   display: flex;
   gap: 16px;
@@ -178,7 +234,12 @@ body {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+  /* Hide top bar on mobile */
+  .top-bar {
+    display: none;
+  }
+  
   .top-bar-content {
     flex-direction: column;
     gap: 8px;
@@ -296,6 +357,72 @@ body {
   .mobile-nav-item:hover {
     color: #dc143c;
   }
+
+  /* Mobile Dropdown Styles */
+  .dropdown-mobile {
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-nav-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-nav-toggle:hover {
+    color: #dc143c;
+  }
+
+  .mobile-nav-toggle .dropdown-arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-nav-toggle .dropdown-arrow.active {
+    transform: rotate(180deg);
+  }
+
+  .mobile-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #f8f8f8;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .mobile-dropdown.active {
+    max-height: 300px;
+  }
+
+  .mobile-dropdown-item {
+    display: block;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-dropdown-item:hover {
+    color: #dc143c;
+    background: #f0f0f0;
+    padding-left: 44px;
+  }
+
+  .mobile-dropdown-item:last-child {
+    border-bottom: none;
+  }
   
   .mobile-actions {
     margin-top: 30px;
@@ -363,7 +490,7 @@ body {
 }
 
 /* Hide mobile elements on desktop */
-@media (min-width: 769px) {
+@media (min-width: 1001px) {
   .mobile-menu-toggle,
   .mobile-nav,
   .mobile-menu-overlay {
@@ -763,13 +890,11 @@ body {
 }
 
 .map-full-width {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   margin-bottom: 4rem;
+  overflow: hidden;
 }
 
 .map-title {
@@ -789,6 +914,9 @@ body {
 .map-container-wrapper {
   display: block;
   margin-bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .map-sidebar {
@@ -945,9 +1073,16 @@ body {
   gap: 0.125rem;
 }
 
+/* Custom component styles */
+.city-stats-section h3 {
+  font-size: 24px !important; 
+}
+
+/* Map Container Fix */
 .map-container {
-  border: 1px solid #e5e7eb;
-  border-radius: 0;
+  width: 100%;
+  height: 500px;
+  max-width: 100vw;
   overflow: hidden;
 }
 
@@ -1562,8 +1697,43 @@ body {
   }
 }
 
+/* Map Responsive Fixes */
+@media (max-width: 1000px) {
+  .map-header-container {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .map-title {
+    font-size: 2rem;
+  }
+  
+  .map-subtitle {
+    font-size: 1rem;
+  }
+  
+  .map-full-width {
+    margin-bottom: 2rem;
+  }
+  
+  .map-container {
+    min-height: 400px;
+  }
+  
+  .map-container-wrapper {
+    padding: 0;
+  }
+}
+
 /* Loading Animation */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* FeaturesWithImage Component Responsive Styles */
+@media (max-width: 900px) {
+  section[style*="backgroundColor: rgb(26, 26, 26)"] > div > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
 }

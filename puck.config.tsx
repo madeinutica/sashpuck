@@ -68,6 +68,9 @@ type Props = {
     subtitle: string;
     stats: Array<{ number: string; label: string; description: string }>;
     backgroundColor: string;
+    additionalText?: string;
+    ctaText?: string;
+    ctaLink?: string;
   };
   TestimonialCard: {
     name: string;
@@ -218,6 +221,33 @@ type Props = {
     description: string;
     activities: Array<string>;
     image: string;
+  };
+  FeaturesWithImage: {
+    title: string;
+    features: Array<string>;
+    imageUrl: string;
+    badgeText: string;
+    backgroundColor: string;
+  };
+  SidingHero: {
+    title: string;
+    subtitle: string;
+    badge: string;
+    ctaText: string;
+    ctaLink: string;
+    secondaryCtaText: string;
+    secondaryCtaLink: string;
+    features: Array<{
+      icon: string;
+      title: string;
+      description: string;
+    }>;
+    videoUrl?: string;
+    colorSwatches: Array<{
+      name: string;
+      color: string;
+      image: string;
+    }>;
   };
 };
 
@@ -490,7 +520,7 @@ export const config: Config<Props> = {
         image: "",
       },
       render: ({ title, features, ctaText, ctaLink, image }) => (
-        <div style={{ 
+        <div className="service-card-item" style={{ 
           background: "white",
           borderRadius: "0",
           boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
@@ -776,56 +806,125 @@ export const config: Config<Props> = {
           }
         },
         backgroundColor: { type: "text" },
+        additionalText: { type: "textarea" },
+        ctaText: { type: "text" },
+        ctaLink: { type: "text" },
       },
       defaultProps: {
         title: "Why Choose New York Sash",
         subtitle: "Family-owned and operated since 1988, serving Central New York with unmatched expertise",
         stats: [],
         backgroundColor: "#1a1a1a",
+        additionalText: "",
+        ctaText: "",
+        ctaLink: "",
       },
-      render: ({ title, subtitle, stats, backgroundColor }) => (
-        <div style={{ 
-          background: backgroundColor,
-          color: "white",
-          padding: "4rem 2rem"
-        }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-              <h2 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "1rem" }}>
-                {title}
-              </h2>
-              <p style={{ fontSize: "1.2rem", opacity: 0.9 }}>
-                {subtitle}
-              </p>
-            </div>
-            <div style={{ 
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: "2rem",
-              marginBottom: "3rem"
-            }}>
-              {stats.map((stat: any, index: number) => (
-                <div key={index} style={{ 
-                  textAlign: "center",
-                  padding: "2rem",
-                  backgroundColor: "#2a2a2a",
-                  borderRadius: "0"
-                }}>
-                  <div style={{ fontSize: "3rem", fontWeight: "bold", color: "#dc143c", marginBottom: "1rem" }}>
-                    {stat.number}
+      render: ({ title, subtitle, stats, backgroundColor, additionalText, ctaText, ctaLink }) => {
+        const isDarkBackground = backgroundColor === "#1a1a1a" || backgroundColor === "#2a2a2a" || backgroundColor === "#dc143c";
+        const isLightBackground = backgroundColor === "#f9fafb" || backgroundColor === "#ffffff";
+        const isRedBackground = backgroundColor === "#dc143c";
+        
+        return (
+          <div style={{ 
+            background: backgroundColor,
+            color: isDarkBackground ? "white" : "#1a1a1a",
+            padding: "4rem 2rem"
+          }}>
+            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+              <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+                <h2 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "1rem", color: isDarkBackground ? "white" : "#1a1a1a" }}>
+                  {title}
+                </h2>
+                <p style={{ fontSize: "1.125rem", color: isDarkBackground ? "white" : "#666", opacity: isDarkBackground ? 0.95 : 1 }}>
+                  {subtitle}
+                </p>
+              </div>
+              <div style={{ 
+                display: "grid",
+                gridTemplateColumns: stats.length === 3 ? "repeat(3, 1fr)" : stats.length === 4 ? "repeat(4, 1fr)" : "repeat(5, 1fr)",
+                gap: isRedBackground ? "2rem" : "3rem",
+                marginBottom: additionalText || ctaText ? "2rem" : "3rem"
+              }}>
+                {stats.map((stat: any, index: number) => (
+                  <div key={index} style={{ 
+                    textAlign: "center",
+                    padding: isRedBackground ? "1.5rem" : "2rem",
+                    backgroundColor: isRedBackground ? "rgba(0,0,0,0.1)" : (isDarkBackground ? "rgba(255,255,255,0.05)" : "transparent"),
+                    borderRadius: "0.5rem"
+                  }}>
+                    {isLightBackground ? (
+                      // Light background style with circular badges
+                      <>
+                        <div style={{ 
+                          width: "80px",
+                          height: "80px",
+                          borderRadius: "50%",
+                          backgroundColor: "#dc143c",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          margin: "0 auto 1rem",
+                          fontSize: "2rem"
+                        }}>
+                          {stat.number}
+                        </div>
+                        <div style={{ fontSize: "1.125rem", fontWeight: "700", marginBottom: "0.5rem", color: "#1a1a1a" }}>
+                          {stat.label}
+                        </div>
+                        <div style={{ color: "#666", fontSize: "0.9rem", lineHeight: "1.5" }}>
+                          {stat.description}
+                        </div>
+                      </>
+                    ) : (
+                      // Dark background style with large red/white numbers
+                      <>
+                        <div style={{ fontSize: isRedBackground ? "1.5rem" : "3.5rem", fontWeight: "bold", color: isRedBackground ? "white" : "#dc143c", marginBottom: "0.75rem" }}>
+                          {stat.number}
+                        </div>
+                        <div style={{ fontSize: isRedBackground ? "1rem" : "1.25rem", fontWeight: "600", marginBottom: "0.5rem", color: "white" }}>
+                          {stat.label}
+                        </div>
+                        {stat.description && (
+                          <div style={{ color: isRedBackground ? "rgba(255,255,255,0.9)" : "#ccc", fontSize: "0.95rem" }}>
+                            {stat.description}
+                          </div>
+                        )}
+                      </>
+                    )}
                   </div>
-                  <div style={{ fontSize: "1.2rem", fontWeight: "600", marginBottom: "0.5rem" }}>
-                    {stat.label}
-                  </div>
-                  <div style={{ color: "#ccc" }}>
-                    {stat.description}
-                  </div>
+                ))}
+              </div>
+              {additionalText && (
+                <div style={{ textAlign: "center", color: isDarkBackground ? "white" : "#1a1a1a", marginBottom: ctaText ? "1.5rem" : "0" }}>
+                  <p style={{ fontSize: "16px", margin: "20px 0" }}>
+                    {additionalText}
+                  </p>
                 </div>
-              ))}
+              )}
+              {ctaText && ctaLink && (
+                <div style={{ textAlign: "center" }}>
+                  <a
+                    href={ctaLink}
+                    style={{
+                      display: "inline-block",
+                      backgroundColor: "white",
+                      color: "#dc143c",
+                      padding: "0.875rem 2rem",
+                      borderRadius: "0.375rem",
+                      fontSize: "1rem",
+                      fontWeight: "600",
+                      textDecoration: "none",
+                      transition: "transform 0.2s"
+                    }}
+                  >
+                    {ctaText}
+                  </a>
+                </div>
+              )}
             </div>
           </div>
-        </div>
-      ),
+        );
+      },
     },
     TestimonialCard: {
       fields: {
@@ -1124,35 +1223,22 @@ export const config: Config<Props> = {
           padding: "3rem 2rem",
           textAlign: "center"
         }}>
-          <h2 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "1rem" }}>
-            {title}
-          </h2>
-          <p style={{ fontSize: "1.2rem", marginBottom: "2rem", opacity: 0.9 }}>
-            {description}
-          </p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <a 
-              href={buttonLink}
-              style={{
-                display: "inline-block",
-                backgroundColor: "#dc143c",
-                color: "white",
-                padding: "1rem 2rem",
-                fontSize: "1.1rem",
-                fontWeight: "600",
-                textDecoration: "none",
-                borderRadius: "0",
-                transition: "background-color 0.3s ease"
-              }}
-            >
-              {buttonText}
-            </a>
-            {secondaryButtonText && (
+          <div style={{
+            maxWidth: "900px",
+            margin: "0 auto"
+          }}>
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "1rem" }}>
+              {title}
+            </h2>
+            <p style={{ fontSize: "1.2rem", marginBottom: "2rem", opacity: 0.9 }}>
+              {description}
+            </p>
+            <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
               <a 
-                href={secondaryButtonLink}
+                href={buttonLink}
                 style={{
                   display: "inline-block",
-                  backgroundColor: "#333",
+                  backgroundColor: "#dc143c",
                   color: "white",
                   padding: "1rem 2rem",
                   fontSize: "1.1rem",
@@ -1162,9 +1248,27 @@ export const config: Config<Props> = {
                   transition: "background-color 0.3s ease"
                 }}
               >
-                {secondaryButtonText}
+                {buttonText}
               </a>
-            )}
+              {secondaryButtonText && (
+                <a 
+                  href={secondaryButtonLink}
+                  style={{
+                    display: "inline-block",
+                    backgroundColor: "#333",
+                    color: "white",
+                    padding: "1rem 2rem",
+                    fontSize: "1.1rem",
+                    fontWeight: "600",
+                    textDecoration: "none",
+                    borderRadius: "0",
+                    transition: "background-color 0.3s ease"
+                  }}
+                >
+                  {secondaryButtonText}
+                </a>
+              )}
+            </div>
           </div>
         </div>
       ),
@@ -1235,8 +1339,6 @@ export const config: Config<Props> = {
       },
       render: ({ title, subtitle, services }) => {
         const ServiceCard = ({ service }: { service: any }) => {
-          const [showAfter, setShowAfter] = React.useState(false);
-          
           return (
             <div style={{ 
               background: "white",
@@ -1248,106 +1350,23 @@ export const config: Config<Props> = {
               flexDirection: "column",
               border: "1px solid #e5e7eb"
             }}>
-              {/* Image Container with Before/After Toggle */}
+              {/* Image Container */}
               <div style={{ 
                 position: "relative",
                 height: "250px",
                 overflow: "hidden",
                 backgroundColor: "#f8f9fa"
               }}>
-                {/* Before Image */}
+                {/* Service Image */}
                 <img 
-                  src={service.beforeImage} 
-                  alt={`${service.title} - Before`}
+                  src={service.afterImage || service.beforeImage} 
+                  alt={`${service.title} - Transformation`}
                   style={{ 
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
                     width: "100%", 
                     height: "100%", 
-                    objectFit: "cover",
-                    transition: "opacity 0.3s ease",
-                    opacity: showAfter ? 0 : 1
+                    objectFit: "cover"
                   }}
                 />
-                {/* After Image */}
-                <img 
-                  src={service.afterImage} 
-                  alt={`${service.title} - After`}
-                  style={{ 
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%", 
-                    height: "100%", 
-                    objectFit: "cover",
-                    transition: "opacity 0.3s ease",
-                    opacity: showAfter ? 1 : 0
-                  }}
-                />
-                
-                {/* Toggle Buttons */}
-                <div style={{
-                  position: "absolute",
-                  bottom: "15px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  display: "flex",
-                  gap: "8px",
-                  zIndex: 10
-                }}>
-                  <button
-                    onClick={() => setShowAfter(false)}
-                    style={{
-                      backgroundColor: !showAfter ? "#6b7280" : "#d1d5db",
-                      color: "white",
-                      border: "none",
-                      padding: "8px 16px",
-                      borderRadius: "0",
-                      fontSize: "14px",
-                      fontWeight: "600",
-                      cursor: "pointer",
-                      transition: "all 0.3s ease",
-                      boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
-                    }}
-                  >
-                    Before
-                  </button>
-                  <button
-                    onClick={() => setShowAfter(true)}
-                    style={{
-                      backgroundColor: showAfter ? "#6b7280" : "#d1d5db",
-                      color: "white",
-                      border: "none",
-                      padding: "8px 16px",
-                      borderRadius: "0",
-                      fontSize: "14px",
-                      fontWeight: "600",
-                      cursor: "pointer",
-                      transition: "all 0.3s ease",
-                      boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
-                    }}
-                  >
-                    After
-                  </button>
-                </div>
-
-                {/* Red indicator dot */}
-                <div style={{
-                  position: "absolute",
-                  top: "15px",
-                  right: "15px",
-                  width: "24px",
-                  height: "24px",
-                  backgroundColor: "#dc143c",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
-                }}>
-                  <span style={{ color: "white", fontSize: "14px", fontWeight: "bold" }}>!</span>
-                </div>
               </div>
 
               {/* Content */}
@@ -1477,14 +1496,21 @@ export const config: Config<Props> = {
           return (
             <div style={{ 
               background: "white",
-              borderRadius: "0",
-              boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+              borderRadius: "8px",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
               overflow: "hidden",
               height: "100%",
-              border: "1px solid #e5e7eb"
+              display: "flex",
+              flexDirection: "column"
             }}>
-              {testimonial.videoUrl && (
-                <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+              {/* Video or Image Placeholder */}
+              <div style={{ 
+                position: "relative", 
+                paddingBottom: "56.25%", 
+                height: 0,
+                backgroundColor: "#2b2b2b"
+              }}>
+                {testimonial.videoUrl ? (
                   <iframe
                     src={testimonial.videoUrl}
                     style={{
@@ -1499,16 +1525,54 @@ export const config: Config<Props> = {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
-                </div>
-              )}
-              <div style={{ padding: "1.5rem" }}>
-                <h3 style={{ fontSize: "1.2rem", fontWeight: "bold", marginBottom: "0.5rem", color: "#333" }}>
+                ) : (
+                  <div style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: "#2b2b2b",
+                    color: "#888"
+                  }}>
+                    <div style={{ textAlign: "center" }}>
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" style={{ marginBottom: "8px" }}>
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                      </svg>
+                      <div style={{ fontSize: "14px" }}>Video unavailable</div>
+                      <div style={{ fontSize: "12px" }}>This video is private</div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              
+              <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column" }}>
+                <h3 style={{ 
+                  fontSize: "1.1rem", 
+                  fontWeight: "bold", 
+                  marginBottom: "0.25rem", 
+                  color: "#1f2937" 
+                }}>
                   {testimonial.name} - {testimonial.location}
                 </h3>
-                <p style={{ fontSize: "0.9rem", color: "#dc143c", marginBottom: "1rem", fontWeight: "600" }}>
+                <p style={{ 
+                  fontSize: "0.9rem", 
+                  color: "#666", 
+                  marginBottom: "1rem",
+                  fontStyle: "italic"
+                }}>
                   {testimonial.service}
                 </p>
-                <p style={{ color: "#666", lineHeight: "1.6" }}>
+                <p style={{ 
+                  color: "#4b5563", 
+                  lineHeight: "1.6",
+                  fontSize: "0.95rem",
+                  fontStyle: "italic"
+                }}>
                   "{testimonial.testimonial}"
                 </p>
               </div>
@@ -1518,16 +1582,16 @@ export const config: Config<Props> = {
 
         return (
           <div style={{ 
-            background: "#f8f9fa",
+            background: "white",
             padding: "4rem 2rem"
           }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+            <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
               <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-                <h2 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "1rem", color: "#1f2937" }}>
+                <h2 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "0.5rem", color: "#1f2937" }}>
                   {title}
                 </h2>
                 {subtitle && (
-                  <p style={{ fontSize: "1.2rem", color: "#6b7280", maxWidth: "800px", margin: "0 auto" }}>
+                  <p style={{ fontSize: "1.125rem", color: "#6b7280" }}>
                     {subtitle}
                   </p>
                 )}
@@ -3224,6 +3288,426 @@ export const config: Config<Props> = {
                   }}
                   loading="lazy"
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+      ),
+    },
+    FeaturesWithImage: {
+      fields: {
+        title: { type: "text" },
+        features: {
+          type: "array",
+          arrayFields: {
+            feature: { type: "text" },
+          },
+        },
+        imageUrl: { type: "text" },
+        badgeText: { type: "text" },
+        backgroundColor: { type: "text" },
+      },
+      defaultProps: {
+        title: "What Sets Us Apart",
+        features: [
+          "Family-owned and operated since 1988",
+          "EPA certified lead-safe installation practices",
+          "Custom manufactured products for perfect fit",
+          "Year-round installation capability",
+          "Comprehensive warranties and guarantees",
+          "Local Central New York expertise"
+        ],
+        imageUrl: "/images/team/epa-certified-team.jpg",
+        badgeText: "EPA Certified",
+        backgroundColor: "#1a1a1a",
+      },
+      render: ({ title, features, imageUrl, badgeText, backgroundColor }) => (
+        <section style={{
+          padding: "1.75rem 2rem 5rem 2rem",
+          backgroundColor: backgroundColor || "#1a1a1a"
+        }}>
+          <div style={{
+            maxWidth: "1400px",
+            margin: "0 auto"
+          }}>
+            <h2 style={{
+              fontSize: "2.5rem",
+              fontWeight: "bold",
+              marginBottom: "3rem",
+              color: "white",
+              textAlign: "center"
+            }}>
+              {title}
+            </h2>
+            
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "4rem",
+              alignItems: "center"
+            }}>
+              <div>
+                <ul style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0
+                }}>
+                  {features.map((feature: any, index: number) => (
+                    <li key={index} style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      marginBottom: "1.25rem",
+                      fontSize: "1.125rem",
+                      color: "white"
+                    }}>
+                      <span style={{
+                        color: "#dc143c",
+                        marginRight: "0.75rem",
+                        fontSize: "1.25rem",
+                        fontWeight: "bold",
+                        lineHeight: "1.5"
+                      }}>
+                        ✓
+                      </span>
+                      <span>{feature.feature || feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div style={{
+                position: "relative",
+                textAlign: "center"
+              }}>
+                <img
+                  src={imageUrl}
+                  alt={title}
+                  style={{
+                    width: "100%",
+                    maxWidth: "500px",
+                    borderRadius: "0.5rem",
+                    boxShadow: "0 10px 40px rgba(0,0,0,0.3)"
+                  }}
+                  loading="lazy"
+                />
+                {badgeText && (
+                  <div style={{
+                    position: "absolute",
+                    bottom: "2rem",
+                    right: "2rem",
+                    backgroundColor: "#dc143c",
+                    color: "white",
+                    padding: "0.75rem 1.5rem",
+                    borderRadius: "0",
+                    fontSize: "1rem",
+                    fontWeight: "600",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.3)"
+                  }}>
+                    {badgeText}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      ),
+    },
+    SidingHero: {
+      fields: {
+        title: { type: "text" },
+        subtitle: { type: "textarea" },
+        badge: { type: "text" },
+        ctaText: { type: "text" },
+        ctaLink: { type: "text" },
+        secondaryCtaText: { type: "text" },
+        secondaryCtaLink: { type: "text" },
+        features: {
+          type: "array",
+          arrayFields: {
+            icon: { type: "text" },
+            title: { type: "text" },
+            description: { type: "text" },
+          },
+        },
+        videoUrl: { type: "text" },
+        colorSwatches: {
+          type: "array",
+          arrayFields: {
+            name: { type: "text" },
+            color: { type: "text" },
+            image: { type: "text" },
+          },
+        },
+      },
+      defaultProps: {
+        title: "Elevate Your Home's Protection & Style",
+        subtitle: "Transform your home's exterior with our premium siding solutions. Engineered for Central New York weather, combining lasting beauty with superior protection and energy efficiency.",
+        badge: "Premium Vinyl & Insulated Siding Solutions",
+        ctaText: "Get Expert Consultation",
+        ctaLink: "#contact",
+        secondaryCtaText: "(315) 624-7344",
+        secondaryCtaLink: "tel:+13156247344",
+        features: [
+          {
+            icon: "✓",
+            title: "Maintenance-Free",
+            description: "Never needs painting"
+          },
+          {
+            icon: "✓",
+            title: "Weather Resistant",
+            description: "Built for NY climate"
+          },
+          {
+            icon: "✓",
+            title: "Energy Efficient",
+            description: "Superior insulation"
+          },
+          {
+            icon: "✓",
+            title: "Lifetime Warranty",
+            description: "Guaranteed protection"
+          }
+        ],
+        videoUrl: "",
+        colorSwatches: [
+          { name: "Arctic White", color: "#FFFFFF", image: "/images/colors/white.jpg" },
+          { name: "Coastal Gray", color: "#C8D3DC", image: "/images/colors/gray.jpg" },
+          { name: "Naval Blue", color: "#1E3A8A", image: "/images/colors/blue.jpg" }
+        ],
+      },
+      render: ({ title, subtitle, badge, ctaText, ctaLink, secondaryCtaText, secondaryCtaLink, features, videoUrl, colorSwatches }) => (
+        <section style={{
+          position: "relative",
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+          background: "linear-gradient(135deg, #1a1a1a 0%, #333 100%)"
+        }}>
+          {/* Content */}
+          <div style={{
+            position: "relative",
+            zIndex: 10,
+            maxWidth: "1400px",
+            margin: "0 auto",
+            padding: "0 2rem",
+            width: "100%"
+          }}>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "4rem",
+              alignItems: "center"
+            }}>
+              {/* Left Column */}
+              <div style={{ color: "white" }}>
+                <div style={{
+                  display: "inline-block",
+                  backgroundColor: "#dc143c",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "9999px",
+                  fontSize: "0.875rem",
+                  fontWeight: "600",
+                  marginBottom: "1.5rem"
+                }}>
+                  {badge}
+                </div>
+                <h1 style={{
+                  fontSize: "3rem",
+                  fontWeight: "bold",
+                  marginBottom: "1.5rem",
+                  lineHeight: "1.2"
+                }}>
+                  {title.includes("Protection & Style") ? (
+                    <>
+                      Elevate Your Home's<br />
+                      <span style={{ color: "#dc143c" }}>Protection & Style</span>
+                    </>
+                  ) : title}
+                </h1>
+                <p style={{
+                  fontSize: "1.125rem",
+                  marginBottom: "2rem",
+                  color: "#d1d5db",
+                  lineHeight: "1.6"
+                }}>
+                  {subtitle}
+                </p>
+                
+                {/* Features Grid */}
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(2, 1fr)",
+                  gap: "1rem",
+                  marginBottom: "2rem"
+                }}>
+                  {features.map((feature: any, index: number) => (
+                    <div key={index} style={{
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                      borderRadius: "0.5rem",
+                      padding: "1rem"
+                    }}>
+                      <div style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginBottom: "0.5rem"
+                      }}>
+                        <span style={{
+                          color: "#dc143c",
+                          fontSize: "1.25rem",
+                          marginRight: "0.5rem",
+                          fontWeight: "bold"
+                        }}>
+                          {feature.icon}
+                        </span>
+                        <h3 style={{ fontWeight: "600", margin: 0, fontSize: "1rem" }}>
+                          {feature.title}
+                        </h3>
+                      </div>
+                      <p style={{
+                        color: "#d1d5db",
+                        fontSize: "0.875rem",
+                        margin: 0
+                      }}>
+                        {feature.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA Buttons */}
+                <div style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "1rem"
+                }}>
+                  <a
+                    href={ctaLink}
+                    style={{
+                      backgroundColor: "#dc143c",
+                      color: "white",
+                      padding: "1rem 2rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "1.125rem",
+                      fontWeight: "600",
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      transition: "background-color 0.3s"
+                    }}
+                  >
+                    {ctaText}
+                    <svg style={{
+                      width: "1.25rem",
+                      height: "1.25rem",
+                      marginLeft: "0.5rem"
+                    }} fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                    </svg>
+                  </a>
+                  <a
+                    href={secondaryCtaLink}
+                    style={{
+                      backgroundColor: "white",
+                      color: "#1a1a1a",
+                      padding: "1rem 2rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "1.125rem",
+                      fontWeight: "600",
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      transition: "background-color 0.3s"
+                    }}
+                  >
+                    <svg style={{
+                      width: "1.25rem",
+                      height: "1.25rem",
+                      marginRight: "0.5rem"
+                    }} fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    {secondaryCtaText}
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div>
+                {/* Video Section */}
+                <div style={{
+                  backgroundColor: "rgba(255,255,255,0.1)",
+                  backdropFilter: "blur(10px)",
+                  borderRadius: "0.5rem",
+                  padding: "1.5rem",
+                  marginBottom: "1.5rem"
+                }}>
+                  {videoUrl ? (
+                    <iframe
+                      style={{
+                        width: "100%",
+                        borderRadius: "0.5rem",
+                        boxShadow: "0 10px 25px rgba(0,0,0,0.3)"
+                      }}
+                      height="315"
+                      src={videoUrl}
+                      title="Siding Installation Video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                    ></iframe>
+                  ) : (
+                    <div style={{
+                      backgroundColor: "#2b2b2b",
+                      borderRadius: "0.5rem",
+                      height: "315px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#888"
+                    }}>
+                      <div style={{ textAlign: "center" }}>
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" style={{ marginBottom: "8px" }}>
+                          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                          <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                        </svg>
+                        <div style={{ fontSize: "14px" }}>Video unavailable</div>
+                        <div style={{ fontSize: "12px" }}>This video is private</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Color Swatches */}
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, 1fr)",
+                  gap: "1rem"
+                }}>
+                  {colorSwatches.map((swatch: any, index: number) => (
+                    <div key={index} style={{
+                      textAlign: "center"
+                    }}>
+                      <div style={{
+                        backgroundColor: swatch.color,
+                        border: swatch.color === "#FFFFFF" ? "1px solid #333" : "none",
+                        borderRadius: "0.5rem",
+                        aspectRatio: "1",
+                        marginBottom: "0.5rem",
+                        boxShadow: "0 4px 6px rgba(0,0,0,0.2)"
+                      }}></div>
+                      <p style={{
+                        color: "white",
+                        fontSize: "0.875rem",
+                        margin: 0
+                      }}>
+                        {swatch.name}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

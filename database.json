@@ -1,1 +1,2490 @@
-{"/":{"root":{"props":{"title":"New York Sash - Windows, Siding, Baths & Doors | Central NY"}},"content":[{"type":"HeroSection","props":{"title":"Transform Your Home's Beauty & Comfort","subtitle":"Central New York's premier provider of premium windows, siding, bathrooms, and entry doors.","ctaText":"Get Free Consultation","ctaLink":"#contact","secondaryCtaText":"(315) 624-7344","secondaryCtaLink":"tel:+13156247344","badge":"Trusted Since 1988 | 10,000+ Projects Completed","id":"HeroSection-home"}},{"type":"PromoBanner","props":{"imageUrl":"/images/cta/contest-logo-25k-hig-2026-long-2048x333.png","altText":"$25,000 Home Improvement Giveaway","link":"#contact","id":"PromoBanner-0d09c237-6211-4bfe-a5da-b5acd0122683"}},{"type":"StatsSection","props":{"title":"Why Choose New York Sash","subtitle":"Family-owned and operated since 1988, serving Central New York with unmatched expertise","stats":[{"number":"10K+","label":"Projects Completed","description":"Successful installations across Central NY"},{"number":"35+","label":"Years Experience","description":"Trusted since 1988"},{"number":"98%","label":"Customer Satisfaction","description":"Rated excellent by our customers"},{"number":"50+","label":"Local Communities","description":"Serving Central New York"}],"backgroundColor":"#1a1a1a","id":"StatsSection-home"}},{"type":"ServicesGrid","props":{"title":"Our Premium Services","subtitle":"Serving Central New York with expert installation and superior products backed by our family-owned commitment to quality","services":[{"title":"Windows","beforeImage":"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center","afterImage":"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&crop=center","features":["Fusion welded frames","LowE with Argon gas","ENERGY STAR certified","Custom manufactured"],"ctaText":"Learn More","ctaLink":"/windows","description":"Transform your home with energy-efficient windows that reduce costs and enhance comfort."},{"title":"Siding","beforeImage":"https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=300&fit=crop&crop=center","afterImage":"https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&h=300&fit=crop&crop=center","features":["Insulated vinyl siding","Maintenance-free","ENERGY STAR rated","Lifetime warranty"],"ctaText":"Learn More","ctaLink":"/siding","description":"Protect and beautify your home with durable, weather-resistant siding solutions."},{"title":"Bathroom Remodeling","beforeImage":"https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&h=300&fit=crop&crop=center","afterImage":"https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop&crop=center","features":["Acrylic bath liners","Walk-in tubs","Tub-to-shower conversions","2-day installation"],"ctaText":"Learn More","ctaLink":"/baths","description":"Complete bathroom transformations with modern fixtures and expert craftsmanship."},{"title":"Entry Doors","beforeImage":"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center","afterImage":"https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=400&h=300&fit=crop&crop=center","features":["Fiberglass & steel","Decorative glass options","Enhanced security","Energy efficient"],"ctaText":"Learn More","ctaLink":"/doors","description":"Secure, stylish entry doors that make a great first impression."}],"id":"ServicesGrid-home"}},{"type":"TestimonialsGrid","props":{"title":"Local Homeowners Trust New York Sash","subtitle":"We Proudly serve communities throughout Central New York with expert home improvement services","testimonials":[{"name":"Sarah Johnson","location":"Syracuse, NY","service":"Window Replacement","testimonial":"New York Sash did an amazing job replacing all the windows in our home. The quality is exceptional and the installation team was professional and clean. Our energy bills have already decreased significantly!","videoUrl":"https://www.youtube.com/embed/dQw4w9WgXcQ"},{"name":"Mike Rodriguez","location":"Utica, NY","service":"Bathroom Remodel","testimonial":"We're thrilled with our new bathroom! The team at New York Sash transformed our outdated space into a beautiful, functional room. The attention to detail was impressive.","videoUrl":"https://www.youtube.com/embed/dQw4w9WgXcQ"},{"name":"Jennifer Davis","location":"Rome, NY","service":"Siding Installation","testimonial":"Our home looks brand new after the siding installation. The crew was punctual, respectful, and did excellent work. Highly recommend New York Sash for any home improvement project.","videoUrl":"https://www.youtube.com/embed/dQw4w9WgXcQ"}],"id":"TestimonialsGrid-home"}},{"type":"ServiceAreas","props":{"title":"Serving Central New York","subtitle":"Proudly serving communities throughout Central New York with expert home improvement services","areas":[{"name":"Syracuse","population":"148,000"},{"name":"Utica","population":"65,000"},{"name":"Rome","population":"34,000"},{"name":"Auburn","population":"28,000"},{"name":"Oneida","population":"11,000"},{"name":"Fulton","population":"12,000"}],"additionalText":"Also serving surrounding communities throughout Onondaga, Oneida, Madison, Oswego, and Cayuga counties","id":"ServiceAreas-home"}},{"type":"CallToAction","props":{"title":"Ready to Transform Your Home?","description":"Contact New York Sash today for a free, no-obligation consultation. Our expert team will help you choose the perfect solutions for your home improvement needs.","buttonText":"Get Free Consultation","buttonLink":"#contact","secondaryButtonText":"Call (315) 624-7344","secondaryButtonLink":"tel:+13156247344","backgroundColor":"#1a1a1a","id":"CallToAction-home"}}],"zones":{}},"/about":{"root":{"props":{"title":"About Us - New York Sash | Central NY's Home Improvement Experts"}},"content":[{"type":"AboutHero","props":{"title":"Your Trusted Home Improvement Partner","subtitle":"For over four decades, New York Sash has been transforming homes throughout Central New York with premium windows, siding, bathrooms, and entry doors.","badge":"Family-Owned Since 1979","ctaText":"Get Free Consultation","ctaLink":"#contact","secondaryCtaText":"(315) 624-7344","secondaryCtaLink":"tel:315-624-7344","stats":[{"number":"5,000+","label":"Homes Transformed"},{"number":"45+","label":"Years Experience"},{"number":"100%","label":"Satisfaction Guarantee"},{"number":"A+","label":"BBB Rating"}],"videoUrl":"https://www.youtube.com/embed/_ToUrLnN0w4","id":"AboutHero-main"}},{"type":"CompanyOverview","props":{"title":"Your Trusted Local Partner","description":"For over four decades, New York Sash has been Central New York's premier home improvement company. What started as a small family business has grown into the region's most trusted name for windows, siding, bathrooms, and entry doors.","additionalText":"We understand that your home is your most important investment. That's why we're committed to providing the highest quality products, expert installation, and exceptional customer service that has earned us thousands of satisfied customers and an A+ rating with the Better Business Bureau.","image":"https://placehold.co/600x400/000000/FFFFFF?text=Company+Building","stats":[{"number":"5,000+","label":"Homes Transformed"},{"number":"45+","label":"Years Experience"},{"number":"100%","label":"Satisfaction Guarantee"},{"number":"A+","label":"BBB Rating"}],"id":"CompanyOverview-main"}},{"type":"CompanyTimeline","props":{"title":"Our Story","subtitle":"From humble beginnings to regional leader - see how we've grown while maintaining our commitment to quality and service.","timelineItems":[{"year":"1979","title":"Company Founded","description":"New York Sash was established as a family-owned business with a simple mission: provide quality home improvement products and exceptional service to Central New York homeowners."},{"year":"1985","title":"First Showroom Opens","description":"Opened our first showroom in Whitesboro, NY, allowing customers to see and touch our products before making decisions. This hands-on approach became a cornerstone of our business."},{"year":"1995","title":"Expanding Services","description":"Added bathroom remodeling and entry door installation to our services, becoming a full-service home improvement company."},{"year":"2000","title":"ENERGY STAR Partnership","description":"Became an ENERGY STAR partner, focusing on energy-efficient products that help homeowners save money and reduce environmental impact."},{"year":"2010","title":"Advanced Installation Training","description":"Implemented comprehensive training programs for our installation teams, ensuring every project meets the highest standards of quality and craftsmanship."},{"year":"2020","title":"Digital Innovation","description":"Embraced digital tools and virtual consultations to better serve customers while maintaining our personal touch and commitment to excellence."},{"year":"Today","title":"Leading the Industry","description":"Continuing to lead Central New York's home improvement industry with innovative products, expert installation, and unmatched customer service."}],"id":"CompanyTimeline-main"}},{"type":"CoreValues","props":{"title":"Our Core Values","subtitle":"These principles guide everything we do and ensure every customer receives the exceptional experience they deserve.","values":[{"icon":"🤝","title":"Integrity","description":"We believe in honest communication, fair pricing, and always doing what's right for our customers."},{"icon":"⭐","title":"Quality","description":"We use only the finest products and employ skilled craftsmen who take pride in their work."},{"icon":"💬","title":"Service","description":"Every customer interaction is an opportunity to exceed expectations and build lasting relationships."},{"icon":"🏠","title":"Community","description":"We're proud to be part of Central New York and support our local communities."},{"icon":"🔧","title":"Expertise","description":"Continuous training and education ensure our team stays at the forefront of industry innovations."},{"icon":"🌱","title":"Sustainability","description":"We promote energy-efficient solutions that benefit both our customers and the environment."}],"id":"CoreValues-main"}},{"type":"CertificationsAwards","props":{"title":"Certifications & Recognition","subtitle":"Our commitment to excellence has earned us industry recognition and the trust of our customers.","certifications":[{"image":"https://placehold.co/150x100/000000/FFFFFF?text=BBB+A%2B","title":"Better Business Bureau","description":"A+ Rating"},{"image":"https://placehold.co/150x100/000000/FFFFFF?text=ENERGY+STAR","title":"ENERGY STAR","description":"Certified Partner"},{"image":"https://placehold.co/150x100/000000/FFFFFF?text=Licensed","title":"Licensed","description":"Fully Licensed Contractor"},{"image":"https://placehold.co/150x100/000000/FFFFFF?text=Insured","title":"Insured","description":"Comprehensive Coverage"}],"id":"CertificationsAwards-main"}},{"type":"TeamSection","props":{"title":"Meet Our Team","subtitle":"Dedicated professionals who bring expertise, passion, and personal attention to every project.","teamMembers":[{"name":"Sales Manager","position":"Lead Consultant","role":"Sales Manager","description":"Over 15 years helping homeowners choose the perfect solutions for their homes.","image":"https://placehold.co/200x200/000000/FFFFFF?text=Team+Member"},{"name":"Installation Manager","position":"Master Craftsman","role":"Installation Manager","description":"20+ years of installation expertise ensuring every project exceeds expectations.","image":"https://placehold.co/200x200/000000/FFFFFF?text=Team+Member"},{"name":"Customer Service Manager","position":"Customer Advocate","role":"Customer Service Manager","description":"Dedicated to ensuring every customer has an exceptional experience from start to finish.","image":"https://placehold.co/200x200/000000/FFFFFF?text=Team+Member"}],"id":"TeamSection-main"}},{"type":"CommunityInvolvement","props":{"title":"Community Commitment","subtitle":"We're proud to support our Central New York communities through sponsorships, charitable giving, and volunteer work.","description":"Supporting Our Neighbors","activities":[{"activity":"Annual sponsorship of local youth sports teams"},{"activity":"Donations to Habitat for Humanity builds"},{"activity":"Support for local schools and educational programs"},{"activity":"Emergency home repairs for seniors and veterans"},{"activity":"Participation in community festivals and events"}],"image":"https://placehold.co/600x400/000000/FFFFFF?text=Community+Support","id":"CommunityInvolvement-main"}},{"type":"CallToAction","props":{"title":"Ready to Transform Your Home?","description":"Contact New York Sash today for a free, no-obligation consultation. Our expert team will help you choose the perfect solutions for your home improvement needs.","buttonText":"Get Free Consultation","buttonLink":"#contact","secondaryButtonText":"Call (315) 624-7344","secondaryButtonLink":"tel:315-624-7344","backgroundColor":"#dc143c","id":"CallToAction-about"}}],"zones":{}},"/windows":{"root":{"props":{"title":"Premium Replacement Windows | New York Sash | Central New York"}},"content":[{"type":"WindowsHero","props":{"title":"Experience the Window Revolution","subtitle":"Transform your home with our premium fusion-welded windows. Superior energy efficiency, enhanced comfort, and timeless beauty designed specifically for Central New York homes.","badge":"ENERGY STAR® Certified Windows","ctaText":"Schedule Free Consultation","ctaLink":"#contact","secondaryCtaText":"(315) 624-7344","secondaryCtaLink":"tel:315-624-7344","features":[{"icon":"✓","title":"Fusion Welded Frames","description":"Superior strength and insulation"},{"icon":"✓","title":"LowE Glass","description":"Advanced UV protection"},{"icon":"✓","title":"Argon Gas Filled","description":"Enhanced insulation"},{"icon":"✓","title":"Lifetime Warranty","description":"Peace of mind guarantee"}],"videoUrl":"https://www.youtube.com/embed/_ToUrLnN0w4","backgroundImages":[],"id":"WindowsHero-main"}},{"type":"WindowsFeatures","props":{"title":"Premium Features & Benefits","subtitle":"Our windows are custom-engineered for Central New York homes","features":[{"icon":"⚡","title":"Energy Efficient Design","description":"Advanced energy efficiency features","items":["LowE glass with Argon gas","Exceeds ENERGY STAR® requirements","Superior insulation value"]},{"icon":"🛡️","title":"Superior Construction","description":"Built to last with premium materials","items":["Fusion welded frames & sashes","Stainless steel balance system","Custom sized to fit any opening"]},{"icon":"🔧","title":"Easy Maintenance","description":"Designed for convenience","items":["Tilt-in sashes for easy cleaning","Dual vent locks for security","Half screen for ventilation"]}],"id":"WindowsFeatures-main"}},{"type":"WindowsInstallation","props":{"title":"Year-Round Installation Available","subtitle":"Professional installation in any season","description":"Don't wait for warmer weather - our certified installers use special techniques to install windows in any season while protecting your home from the elements.","processTitle":"Our Winter Installation Process:","processSteps":["Room-by-room installation to minimize heat loss","Complete one window before moving to next","Special weatherization techniques"],"videoUrl":"https://www.youtube.com/embed/_kYToIDvzfU","id":"WindowsInstallation-main"}},{"type":"WindowsTestimonials","props":{"title":"What Our Customers Say","subtitle":"Hear from homeowners throughout Central New York","testimonials":[{"name":"Sarah H.","location":"Utica, NY","description":"Sarah from Utica shares her experience with our window installation","videoUrl":"https://www.youtube.com/embed/7eLjAxEJCuU"},{"name":"Joe B.","location":"Sauquoit, NY","description":"Joe discusses his window replacement project","videoUrl":"https://www.youtube.com/embed/FF1r77f850c"},{"name":"Raymond & Laura B.","location":"New Hartford, NY","description":"Raymond and Laura talk about their energy savings","videoUrl":"https://www.youtube.com/embed/I9Gm7wyXTIo"}],"id":"WindowsTestimonials-main"}},{"type":"CallToAction","props":{"title":"Ready for New Windows?","description":"Contact New York Sash today for a free, no-obligation consultation. Our expert team will help you choose the perfect windows for your home.","buttonText":"Schedule Free Consultation","buttonLink":"#contact","secondaryButtonText":"Call (315) 624-7344","secondaryButtonLink":"tel:315-624-7344","backgroundColor":"#dc143c","id":"CallToAction-windows"}}],"zones":{}},"/siding":{"root":{"props":{"title":"Siding Installation & Replacement | SASH New York"}},"content":[{"type":"HeroSection","props":{"title":"Protect & Beautify with Quality Siding","subtitle":"Durable siding solutions that enhance your home's curb appeal while providing lasting protection","ctaText":"Explore Siding Options","ctaLink":"tel:+13156247344","id":"HeroSection-siding"}},{"type":"FeatureCard","props":{"icon":"🛡️","title":"Weather Protection","description":"Our siding materials are designed to withstand New York's harsh weather conditions, from winter snow to summer storms.","id":"FeatureCard-siding-protection"}},{"type":"FeatureCard","props":{"icon":"🏡","title":"Curb Appeal","description":"Transform your home's exterior with beautiful siding options that increase property value and neighborhood appeal.","id":"FeatureCard-siding-appeal"}},{"type":"FeatureCard","props":{"icon":"🔧","title":"Low Maintenance","description":"Choose from maintenance-free options that stay beautiful for years without the need for painting or staining.","id":"FeatureCard-siding-maintenance"}},{"type":"TextBlock","props":{"content":"SIDING MATERIALS WE OFFER:\n\n• Vinyl Siding - Cost-effective and low maintenance\n• Fiber Cement - Durable and fire-resistant\n• Wood Siding - Classic beauty with natural appeal\n• Metal Siding - Modern look with superior durability\n• Composite Siding - Best of both worlds\n\nAll materials come with manufacturer warranties and our installation guarantee.","alignment":"left","id":"TextBlock-siding-materials"}},{"type":"CallToAction","props":{"title":"Transform Your Home's Exterior","description":"Get a free consultation and estimate for your siding project.","buttonText":"Schedule Consultation","buttonLink":"tel:+13156247344","backgroundColor":"#059669","id":"CallToAction-siding"}}],"zones":{}},"/baths":{"root":{"props":{"title":"Bathroom Renovation Services | SASH New York"}},"content":[{"type":"HeroSection","props":{"title":"Complete Bathroom Renovations","subtitle":"Transform your bathroom into a luxurious retreat with our comprehensive renovation services","ctaText":"Start Your Renovation","ctaLink":"tel:+13156247344","id":"HeroSection-baths"}},{"type":"FeatureCard","props":{"icon":"🚿","title":"Custom Showers","description":"From walk-in showers to luxury spa experiences, we create custom shower solutions tailored to your needs.","id":"FeatureCard-baths-showers"}},{"type":"FeatureCard","props":{"icon":"🛁","title":"Bathtub Installation","description":"Soaking tubs, jetted tubs, and space-saving solutions. We handle removal and installation with expert precision.","id":"FeatureCard-baths-tubs"}},{"type":"FeatureCard","props":{"icon":"🏺","title":"Vanity & Storage","description":"Custom vanities and smart storage solutions that maximize space while adding style and functionality.","id":"FeatureCard-baths-vanity"}},{"type":"TextBlock","props":{"content":"OUR BATHROOM RENOVATION SERVICES INCLUDE:\n\n• Complete design consultation\n• Plumbing and electrical work\n• Tile and flooring installation\n• Fixture installation and replacement\n• Vanity and cabinet installation\n• Lighting and ventilation\n• Accessibility modifications\n• Final inspection and cleanup\n\nWe work with you from concept to completion, ensuring your new bathroom exceeds expectations.","alignment":"left","id":"TextBlock-baths-services"}},{"type":"CallToAction","props":{"title":"Ready to Renovate Your Bathroom?","description":"Contact us for a free consultation and estimate on your bathroom renovation project.","buttonText":"Get Free Consultation","buttonLink":"tel:+13156247344","backgroundColor":"#7c3aed","id":"CallToAction-baths"}}],"zones":{}},"/doors":{"root":{"props":{"title":"Door Installation & Replacement | SASH New York"}},"content":[{"type":"HeroSection","props":{"title":"Secure & Stylish Door Solutions","subtitle":"Professional door installation for entry doors, patio doors, and interior doors with superior security and style","ctaText":"Browse Door Options","ctaLink":"tel:+13156247344","id":"HeroSection-doors"}},{"type":"CallToAction","props":{"title":"Need New Doors?","description":"Get expert door installation with a free estimate and professional consultation.","buttonText":"Get Door Quote","buttonLink":"tel:+13156247344","backgroundColor":"#dc2626","id":"CallToAction-doors"}}],"zones":{}}}
+{
+  "/": {
+    "root": {
+      "props": {
+        "title": "New York Sash - Windows, Siding, Baths & Doors | Central NY"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Transform Your Home's Beauty & Comfort",
+          "subtitle": "Central New York's premier provider of premium windows, siding, bathrooms, and entry doors.",
+          "ctaText": "Get Free Consultation",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:+13156247344",
+          "badge": "Trusted Since 1988 | 10,000+ Projects Completed",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-home"
+        }
+      },
+      {
+        "type": "PromoBanner",
+        "props": {
+          "imageUrl": "/images/cta/contest-logo-25k-hig-2026-long-2048x333.png",
+          "altText": "$25,000 Home Improvement Giveaway",
+          "link": "#contact",
+          "id": "PromoBanner-0d09c237-6211-4bfe-a5da-b5acd0122683"
+        }
+      },
+      {
+        "type": "ServicesGrid",
+        "props": {
+          "title": "Our Premium Services",
+          "subtitle": "Serving Central New York with expert installation and superior products backed by our family-owned commitment to quality",
+          "services": [
+            {
+              "title": "Windows",
+              "beforeImage": "/images/services/windows-before.jpg",
+              "afterImage": "/images/services/windows.jpg",
+              "features": [
+                "Fusion welded frames",
+                "LowE with Argon gas",
+                "ENERGY STAR certified",
+                "Custom manufactured"
+              ],
+              "ctaText": "Learn More",
+              "ctaLink": "/windows",
+              "description": "Transform your home with energy-efficient windows that reduce costs and enhance comfort."
+            },
+            {
+              "title": "Siding",
+              "beforeImage": "/images/services/siding-before.jpg",
+              "afterImage": "/images/services/siding.jpg",
+              "features": [
+                "Insulated vinyl siding",
+                "Maintenance-free",
+                "ENERGY STAR rated",
+                "Lifetime warranty"
+              ],
+              "ctaText": "Learn More",
+              "ctaLink": "/siding",
+              "description": "Protect and beautify your home with durable, weather-resistant siding solutions."
+            },
+            {
+              "title": "Bathroom Remodeling",
+              "beforeImage": "/images/services/bathrooms-before.jpg",
+              "afterImage": "/images/services/bathrooms.jpg",
+              "features": [
+                "Acrylic bath liners",
+                "Walk-in tubs",
+                "Tub-to-shower conversions",
+                "2-day installation"
+              ],
+              "ctaText": "Learn More",
+              "ctaLink": "/bathrooms",
+              "description": "Complete bathroom transformations with modern fixtures and expert craftsmanship."
+            },
+            {
+              "title": "Entry Doors",
+              "beforeImage": "/images/services/doors-before.jpg",
+              "afterImage": "/images/services/doors.jpg",
+              "features": [
+                "Fiberglass & steel",
+                "Decorative glass options",
+                "Enhanced security",
+                "Energy efficient"
+              ],
+              "ctaText": "Learn More",
+              "ctaLink": "/doors",
+              "description": "Secure, stylish entry doors that make a great first impression."
+            }
+          ],
+          "id": "ServicesGrid-home"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Why Choose New York Sash",
+          "subtitle": "Family-owned and operated since 1988, serving Central New York with unmatched expertise and commitment",
+          "stats": [
+            {
+              "number": "35+",
+              "label": "Years in Business",
+              "description": "Since 1988"
+            },
+            {
+              "number": "10,000+",
+              "label": "Happy Customers",
+              "description": "Across Central NY"
+            },
+            {
+              "number": "4.9★",
+              "label": "Customer Rating",
+              "description": "847+ Reviews"
+            }
+          ],
+          "backgroundColor": "#1a1a1a",
+          "id": "StatsSection-home"
+        }
+      },
+      {
+        "type": "FeaturesWithImage",
+        "props": {
+          "title": "What Sets Us Apart",
+          "features": [
+            "Family-owned and operated since 1988",
+            "EPA certified lead-safe installation practices",
+            "Custom manufactured products for perfect fit",
+            "Year-round installation capability",
+            "Comprehensive warranties and guarantees",
+            "Local Central New York expertise"
+          ],
+          "imageUrl": "/images/team/epa-certified-team.jpg",
+          "badgeText": "EPA Certified",
+          "backgroundColor": "#1a1a1a",
+          "id": "FeaturesWithImage-what-sets-us-apart"
+        }
+      },
+      {
+        "type": "TestimonialsGrid",
+        "props": {
+          "title": "Real Customer Stories",
+          "subtitle": "Hear directly from our satisfied customers across Central New York",
+          "testimonials": [
+            {
+              "name": "Teresa",
+              "location": "Utica, NY",
+              "service": "Window Installation",
+              "testimonial": "I enjoyed my time with the New York Sash installers so much I had breakfast with them!",
+              "videoUrl": ""
+            },
+            {
+              "name": "Mary Ann",
+              "location": "Rome, NY",
+              "service": "Tub-to-Shower Conversion",
+              "testimonial": "We were concerned about safety in the bathroom, so we called New York Sash.",
+              "videoUrl": ""
+            },
+            {
+              "name": "Gerald Edwards",
+              "location": "Lowville, NY",
+              "service": "Siding & Windows",
+              "testimonial": "New York Sash did an excellent job on our siding and windows in Lowville. The quality and professionalism were outstanding.",
+              "videoUrl": ""
+            }
+          ],
+          "id": "TestimonialsGrid-home"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Serving Central New York",
+          "subtitle": "Proudly serving communities throughout Central New York with expert home improvement services",
+          "customClass": "city-stats-section",
+          "stats": [
+            {
+              "number": "Utica",
+              "label": "Population: 62,000+",
+              "description": ""
+            },
+            {
+              "number": "Syracuse",
+              "label": "Population: 148,000+",
+              "description": ""
+            },
+            {
+              "number": "Rome",
+              "label": "Population: 32,000+",
+              "description": ""
+            },
+            {
+              "number": "New Hartford",
+              "label": "Population: 22,000+",
+              "description": ""
+            }
+          ],
+          "additionalText": "Also serving: Sauquoit, Lowville, Frankfort, Whitesboro, Copenhagen, West Winfield, Weedsport, Ilion, Laurens, Sylvan Beach, and surrounding communities",
+          "ctaText": "View All Service Areas",
+          "ctaLink": "#service-areas",
+          "backgroundColor": "#dc143c",
+          "id": "StatsSection-service-areas"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready to Transform Your Home?",
+          "description": "Contact New York Sash today for a free, no-obligation consultation. Our expert team will help you choose the perfect solutions for your home improvement needs. Whether you're planning a complete exterior makeover or just updating a single room, we're here to make your vision a reality.",
+          "buttonText": "Get Free Consultation",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "Call (315) 624-7344",
+          "secondaryButtonLink": "tel:+13156247344",
+          "backgroundColor": "#1a1a1a",
+          "id": "CallToAction-home"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/about": {
+    "root": {
+      "props": {
+        "title": "About New York Sash | Your Trusted Local Partner"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Your Trusted Local Partner",
+          "subtitle": "For over four decades, New York Sash has been Central New York's premier home improvement company. What started as a small family business has grown into the region's most trusted provider of windows, siding, bathrooms, and entry doors.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "Call (315) 624-7344",
+          "secondaryCtaLink": "tel:+13156247344",
+          "badge": "Family-Owned Since 1988 • Better Business Bureau A+ Rating",
+          "videoUrl": "",
+          "id": "HeroSection-about"
+        }
+      },
+      {
+        "type": "CompanyOverview",
+        "props": {
+          "title": "Your Trusted Local Partner",
+          "description": "For over four decades, New York Sash has been Central New York's premier home improvement company. What started as a small family business has grown into the region's most trusted provider of windows, siding, bathrooms, and entry doors.",
+          "additionalText": "We understand that your home is your most important investment. That's why we're committed to providing the highest quality products, expert installation, and exceptional customer service that has earned us an A+ rating with the Better Business Bureau.",
+          "image": "/images/about/company-building.jpg",
+          "stats": [
+            {
+              "number": "5,000+",
+              "label": "Happy Customers"
+            },
+            {
+              "number": "100%",
+              "label": "Customer Owned"
+            },
+            {
+              "number": "45+",
+              "label": "Years Experience"
+            },
+            {
+              "number": "A+",
+              "label": "BBB Rating"
+            }
+          ],
+          "id": "CompanyOverview-about"
+        }
+      },
+      {
+        "type": "CompanyTimeline",
+        "props": {
+          "title": "Our Story",
+          "subtitle": "From humble beginnings to regional leader - see how we've grown while improving our commitment to quality and service",
+          "timelineItems": [
+            {
+              "year": "1988",
+              "title": "Company Founded",
+              "description": "New York Sash was established as a small, family-owned business with a simple goal: to bring quality home improvement services to Central New York families at fair prices."
+            },
+            {
+              "year": "1995",
+              "title": "First Showroom Opens",
+              "description": "We opened our first showroom, allowing customers to see and touch our products before making their investment decision."
+            },
+            {
+              "year": "2002",
+              "title": "Expanding Services",
+              "description": "Added bathroom remodeling to our services, becoming a full-service home improvement company."
+            },
+            {
+              "year": "2008",
+              "title": "ENERGY STAR Partnership",
+              "description": "Became an ENERGY STAR partner, committing to energy-efficient products that help homeowners save money and protect the environment."
+            },
+            {
+              "year": "2015",
+              "title": "Advanced Installation Training",
+              "description": "Implemented comprehensive training program for our installation teams, raising every project team to the highest standards of craftsmanship."
+            },
+            {
+              "year": "2020",
+              "title": "Digital Innovation",
+              "description": "Enhanced digital tools and virtual consultations to better serve customers while maintaining our personal touch and commitment to service."
+            },
+            {
+              "year": "Today",
+              "title": "Leading the Industry",
+              "description": "Continuing to lead Central New York's home improvement industry with innovative products, expert installation, and exceptional customer service."
+            }
+          ],
+          "id": "CompanyTimeline-about"
+        }
+      },
+      {
+        "type": "CoreValues",
+        "props": {
+          "title": "Our Core Values",
+          "subtitle": "These principles guide everything we do and ensure exceptional experience they deserve",
+          "values": [
+            {
+              "icon": "🤝",
+              "title": "Integrity",
+              "description": "We believe in honest communication, fair pricing and transparent business practices with every customer."
+            },
+            {
+              "icon": "⭐",
+              "title": "Quality",
+              "description": "We use only the finest products and employ skilled, experienced professionals with years of proven expertise."
+            },
+            {
+              "icon": "🛡️",
+              "title": "Service",
+              "description": "Every customer deserves our full attention to exceed customer expectations from start to finish."
+            },
+            {
+              "icon": "🏘️",
+              "title": "Community",
+              "description": "We're proud part of Central New York and work hard to give back through our community service efforts."
+            },
+            {
+              "icon": "🔧",
+              "title": "Expertise",
+              "description": "Continuous learning and product innovation to keep our team educated on the latest technologies and best installation practices."
+            },
+            {
+              "icon": "🌱",
+              "title": "Sustainability",
+              "description": "We prioritize eco-friendly products and practices that reduce environmental impact and provide long-term value for our customers."
+            }
+          ],
+          "id": "CoreValues-about"
+        }
+      },
+      {
+        "type": "CertificationsAwards",
+        "props": {
+          "title": "Certifications & Recognition",
+          "subtitle": "Our commitment to excellence and quality is evident through the industry recognitions and the trust of thousands of customers",
+          "certifications": [
+            {
+              "image": "/images/certifications/bbb-logo.png",
+              "title": "Better Business Bureau",
+              "description": "A+ Rating"
+            },
+            {
+              "image": "/images/certifications/guildquality-logo.png",
+              "title": "GuildQuality",
+              "description": "Guildmaster Award"
+            },
+            {
+              "image": "/images/certifications/lead-safe-logo.png",
+              "title": "EPA Lead-Safe",
+              "description": "Certified Firm"
+            },
+            {
+              "image": "/images/certifications/energystar-logo.png",
+              "title": "ENERGY STAR",
+              "description": "Certified Products"
+            }
+          ],
+          "id": "CertificationsAwards-about"
+        }
+      },
+      {
+        "type": "TeamSection",
+        "props": {
+          "title": "Meet Our Team",
+          "subtitle": "Dedicated professionals who bring expertise, passion, and personal attention to every project",
+          "teamMembers": [
+            {
+              "name": "Lead Manager",
+              "position": "Lead Manager",
+              "role": "Leadership & Strategy",
+              "description": "Over 15 years leading home improvement projects and exceeding customer expectations.",
+              "image": "/images/team/lead-manager.jpg"
+            },
+            {
+              "name": "Operations Manager",
+              "position": "Operations Manager",
+              "role": "Project Coordination",
+              "description": "20+ years of experience ensuring smooth installation projects with attention to detail.",
+              "image": "/images/team/operations-manager.jpg"
+            },
+            {
+              "name": "Customer Service Manager",
+              "position": "Customer Service Manager",
+              "role": "Customer Relations",
+              "description": "Dedicated to providing exceptional support and ensuring total customer satisfaction.",
+              "image": "/images/team/customer-service-manager.jpg"
+            }
+          ],
+          "id": "TeamSection-about"
+        }
+      },
+      {
+        "type": "CommunityInvolvement",
+        "props": {
+          "title": "Community Commitment",
+          "subtitle": "We're proud to be part of Central New York. From sponsoring local youth sports teams through supporting families in need, we're committed to giving back to the communities we serve.",
+          "description": "Supporting Our Neighbors",
+          "activities": [
+            "Annual sponsorship of local youth sports teams",
+            "Donations to Habitat for Humanity builds",
+            "Support for local schools and educational programs",
+            "Emergency home repairs for seniors and veterans",
+            "Participation in community festivals and events"
+          ],
+          "image": "/images/about/community-support.jpg",
+          "id": "CommunityInvolvement-about"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Experience the New York Sash Difference",
+          "description": "Join thousands of satisfied customers who have trusted us with their home improvement needs. Schedule a FREE in-home consultation today and see why we're Central New York's premier home improvement company.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "Call (315) 624-7344",
+          "secondaryButtonLink": "tel:+13156247344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-about"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/windows": {
+    "root": {
+      "props": {
+        "title": "Experience the Window Revolution | New York Sash | Central NY"
+      }
+    },
+    "content": [
+      {
+        "type": "WindowsHero",
+        "props": {
+          "title": "Experience the Window Revolution",
+          "subtitle": "Transform your home with our premium fusion-welded windows. Superior energy efficiency, enhanced comfort, and timeless beauty designed specifically for Central New York homes.",
+          "badge": "ENERGY STAR® Certified Windows",
+          "ctaText": "Schedule Free Consultation",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:+13156247344",
+          "features": [
+            {
+              "icon": "✓",
+              "title": "Fusion Welded Frames",
+              "description": "Superior strength and insulation"
+            },
+            {
+              "icon": "✓",
+              "title": "LowE Glass",
+              "description": "Advanced UV protection"
+            },
+            {
+              "icon": "✓",
+              "title": "Argon Gas Filled",
+              "description": "Enhanced insulation"
+            },
+            {
+              "icon": "✓",
+              "title": "Lifetime Warranty",
+              "description": "Peace of mind guarantee"
+            }
+          ],
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "backgroundImages": [
+            "/images/windows/window-detail-1.jpg",
+            "/images/windows/window-detail-2.jpg"
+          ],
+          "id": "WindowsHero-windows"
+        }
+      },
+      {
+        "type": "WindowsFeatures",
+        "props": {
+          "title": "Premium Features & Benefits",
+          "subtitle": "Our windows are custom-engineered for Central New York homes",
+          "features": [
+            {
+              "icon": "⚡",
+              "title": "Energy Efficient Design",
+              "description": "Advanced energy efficiency features",
+              "items": [
+                "LowE glass with Argon gas",
+                "Exceeds ENERGY STAR® requirements",
+                "Superior insulation value"
+              ]
+            },
+            {
+              "icon": "🛡️",
+              "title": "Superior Construction",
+              "description": "Built to last with premium materials",
+              "items": [
+                "Fusion welded frames & sashes",
+                "Welded steel insert system",
+                "Custom sized to fit any opening"
+              ]
+            },
+            {
+              "icon": "🔧",
+              "title": "Easy Maintenance",
+              "description": "Designed for convenience",
+              "items": [
+                "Tilt-in sashes for easy cleaning",
+                "Dual vent locks for security",
+                "Half screen for ventilation"
+              ]
+            }
+          ],
+          "id": "WindowsFeatures-windows"
+        }
+      },
+      {
+        "type": "WindowsInstallation",
+        "props": {
+          "title": "Year-Round Installation Available",
+          "subtitle": "Don't wait for summer weather",
+          "description": "Our certified installers use special techniques to install windows in any season while protecting your home from the elements.",
+          "processTitle": "Our Winter Installation Process:",
+          "processSteps": [
+            "Warm-up room installations to maintain heat loss",
+            "Complete one window before moving to next",
+            "Special winterization techniques"
+          ],
+          "videoUrl": "",
+          "id": "WindowsInstallation-windows"
+        }
+      },
+      {
+        "type": "TestimonialsGrid",
+        "props": {
+          "title": "What Our Customers Say",
+          "subtitle": "Hear from homeowners throughout Central New York",
+          "testimonials": [
+            {
+              "name": "Sarah H.",
+              "location": "Utica, NY",
+              "service": "Window Installation",
+              "testimonial": "Sarah from Utica shares her experience with our window installation service.",
+              "videoUrl": ""
+            },
+            {
+              "name": "Joe A.",
+              "location": "Herkimer, NY",
+              "service": "Window Installation",
+              "testimonial": "Joe discusses his window replacement project in Herkimer.",
+              "videoUrl": ""
+            },
+            {
+              "name": "Raymond & Laura B.",
+              "location": "New Hartford, NY",
+              "service": "Window Installation",
+              "testimonial": "Raymond and Laura talk about their energy savings after window replacement.",
+              "videoUrl": ""
+            }
+          ],
+          "id": "TestimonialsGrid-windows"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Beautiful, Energy-Efficient Windows?",
+          "description": "Get your free, no-obligation window estimate today. Our window experts will help you choose the perfect windows for your Central New York home with professional installation and warranty protection.",
+          "buttonText": "Get Free Window Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "Call (315) 624-7344",
+          "secondaryButtonLink": "tel:+13156247344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-windows"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/siding": {
+    "root": {
+      "props": {
+        "title": "Elevate Your Home's Protection & Style | New York Sash"
+      }
+    },
+    "content": [
+      {
+        "type": "SidingHero",
+        "props": {
+          "title": "Elevate Your Home's Protection & Style",
+          "subtitle": "Transform your home's exterior with our premium siding solutions. Engineered for Central New York weather, combining lasting beauty with superior protection and energy efficiency.",
+          "badge": "Premium Vinyl & Insulated Siding Solutions",
+          "ctaText": "Get Expert Consultation",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:+13156247344",
+          "features": [
+            {
+              "icon": "✓",
+              "title": "Maintenance-Free",
+              "description": "Never needs painting"
+            },
+            {
+              "icon": "✓",
+              "title": "Weather Resistant",
+              "description": "Built for NY climate"
+            },
+            {
+              "icon": "✓",
+              "title": "Energy Efficient",
+              "description": "Superior insulation"
+            },
+            {
+              "icon": "✓",
+              "title": "Lifetime Warranty",
+              "description": "Guaranteed protection"
+            }
+          ],
+          "videoUrl": "",
+          "colorSwatches": [
+            { "name": "Arctic White", "color": "#FFFFFF", "image": "/images/colors/white.jpg" },
+            { "name": "Coastal Gray", "color": "#C8D3DC", "image": "/images/colors/gray.jpg" },
+            { "name": "Naval Blue", "color": "#1E3A8A", "image": "/images/colors/blue.jpg" }
+          ],
+          "id": "SidingHero-siding"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Why Choose Our Siding",
+          "subtitle": "Built to withstand Central New York weather while providing lasting beauty and energy efficiency",
+          "stats": [
+            {
+              "number": "⭐",
+              "label": "ENERGY STAR",
+              "description": "Rated for superior energy efficiency and comfort"
+            },
+            {
+              "number": "🏠",
+              "label": "Maintenance-Free",
+              "description": "Never needs painting or staining again"
+            },
+            {
+              "number": "🛡️",
+              "label": "Impact Resistant",
+              "description": "Withstands hail, wind, and harsh weather"
+            },
+            {
+              "number": "🎨",
+              "label": "Color Options",
+              "description": "30+ colors that never fade or chalk"
+            },
+            {
+              "number": "🌱",
+              "label": "Eco-Friendly",
+              "description": "Recyclable and energy-efficient materials"
+            }
+          ],
+          "backgroundColor": "#f9fafb",
+          "id": "StatsSection-why-choose-siding"
+        }
+      },
+      {
+        "type": "ServicesGrid",
+        "props": {
+          "title": "Siding Options & Pricing",
+          "subtitle": "Choose from our premium siding solutions designed for Central New York homes",
+          "services": [
+            {
+              "title": "Traditional Vinyl",
+              "beforeImage": "/images/siding/traditional-vinyl.jpg",
+              "afterImage": "/images/siding/traditional-vinyl.jpg",
+              "features": [
+                "Maintenance-free",
+                "Weather resistant",
+                "Multiple colors",
+                "Great warranty"
+              ],
+              "ctaText": "Get Quote",
+              "ctaLink": "#contact",
+              "description": "Classic vinyl siding that offers durability and value."
+            },
+            {
+              "title": "Insulated Vinyl",
+              "beforeImage": "/images/siding/insulated-vinyl.jpg",
+              "afterImage": "/images/siding/insulated-vinyl.jpg",
+              "features": [
+                "Superior insulation",
+                "Energy efficient",
+                "Impact resistant",
+                "Noise reduction"
+              ],
+              "ctaText": "Get Quote",
+              "ctaLink": "#contact",
+              "description": "Enhanced insulation for maximum energy efficiency."
+            },
+            {
+              "title": "Designer Series",
+              "beforeImage": "/images/siding/designer-series.jpg",
+              "afterImage": "/images/siding/designer-series.jpg",
+              "features": [
+                "Premium styles",
+                "Custom colors",
+                "Unique textures",
+                "Designer appeal"
+              ],
+              "ctaText": "Get Quote",
+              "ctaLink": "#contact",
+              "description": "High-end siding with exceptional curb appeal."
+            },
+            {
+              "title": "Premium Trim",
+              "beforeImage": "/images/siding/premium-trim.jpg",
+              "afterImage": "/images/siding/premium-trim.jpg",
+              "features": [
+                "Custom details",
+                "Accent pieces",
+                "Weather sealed",
+                "Low-maintenance"
+              ],
+              "ctaText": "Get Quote",
+              "ctaLink": "#contact",
+              "description": "Finishing touches that complete your home's look."
+            }
+          ],
+          "id": "ServicesGrid-siding-options"
+        }
+      },
+      {
+        "type": "ImageGallery",
+        "props": {
+          "images": [
+            {
+              "src": "/images/colors/white.jpg",
+              "alt": "White",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/cream.jpg",
+              "alt": "Cream",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/beige.jpg",
+              "alt": "Beige",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/yellow.jpg",
+              "alt": "Yellow",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/tan.jpg",
+              "alt": "Tan",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/sand.jpg",
+              "alt": "Sand",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/blue.jpg",
+              "alt": "Blue",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/gray.jpg",
+              "alt": "Gray",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/red.jpg",
+              "alt": "Red",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/green.jpg",
+              "alt": "Green",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/sage.jpg",
+              "alt": "Sage",
+              "caption": ""
+            },
+            {
+              "src": "/images/colors/brown.jpg",
+              "alt": "Brown",
+              "caption": ""
+            }
+          ],
+          "columns": 4,
+          "id": "ImageGallery-color-options"
+        }
+      },
+      {
+        "type": "TestimonialsGrid",
+        "props": {
+          "title": "Real Central New York Projects",
+          "subtitle": "See our premium siding installations transforming homes throughout our local communities",
+          "testimonials": [
+            {
+              "name": "Complete Remodel - Lowville, NY",
+              "location": "Lowville, NY",
+              "service": "Siding Installation",
+              "testimonial": "Careful planning helped be complete this quality and efficient installation - highlighting the quality and attention to detail.",
+              "videoUrl": ""
+            },
+            {
+              "name": "Full Exterior - North Utica, NY",
+              "location": "North Utica, NY",
+              "service": "Siding Installation",
+              "testimonial": "This home exterior transformation including new siding, windows, doors, soffit & fascia, and trim including local homeowner's vision.",
+              "videoUrl": ""
+            },
+            {
+              "name": "Multi-Project - Rome, NY",
+              "location": "Rome, NY",
+              "service": "Siding Installation",
+              "testimonial": "Siding and trim chosen to pair with new energy-efficient and storm doors installation project.",
+              "videoUrl": ""
+            }
+          ],
+          "id": "TestimonialsGrid-siding-projects"
+        }
+      },
+      {
+        "type": "FeaturesWithImage",
+        "props": {
+          "title": "Enhanced Home Comfort",
+          "features": [
+            "Energy-efficient insulation upgrades",
+            "Enhanced insulation performance",
+            "Reduced noise and cold spots"
+          ],
+          "imageUrl": "/images/siding/energy-efficient-installation.jpg",
+          "badgeText": "Energy Efficient Installation",
+          "backgroundColor": "#ffffff",
+          "id": "FeaturesWithImage-home-comfort"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready to Transform Your Home's Exterior?",
+          "description": "Get your free, no-obligation siding estimate today. Our design consultants will help you choose the perfect siding solution for your Central New York home.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:+13156247344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-siding"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/baths": {
+    "root": {
+      "props": {
+        "title": "Bathroom Remodeling | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Complete Bathroom Remodeling",
+          "subtitle": "Transform your bathroom with our comprehensive remodeling services. From tub-to-shower conversions to complete renovations, we create beautiful, functional bathrooms for Central New York homes.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "One Day Installation Available",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-baths"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Bathroom Remodeling Benefits",
+          "subtitle": "Functionality, accessibility, and beauty for Central New York homes",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Quick Installation",
+              "description": "Many projects completed in one day"
+            },
+            {
+              "number": "✓",
+              "label": "Accessibility Options",
+              "description": "Safety tubs and barrier-free designs"
+            },
+            {
+              "number": "✓",
+              "label": "Custom Solutions",
+              "description": "Tailored to your space and needs"
+            },
+            {
+              "number": "✓",
+              "label": "Quality Materials",
+              "description": "Durable, easy-to-clean surfaces"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-baths"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Your Bathroom Remodel?",
+          "description": "Create the bathroom of your dreams with Central New York's bathroom remodeling experts. Get your free estimate today.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-baths"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/doors": {
+    "root": {
+      "props": {
+        "title": "Doors | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Premium Door Solutions",
+          "subtitle": "Enhance your home's security, energy efficiency, and curb appeal with our comprehensive door offerings. From entry doors to patio doors, we have the perfect solution for Central New York homes.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Security & Energy Efficiency",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-doors"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Door Installation Benefits",
+          "subtitle": "Security, efficiency, and style for Central New York homes",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Enhanced Security",
+              "description": "Multi-point locking systems available"
+            },
+            {
+              "number": "✓",
+              "label": "Energy Efficient",
+              "description": "Insulated cores and weatherstripping"
+            },
+            {
+              "number": "✓",
+              "label": "Custom Options",
+              "description": "Multiple materials, styles, and colors"
+            },
+            {
+              "number": "✓",
+              "label": "Professional Install",
+              "description": "Expert installation with warranty"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-doors"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for New Doors?",
+          "description": "Upgrade your home's entrance with quality doors from Central New York's door specialists. Get your free estimate today.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-doors"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/showroom": {
+    "root": {
+      "props": {
+        "title": "Design Center & Showroom | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Visit Our Idea & Design Center",
+          "subtitle": "Experience our products firsthand in our beautiful showroom. Touch, feel, and see the quality that makes New York Sash Central New York's premier home improvement choice.",
+          "ctaText": "Schedule Showroom Visit",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Hands-On Product Experience",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+          "id": "HeroSection-showroom"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready to Visit Our Showroom?",
+          "description": "Schedule your personal showroom visit today. Experience the quality difference and get expert guidance for your home improvement project.",
+          "buttonText": "Schedule Showroom Visit",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-showroom"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/team": {
+    "root": {
+      "props": {
+        "title": "Meet Our Expert Team | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Meet the New York Sash Family",
+          "subtitle": "Get to know the dedicated professionals who bring expertise, passion, and personal attention to every home improvement project throughout Central New York.",
+          "ctaText": "Meet the Team",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Your Local Home Improvement Experts",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+          "id": "HeroSection-team"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready to Work with Our Team?",
+          "description": "Contact New York Sash today to meet our expert team and discuss your home improvement project. Experience the difference that dedicated professionals make.",
+          "buttonText": "Meet Our Team",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-team"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/careers": {
+    "root": {
+      "props": {
+        "title": "Join Our Team - Careers | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Build Your Career with New York Sash",
+          "subtitle": "Join Central New York's premier home improvement team. We're looking for dedicated professionals who share our commitment to quality and customer service.",
+          "ctaText": "View Open Positions",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Growing Team, Growing Opportunities",
+          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+          "id": "HeroSection-careers"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready to Join Our Team?",
+          "description": "Take the next step in your career with New York Sash. Contact us today to learn about current opportunities and how you can be part of Central New York's premier home improvement team.",
+          "buttonText": "Apply Today",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-careers"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/windows/double-hung": {
+    "root": {
+      "props": {
+        "title": "Double Hung Windows | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Classic Double Hung Windows",
+          "subtitle": "Experience the timeless beauty and functionality of double hung windows. Our fusion-welded frames and advanced features provide superior performance for Central New York homes.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Tilt-In Sashes for Easy Cleaning",
+          "videoUrl": "https://www.youtube.com/embed/_ToUrLnN0w4",
+          "id": "HeroSection-double-hung"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Double Hung Window Features",
+          "subtitle": "Superior construction and convenience features designed for Central New York weather",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Tilt-In Sashes",
+              "description": "Both sashes tilt in for easy cleaning from inside"
+            },
+            {
+              "number": "✓",
+              "label": "Dual Operation",
+              "description": "Open from top, bottom, or both for optimal ventilation"
+            },
+            {
+              "number": "✓",
+              "label": "Energy Efficient",
+              "description": "LowE glass with Argon gas for maximum insulation"
+            },
+            {
+              "number": "✓",
+              "label": "Security Locks",
+              "description": "Dual vent locks for enhanced security and safety"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-double-hung"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Double Hung Windows?",
+          "description": "Get your free estimate for premium double hung windows. Our design consultants will help you choose the perfect style and features for your Central New York home.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-double-hung"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/windows/bay-bow-picture": {
+    "root": {
+      "props": {
+        "title": "Bay, Bow & Picture Windows | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Stunning Specialty Windows",
+          "subtitle": "Transform your home with our custom bay, bow, and picture windows. Create dramatic focal points while maximizing natural light and views in your Central New York home.",
+          "ctaText": "Design Your Windows",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Custom Designed & Manufactured",
+          "videoUrl": "https://www.youtube.com/embed/_ToUrLnN0w4",
+          "id": "HeroSection-bay-bow-picture"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Specialty Window Options",
+          "subtitle": "Custom solutions to enhance your home's architecture and natural light",
+          "stats": [
+            {
+              "number": "🏠",
+              "label": "Bay Windows",
+              "description": "Project outward to create additional interior space"
+            },
+            {
+              "number": "🌅",
+              "label": "Bow Windows",
+              "description": "Gentle curved design for panoramic views"
+            },
+            {
+              "number": "🖼️",
+              "label": "Picture Windows",
+              "description": "Fixed glass for unobstructed views and maximum light"
+            },
+            {
+              "number": "🎨",
+              "label": "Custom Shapes",
+              "description": "Unique configurations to match your vision"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-bay-bow-picture"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Specialty Windows?",
+          "description": "Design your custom bay, bow, or picture windows today. Our specialists will create the perfect solution to enhance your home's beauty and functionality.",
+          "buttonText": "Design Custom Windows",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-bay-bow-picture"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/windows/slider": {
+    "root": {
+      "props": {
+        "title": "Slider Windows | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Smooth Operating Slider Windows",
+          "subtitle": "Experience effortless operation with our premium slider windows. Sleek design, energy efficiency, and easy maintenance make them perfect for Central New York homes.",
+          "ctaText": "Explore Slider Windows",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Easy Operation & Maximum Ventilation",
+          "videoUrl": "https://www.youtube.com/embed/_ToUrLnN0w4",
+          "id": "HeroSection-slider"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Slider Window Benefits",
+          "subtitle": "Modern convenience and energy efficiency for contemporary living",
+          "stats": [
+            {
+              "number": "↔️",
+              "label": "Smooth Operation",
+              "description": "Easy horizontal sliding action with minimal effort"
+            },
+            {
+              "number": "🌬️",
+              "label": "Maximum Ventilation",
+              "description": "50% opening area for excellent airflow"
+            },
+            {
+              "number": "🏠",
+              "label": "Space Saving",
+              "description": "No swing space required - perfect for tight areas"
+            },
+            {
+              "number": "🧹",
+              "label": "Easy Cleaning",
+              "description": "Simple exterior cleaning from inside your home"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-slider"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Slider Windows?",
+          "description": "Upgrade to smooth-operating slider windows that combine style with functionality. Perfect for modern Central New York homes.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-slider"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/windows/awning": {
+    "root": {
+      "props": {
+        "title": "Awning Windows | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Weather-Protected Awning Windows",
+          "subtitle": "Enjoy fresh air even during light rain with our premium awning windows. Top-hinged design provides excellent ventilation while protecting your Central New York home.",
+          "ctaText": "Learn About Awning Windows",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Ventilation Even in Light Rain",
+          "videoUrl": "https://www.youtube.com/embed/_ToUrLnN0w4",
+          "id": "HeroSection-awning"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Awning Window Advantages",
+          "subtitle": "Perfect combination of ventilation and weather protection",
+          "stats": [
+            {
+              "number": "☔",
+              "label": "Weather Shield",
+              "description": "Open during light rain while staying dry"
+            },
+            {
+              "number": "🌬️",
+              "label": "Directed Airflow",
+              "description": "Top-hinged design directs air upward and inward"
+            },
+            {
+              "number": "🔒",
+              "label": "Enhanced Security",
+              "description": "Difficult to access from outside when open"
+            },
+            {
+              "number": "💡",
+              "label": "Privacy Plus Light",
+              "description": "Maintain privacy while allowing natural light"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-awning"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Awning Windows?",
+          "description": "Experience the unique benefits of awning windows - ventilation, weather protection, and energy efficiency for your Central New York home.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-awning"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/windows/hopper": {
+    "root": {
+      "props": {
+        "title": "Hopper Windows | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Space-Saving Hopper Windows",
+          "subtitle": "Perfect for basements, bathrooms, and tight spaces, our hopper windows provide excellent ventilation with bottom-hinged operation designed for Central New York homes.",
+          "ctaText": "Explore Hopper Windows",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Ideal for Basements & Small Spaces",
+          "videoUrl": "https://www.youtube.com/embed/_ToUrLnN0w4",
+          "id": "HeroSection-hopper"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Hopper Window Benefits",
+          "subtitle": "Smart solution for basements, bathrooms, and compact areas",
+          "stats": [
+            {
+              "number": "⬇️",
+              "label": "Bottom Hinged",
+              "description": "Opens inward from the bottom for space efficiency"
+            },
+            {
+              "number": "🏠",
+              "label": "Perfect for Basements",
+              "description": "Ideal height and operation for below-grade windows"
+            },
+            {
+              "number": "💧",
+              "label": "Moisture Management",
+              "description": "Excellent for bathrooms and humid areas"
+            },
+            {
+              "number": "🔧",
+              "label": "Easy Maintenance",
+              "description": "Simple operation and cleaning from inside"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-hopper"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Hopper Windows?",
+          "description": "Transform your basement or small spaces with efficient hopper windows designed for maximum functionality in minimal space.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-hopper"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/siding/engineered-wood": {
+    "root": {
+      "props": {
+        "title": "Engineered Wood Siding | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Premium Engineered Wood Siding",
+          "subtitle": "Experience the natural beauty of wood with advanced engineered construction. Our engineered wood siding offers the authentic look and texture of real wood with enhanced durability and protection.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Natural Beauty with Modern Performance",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-engineered-wood"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Engineered Wood Siding Benefits",
+          "subtitle": "Advanced engineering meets natural beauty for superior Central New York performance",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Natural Wood Look",
+              "description": "Authentic grain patterns and textures"
+            },
+            {
+              "number": "✓",
+              "label": "Enhanced Durability",
+              "description": "Engineered to resist warping and cracking"
+            },
+            {
+              "number": "✓",
+              "label": "Weather Resistant",
+              "description": "Treated for Central NY climate conditions"
+            },
+            {
+              "number": "✓",
+              "label": "Paint Ready",
+              "description": "Pre-primed surface for easy customization"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-engineered-wood"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Engineered Wood Siding?",
+          "description": "Transform your home with the natural beauty of engineered wood siding. Get your free estimate from Central New York's siding experts.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-engineered-wood"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/siding/reinforced-vinyl": {
+    "root": {
+      "props": {
+        "title": "Reinforced Vinyl Siding | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Heavy-Duty Reinforced Vinyl Siding",
+          "subtitle": "Superior strength meets lasting beauty with our reinforced vinyl siding. Engineered with extra thickness and impact resistance for maximum protection against Central New York's harsh weather.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Enhanced Impact Resistance",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-reinforced-vinyl"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Reinforced Vinyl Siding Features",
+          "subtitle": "Heavy-duty construction for maximum durability and protection",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Impact Resistant",
+              "description": "Extra thick material resists dents and damage"
+            },
+            {
+              "number": "✓",
+              "label": "Wind Rated",
+              "description": "Tested for high wind resistance"
+            },
+            {
+              "number": "✓",
+              "label": "Fade Resistant",
+              "description": "ColorHold technology maintains vibrant colors"
+            },
+            {
+              "number": "✓",
+              "label": "Low Maintenance",
+              "description": "No painting or staining required"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-reinforced-vinyl"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Reinforced Vinyl Siding?",
+          "description": "Protect your home with the strength of reinforced vinyl siding. Get your free estimate from Central New York's trusted siding professionals.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-reinforced-vinyl"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/siding/traditional-vinyl": {
+    "root": {
+      "props": {
+        "title": "Traditional Vinyl Siding | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Classic Traditional Vinyl Siding",
+          "subtitle": "Affordable beauty and reliable protection with our traditional vinyl siding. A time-tested solution that offers excellent value and performance for Central New York homeowners.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Lifetime Warranty Available",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-traditional-vinyl"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Traditional Vinyl Siding Benefits",
+          "subtitle": "Proven performance and value for Central New York homes",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Cost Effective",
+              "description": "Excellent value for budget-conscious homeowners"
+            },
+            {
+              "number": "✓",
+              "label": "Easy Maintenance",
+              "description": "Simple cleaning with soap and water"
+            },
+            {
+              "number": "✓",
+              "label": "Color Options",
+              "description": "Wide selection of colors and styles"
+            },
+            {
+              "number": "✓",
+              "label": "Weather Resistant",
+              "description": "Handles Central NY's changing seasons"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-traditional-vinyl"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Traditional Vinyl Siding?",
+          "description": "Transform your home with affordable, reliable traditional vinyl siding. Get your free estimate from Central New York's siding experts.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-traditional-vinyl"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/siding/cedar-shake-vinyl": {
+    "root": {
+      "props": {
+        "title": "Cedar Shake Vinyl Siding | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Authentic Cedar Shake Vinyl Siding",
+          "subtitle": "Capture the rustic charm of real cedar shakes without the maintenance. Our cedar shake vinyl siding provides the authentic look and texture of natural cedar with modern durability.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Authentic Cedar Look - Zero Maintenance",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-cedar-shake-vinyl"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Cedar Shake Vinyl Features",
+          "subtitle": "Natural cedar beauty with modern vinyl performance",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Authentic Texture",
+              "description": "Realistic cedar shake appearance and feel"
+            },
+            {
+              "number": "✓",
+              "label": "No Maintenance",
+              "description": "No staining, sealing, or painting required"
+            },
+            {
+              "number": "✓",
+              "label": "Insect Resistant",
+              "description": "Won't attract termites or other pests"
+            },
+            {
+              "number": "✓",
+              "label": "Fire Resistant",
+              "description": "Better fire safety than natural cedar"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-cedar-shake-vinyl"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Cedar Shake Vinyl Siding?",
+          "description": "Get the rustic beauty of cedar shakes with modern convenience. Contact Central New York's siding specialists for your free estimate.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-cedar-shake-vinyl"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/siding/board-batten": {
+    "root": {
+      "props": {
+        "title": "Board & Batten Vertical Vinyl Siding | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Modern Board & Batten Vertical Vinyl Siding",
+          "subtitle": "Embrace the modern farmhouse aesthetic with our board and batten vertical vinyl siding. Clean lines and contemporary style meet low-maintenance convenience.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Modern Farmhouse Style",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-board-batten"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Board & Batten Siding Features",
+          "subtitle": "Contemporary vertical design for modern Central New York homes",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Vertical Style",
+              "description": "Creates height and modern architectural interest"
+            },
+            {
+              "number": "✓",
+              "label": "Farmhouse Look",
+              "description": "Perfect for contemporary and transitional styles"
+            },
+            {
+              "number": "✓",
+              "label": "Accent Compatible",
+              "description": "Great for accenting horizontal siding areas"
+            },
+            {
+              "number": "✓",
+              "label": "Easy Installation",
+              "description": "Professional installation for clean, straight lines"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-board-batten"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Board & Batten Siding?",
+          "description": "Add modern farmhouse charm to your home with board and batten vertical vinyl siding. Get your free estimate today.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-board-batten"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/siding/stacked-stone": {
+    "root": {
+      "props": {
+        "title": "Stacked Stone Siding | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Stunning Stacked Stone Siding",
+          "subtitle": "Transform your home with the luxury look of natural stacked stone. Our stone siding panels deliver authentic texture and timeless elegance with modern convenience and durability.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Natural Stone Beauty - Modern Durability",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-stacked-stone"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Stacked Stone Siding Benefits",
+          "subtitle": "Luxury stone appearance with practical performance",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Authentic Look",
+              "description": "Realistic stone texture and natural color variation"
+            },
+            {
+              "number": "✓",
+              "label": "Lightweight",
+              "description": "Easier installation than real stone masonry"
+            },
+            {
+              "number": "✓",
+              "label": "Insulated Options",
+              "description": "Available with foam backing for energy efficiency"
+            },
+            {
+              "number": "✓",
+              "label": "Accent Perfect",
+              "description": "Ideal for foundations, gables, and feature walls"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-stacked-stone"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Stacked Stone Siding?",
+          "description": "Elevate your home's curb appeal with luxury stacked stone siding. Contact Central New York's stone siding specialists for your free estimate.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-stacked-stone"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/baths/tub-to-shower": {
+    "root": {
+      "props": {
+        "title": "Tub To Shower Conversion | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Tub To Shower Conversion",
+          "subtitle": "Transform your old bathtub into a beautiful, accessible shower in just one day. Our professional tub to shower conversions provide modern convenience and enhanced accessibility for Central New York homes.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "One Day Installation Available",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-tub-to-shower"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Tub To Shower Conversion Benefits",
+          "subtitle": "Modern convenience and accessibility in your Central New York bathroom",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Quick Installation",
+              "description": "Most conversions completed in one day"
+            },
+            {
+              "number": "✓",
+              "label": "Accessible Design",
+              "description": "Low threshold entry for easy access"
+            },
+            {
+              "number": "✓",
+              "label": "Custom Options",
+              "description": "Multiple sizes, colors, and accessories"
+            },
+            {
+              "number": "✓",
+              "label": "Easy Maintenance",
+              "description": "Non-porous surfaces resist mold and mildew"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-tub-to-shower"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Your Tub To Shower Conversion?",
+          "description": "Transform your bathroom with a modern, accessible shower conversion. Get your free estimate from Central New York's bathroom remodeling experts.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-tub-to-shower"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/baths/safety-tubs": {
+    "root": {
+      "props": {
+        "title": "Safety Tubs | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Walk-In Safety Tubs",
+          "subtitle": "Enjoy safe, comfortable bathing with our walk-in safety tubs. Featuring low thresholds, built-in seating, grab bars, and slip-resistant surfaces for ultimate peace of mind.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "ADA Compliant Options Available",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-safety-tubs"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Safety Tub Features",
+          "subtitle": "Enhanced safety and comfort for Central New York homeowners",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Low Entry",
+              "description": "Easy step-in with low threshold door"
+            },
+            {
+              "number": "✓",
+              "label": "Built-In Seating",
+              "description": "Comfortable seating for relaxed bathing"
+            },
+            {
+              "number": "✓",
+              "label": "Safety Features",
+              "description": "Grab bars and slip-resistant surfaces"
+            },
+            {
+              "number": "✓",
+              "label": "Therapeutic Options",
+              "description": "Air and water jet systems available"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-safety-tubs"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for a Safety Tub?",
+          "description": "Enhance your bathroom safety and comfort with a walk-in safety tub. Contact Central New York's accessibility experts for your free consultation.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-safety-tubs"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/baths/shower-doors": {
+    "root": {
+      "props": {
+        "title": "Shower Doors | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Custom Shower Doors & Enclosures",
+          "subtitle": "Elegant shower doors and enclosures in frameless, semi-frameless, and framed styles. Professional installation with tempered safety glass and premium hardware.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Tempered Safety Glass Standard",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-shower-doors"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Shower Door Options",
+          "subtitle": "Custom glass solutions for every Central New York bathroom style",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Frameless Design",
+              "description": "Sleek, modern look with minimal hardware"
+            },
+            {
+              "number": "✓",
+              "label": "Semi-Frameless",
+              "description": "Contemporary style with structural support"
+            },
+            {
+              "number": "✓",
+              "label": "Framed Options",
+              "description": "Traditional style with full frame support"
+            },
+            {
+              "number": "✓",
+              "label": "Custom Sizing",
+              "description": "Precise measurements for perfect fit"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-shower-doors"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Custom Shower Doors?",
+          "description": "Transform your shower with elegant glass doors and enclosures. Get your free estimate from Central New York's glass specialists.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-shower-doors"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/baths/toilets": {
+    "root": {
+      "props": {
+        "title": "Toilets | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "High-Efficiency Toilets",
+          "subtitle": "Upgrade to modern, water-saving toilets with comfort height seating and powerful flush performance. Professional installation with warranty protection for Central New York homes.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "WaterSense Certified Models",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-toilets"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Modern Toilet Features",
+          "subtitle": "Efficiency, comfort, and performance for Central New York bathrooms",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Water Efficient",
+              "description": "WaterSense certified for maximum savings"
+            },
+            {
+              "number": "✓",
+              "label": "Comfort Height",
+              "description": "ADA compliant height for easier use"
+            },
+            {
+              "number": "✓",
+              "label": "Dual Flush",
+              "description": "Two flush options for optimal water usage"
+            },
+            {
+              "number": "✓",
+              "label": "Easy Clean",
+              "description": "Smooth surfaces for simple maintenance"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-toilets"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for a New Toilet?",
+          "description": "Upgrade your bathroom with a modern, efficient toilet. Professional installation and warranty included from Central New York's plumbing experts.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-toilets"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/baths/accessories": {
+    "root": {
+      "props": {
+        "title": "Bathroom Accessories | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Premium Bathroom Accessories",
+          "subtitle": "Complete your bathroom remodel with high-quality accessories including grab bars, towel bars, soap dispensers, and storage solutions. Safety and style combined for Central New York homes.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Safety & Style Combined",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-accessories"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Bathroom Accessory Options",
+          "subtitle": "Functional and beautiful finishing touches for Central New York bathrooms",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Safety Accessories",
+              "description": "Grab bars and non-slip solutions"
+            },
+            {
+              "number": "✓",
+              "label": "Storage Solutions",
+              "description": "Shelving, cabinets, and organizers"
+            },
+            {
+              "number": "✓",
+              "label": "Hardware",
+              "description": "Towel bars, hooks, and toilet paper holders"
+            },
+            {
+              "number": "✓",
+              "label": "Dispensers",
+              "description": "Soap, lotion, and shampoo dispensers"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-accessories"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Bathroom Accessories?",
+          "description": "Add the perfect finishing touches to your bathroom with premium accessories. Get your free consultation from Central New York's remodeling specialists.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-accessories"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/baths/color-texture": {
+    "root": {
+      "props": {
+        "title": "Color & Texture Options | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Custom Color & Texture Options",
+          "subtitle": "Personalize your bathroom with our extensive selection of colors, textures, and finishes. From natural stone looks to modern solid colors, create the perfect aesthetic for your Central New York home.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Hundreds of Design Options",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-color-texture"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Design Customization Options",
+          "subtitle": "Endless possibilities for personalizing your Central New York bathroom",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Color Selection",
+              "description": "Wide range of colors to match any style"
+            },
+            {
+              "number": "✓",
+              "label": "Texture Options",
+              "description": "From smooth to textured surfaces"
+            },
+            {
+              "number": "✓",
+              "label": "Stone Looks",
+              "description": "Natural stone patterns and finishes"
+            },
+            {
+              "number": "✓",
+              "label": "Modern Finishes",
+              "description": "Contemporary solid colors and effects"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-color-texture"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready to Explore Design Options?",
+          "description": "Discover the perfect colors and textures for your dream bathroom. Schedule a design consultation with Central New York's bathroom specialists.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-color-texture"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/doors/entry-doors": {
+    "root": {
+      "props": {
+        "title": "Entry Doors | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Beautiful & Secure Entry Doors",
+          "subtitle": "Make a stunning first impression with our premium entry doors. Available in steel, fiberglass, and wood with energy-efficient designs and professional installation throughout Central New York.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Energy Star Certified Options",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-entry-doors"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Entry Door Features",
+          "subtitle": "Security, beauty, and energy efficiency for Central New York homes",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Multiple Materials",
+              "description": "Steel, fiberglass, and wood options"
+            },
+            {
+              "number": "✓",
+              "label": "Energy Efficient",
+              "description": "Insulated cores and weatherstripping"
+            },
+            {
+              "number": "✓",
+              "label": "Security Features",
+              "description": "Multi-point locking systems available"
+            },
+            {
+              "number": "✓",
+              "label": "Custom Styles",
+              "description": "Wide variety of colors and glass options"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-entry-doors"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for a New Entry Door?",
+          "description": "Transform your home's entrance with a beautiful, secure entry door. Get your free estimate from Central New York's door specialists.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-entry-doors"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/doors/storm-doors": {
+    "root": {
+      "props": {
+        "title": "Storm Doors | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Protective Storm Doors",
+          "subtitle": "Protect your entry door and enhance your home's energy efficiency with our durable storm doors. Available in full-view, ventilating, and security models for Central New York weather.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Weather Protection & Security",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-storm-doors"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Storm Door Benefits",
+          "subtitle": "Enhanced protection and efficiency for Central New York homes",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Weather Protection",
+              "description": "Shield entry door from harsh elements"
+            },
+            {
+              "number": "✓",
+              "label": "Energy Savings",
+              "description": "Additional insulation layer reduces energy costs"
+            },
+            {
+              "number": "✓",
+              "label": "Ventilation Options",
+              "description": "Screen panels for fresh air circulation"
+            },
+            {
+              "number": "✓",
+              "label": "Security Features",
+              "description": "Heavy-duty locks and reinforced frames"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-storm-doors"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for Storm Door Protection?",
+          "description": "Protect your entry door and save energy with a quality storm door. Get your free estimate from Central New York's door experts.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-storm-doors"
+        }
+      }
+    ],
+    "zones": {}
+  },
+  "/doors/patio-doors": {
+    "root": {
+      "props": {
+        "title": "Patio Doors | New York Sash | Central New York"
+      }
+    },
+    "content": [
+      {
+        "type": "HeroSection",
+        "props": {
+          "title": "Sliding & French Patio Doors",
+          "subtitle": "Connect your indoor and outdoor living spaces with beautiful patio doors. Available in sliding and French door styles with energy-efficient glass and smooth operation.",
+          "ctaText": "Get Free Estimate",
+          "ctaLink": "#contact",
+          "secondaryCtaText": "(315) 624-7344",
+          "secondaryCtaLink": "tel:315-624-7344",
+          "badge": "Indoor-Outdoor Living Solutions",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "id": "HeroSection-patio-doors"
+        }
+      },
+      {
+        "type": "StatsSection",
+        "props": {
+          "title": "Patio Door Features",
+          "subtitle": "Seamless indoor-outdoor connection for Central New York homes",
+          "stats": [
+            {
+              "number": "✓",
+              "label": "Multiple Styles",
+              "description": "Sliding and French door configurations"
+            },
+            {
+              "number": "✓",
+              "label": "Energy Efficient",
+              "description": "Low-E glass and insulated frames"
+            },
+            {
+              "number": "✓",
+              "label": "Smooth Operation",
+              "description": "Quality hardware and weatherstripping"
+            },
+            {
+              "number": "✓",
+              "label": "Security Locks",
+              "description": "Multi-point locking for peace of mind"
+            }
+          ],
+          "backgroundColor": "#ffffff",
+          "id": "StatsSection-patio-doors"
+        }
+      },
+      {
+        "type": "CallToAction",
+        "props": {
+          "title": "Ready for New Patio Doors?",
+          "description": "Enhance your indoor-outdoor living with beautiful, energy-efficient patio doors. Get your free estimate from Central New York's door specialists.",
+          "buttonText": "Get Free Estimate",
+          "buttonLink": "#contact",
+          "secondaryButtonText": "(315) 624-7344",
+          "secondaryButtonLink": "tel:315-624-7344",
+          "backgroundColor": "#dc143c",
+          "id": "CallToAction-patio-doors"
+        }
+      }
+    ],
+    "zones": {}
+  }
+}

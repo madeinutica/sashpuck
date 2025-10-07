@@ -5,6 +5,11 @@ import Link from 'next/link';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isWindowsDropdownOpen, setIsWindowsDropdownOpen] = useState(false);
+  const [isSidingDropdownOpen, setIsSidingDropdownOpen] = useState(false);
+  const [isBathsDropdownOpen, setIsBathsDropdownOpen] = useState(false);
+  const [isDoorsDropdownOpen, setIsDoorsDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -12,6 +17,46 @@ export default function Header() {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const toggleAboutDropdown = () => {
+    setIsAboutDropdownOpen(!isAboutDropdownOpen);
+  };
+
+  const closeAboutDropdown = () => {
+    setIsAboutDropdownOpen(false);
+  };
+
+  const toggleWindowsDropdown = () => {
+    setIsWindowsDropdownOpen(!isWindowsDropdownOpen);
+  };
+
+  const closeWindowsDropdown = () => {
+    setIsWindowsDropdownOpen(false);
+  };
+
+  const toggleSidingDropdown = () => {
+    setIsSidingDropdownOpen(!isSidingDropdownOpen);
+  };
+
+  const closeSidingDropdown = () => {
+    setIsSidingDropdownOpen(false);
+  };
+
+  const toggleBathsDropdown = () => {
+    setIsBathsDropdownOpen(!isBathsDropdownOpen);
+  };
+
+  const closeBathsDropdown = () => {
+    setIsBathsDropdownOpen(false);
+  };
+
+  const toggleDoorsDropdown = () => {
+    setIsDoorsDropdownOpen(!isDoorsDropdownOpen);
+  };
+
+  const closeDoorsDropdown = () => {
+    setIsDoorsDropdownOpen(false);
   };
 
   return (
@@ -77,26 +122,150 @@ export default function Header() {
 
           {/* Desktop Navigation menu */}
           <nav className="nav-menu desktop-nav">
-            <Link href="/about" className="nav-item dropdown">
-              <span>About Us</span>
-              <span className="dropdown-arrow">⌄</span>
-            </Link>
-            <Link href="/windows" className="nav-item dropdown">
-              <span>Windows</span>
-              <span className="dropdown-arrow">⌄</span>
-            </Link>
-            <Link href="/siding" className="nav-item dropdown">
-              <span>Siding</span>
-              <span className="dropdown-arrow">⌄</span>
-            </Link>
-            <Link href="/baths" className="nav-item dropdown">
-              <span>Baths</span>
-              <span className="dropdown-arrow">⌄</span>
-            </Link>
-            <Link href="/doors" className="nav-item dropdown">
-              <span>Doors</span>
-              <span className="dropdown-arrow">⌄</span>
-            </Link>
+            <div 
+              className="nav-item dropdown"
+              onMouseEnter={() => setIsAboutDropdownOpen(true)}
+              onMouseLeave={() => setIsAboutDropdownOpen(false)}
+            >
+              <Link href="/about" className="nav-link">
+                <span>About Us</span>
+                <span className="dropdown-arrow">⌄</span>
+              </Link>
+              <div className={`dropdown-menu ${isAboutDropdownOpen ? 'active' : ''}`}>
+                <Link href="/about" className="dropdown-item" onClick={closeAboutDropdown}>
+                  About Us
+                </Link>
+                <Link href="/showroom" className="dropdown-item" onClick={closeAboutDropdown}>
+                  Showroom
+                </Link>
+                <Link href="/team" className="dropdown-item" onClick={closeAboutDropdown}>
+                  Meet Our Team
+                </Link>
+                <Link href="/careers" className="dropdown-item" onClick={closeAboutDropdown}>
+                  Job Openings
+                </Link>
+              </div>
+            </div>
+            <div 
+              className="nav-item dropdown"
+              onMouseEnter={() => setIsWindowsDropdownOpen(true)}
+              onMouseLeave={() => setIsWindowsDropdownOpen(false)}
+            >
+              <Link href="/windows" className="nav-link">
+                <span>Windows</span>
+                <span className="dropdown-arrow">⌄</span>
+              </Link>
+              <div className={`dropdown-menu ${isWindowsDropdownOpen ? 'active' : ''}`}>
+                <Link href="/windows" className="dropdown-item" onClick={closeWindowsDropdown}>
+                  All Windows
+                </Link>
+                <Link href="/windows/double-hung" className="dropdown-item" onClick={closeWindowsDropdown}>
+                  Double Hung Windows
+                </Link>
+                <Link href="/windows/bay-bow-picture" className="dropdown-item" onClick={closeWindowsDropdown}>
+                  Bay, Bow & Picture Windows
+                </Link>
+                <Link href="/windows/slider" className="dropdown-item" onClick={closeWindowsDropdown}>
+                  Slider Windows
+                </Link>
+                <Link href="/windows/awning" className="dropdown-item" onClick={closeWindowsDropdown}>
+                  Awning Windows
+                </Link>
+                <Link href="/windows/hopper" className="dropdown-item" onClick={closeWindowsDropdown}>
+                  Hopper Windows
+                </Link>
+              </div>
+            </div>
+            <div 
+              className="nav-item dropdown"
+              onMouseEnter={() => setIsSidingDropdownOpen(true)}
+              onMouseLeave={() => setIsSidingDropdownOpen(false)}
+            >
+              <Link href="/siding" className="nav-link">
+                <span>Siding</span>
+                <span className="dropdown-arrow">⌄</span>
+              </Link>
+              <div className={`dropdown-menu ${isSidingDropdownOpen ? 'active' : ''}`}>
+                <Link href="/siding" className="dropdown-item" onClick={closeSidingDropdown}>
+                  All Siding
+                </Link>
+                <Link href="/siding/engineered-wood" className="dropdown-item" onClick={closeSidingDropdown}>
+                  Engineered Wood Siding
+                </Link>
+                <Link href="/siding/reinforced-vinyl" className="dropdown-item" onClick={closeSidingDropdown}>
+                  Reinforced Vinyl Siding
+                </Link>
+                <Link href="/siding/traditional-vinyl" className="dropdown-item" onClick={closeSidingDropdown}>
+                  Traditional Vinyl Siding
+                </Link>
+                <Link href="/siding/cedar-shake-vinyl" className="dropdown-item" onClick={closeSidingDropdown}>
+                  Cedar Shake Vinyl Siding
+                </Link>
+                <Link href="/siding/board-batten" className="dropdown-item" onClick={closeSidingDropdown}>
+                  Board & Batten Vertical Vinyl
+                </Link>
+                <Link href="/siding/stacked-stone" className="dropdown-item" onClick={closeSidingDropdown}>
+                  Stacked Stone Siding
+                </Link>
+              </div>
+            </div>
+            <div 
+              className="nav-item dropdown"
+              onMouseEnter={() => setIsBathsDropdownOpen(true)}
+              onMouseLeave={() => setIsBathsDropdownOpen(false)}
+            >
+              <Link href="/baths" className="nav-link">
+                <span>Baths</span>
+                <span className="dropdown-arrow">⌄</span>
+              </Link>
+              <div className={`dropdown-menu ${isBathsDropdownOpen ? 'active' : ''}`}>
+                <Link href="/baths" className="dropdown-item" onClick={closeBathsDropdown}>
+                  All Baths
+                </Link>
+                <Link href="/baths/tub-to-shower" className="dropdown-item" onClick={closeBathsDropdown}>
+                  Tub To Shower Conversion
+                </Link>
+                <Link href="/baths/safety-tubs" className="dropdown-item" onClick={closeBathsDropdown}>
+                  Safety Tubs
+                </Link>
+                <Link href="/baths/shower-doors" className="dropdown-item" onClick={closeBathsDropdown}>
+                  Shower Doors
+                </Link>
+                <Link href="/baths/toilets" className="dropdown-item" onClick={closeBathsDropdown}>
+                  Toilets
+                </Link>
+                <Link href="/baths/accessories" className="dropdown-item" onClick={closeBathsDropdown}>
+                  Accessories
+                </Link>
+                <Link href="/baths/color-texture" className="dropdown-item" onClick={closeBathsDropdown}>
+                  Color & Texture Options
+                </Link>
+              </div>
+            </div>
+            <div 
+              className="nav-item dropdown"
+              onMouseEnter={() => setIsDoorsDropdownOpen(true)}
+              onMouseLeave={() => setIsDoorsDropdownOpen(false)}
+            >
+              <Link href="/doors" className="nav-link">
+                <span>Doors</span>
+                <span className="dropdown-arrow">⌄</span>
+              </Link>
+              <div className={`dropdown-menu ${isDoorsDropdownOpen ? 'active' : ''}`}>
+                <Link href="/doors" className="dropdown-item" onClick={closeDoorsDropdown}>
+                  All Doors
+                </Link>
+                <Link href="/doors/entry-doors" className="dropdown-item" onClick={closeDoorsDropdown}>
+                  Entry Doors
+                </Link>
+                <Link href="/doors/storm-doors" className="dropdown-item" onClick={closeDoorsDropdown}>
+                  Storm Doors
+                </Link>
+                <Link href="/doors/patio-doors" className="dropdown-item" onClick={closeDoorsDropdown}>
+                  Patio Doors
+                </Link>
+              </div>
+            </div>
           </nav>
 
           {/* Desktop Action buttons */}
@@ -126,21 +295,145 @@ export default function Header() {
         {/* Mobile Navigation Menu */}
         <div className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
           <div className="mobile-nav-content">
-            <Link href="/about" className="mobile-nav-item" onClick={closeMobileMenu}>
-              About Us
-            </Link>
-            <Link href="/windows" className="mobile-nav-item" onClick={closeMobileMenu}>
-              Windows
-            </Link>
-            <Link href="/siding" className="mobile-nav-item" onClick={closeMobileMenu}>
-              Siding
-            </Link>
-            <Link href="/baths" className="mobile-nav-item" onClick={closeMobileMenu}>
-              Baths
-            </Link>
-            <Link href="/doors" className="mobile-nav-item" onClick={closeMobileMenu}>
-              Doors
-            </Link>
+            <div className="mobile-nav-item dropdown-mobile">
+              <button 
+                className="mobile-nav-toggle"
+                onClick={toggleAboutDropdown}
+              >
+                About Us
+                <span className={`dropdown-arrow ${isAboutDropdownOpen ? 'active' : ''}`}>⌄</span>
+              </button>
+              <div className={`mobile-dropdown ${isAboutDropdownOpen ? 'active' : ''}`}>
+                <Link href="/about" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  About Us
+                </Link>
+                <Link href="/showroom" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Showroom
+                </Link>
+                <Link href="/team" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Meet Our Team
+                </Link>
+                <Link href="/careers" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Job Openings
+                </Link>
+              </div>
+            </div>
+            <div className="mobile-nav-item dropdown-mobile">
+              <button 
+                className="mobile-nav-toggle"
+                onClick={toggleWindowsDropdown}
+              >
+                Windows
+                <span className={`dropdown-arrow ${isWindowsDropdownOpen ? 'active' : ''}`}>⌄</span>
+              </button>
+              <div className={`mobile-dropdown ${isWindowsDropdownOpen ? 'active' : ''}`}>
+                <Link href="/windows" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  All Windows
+                </Link>
+                <Link href="/windows/double-hung" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Double Hung Windows
+                </Link>
+                <Link href="/windows/bay-bow-picture" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Bay, Bow & Picture Windows
+                </Link>
+                <Link href="/windows/slider" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Slider Windows
+                </Link>
+                <Link href="/windows/awning" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Awning Windows
+                </Link>
+                <Link href="/windows/hopper" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Hopper Windows
+                </Link>
+              </div>
+            </div>
+            <div className="mobile-nav-item dropdown-mobile">
+              <button 
+                className="mobile-nav-toggle"
+                onClick={toggleSidingDropdown}
+              >
+                Siding
+                <span className={`dropdown-arrow ${isSidingDropdownOpen ? 'active' : ''}`}>⌄</span>
+              </button>
+              <div className={`mobile-dropdown ${isSidingDropdownOpen ? 'active' : ''}`}>
+                <Link href="/siding" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  All Siding
+                </Link>
+                <Link href="/siding/engineered-wood" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Engineered Wood Siding
+                </Link>
+                <Link href="/siding/reinforced-vinyl" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Reinforced Vinyl Siding
+                </Link>
+                <Link href="/siding/traditional-vinyl" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Traditional Vinyl Siding
+                </Link>
+                <Link href="/siding/cedar-shake-vinyl" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Cedar Shake Vinyl Siding
+                </Link>
+                <Link href="/siding/board-batten" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Board & Batten Vertical Vinyl
+                </Link>
+                <Link href="/siding/stacked-stone" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Stacked Stone Siding
+                </Link>
+              </div>
+            </div>
+            <div className="mobile-nav-item dropdown-mobile">
+              <button 
+                className="mobile-nav-toggle"
+                onClick={toggleBathsDropdown}
+              >
+                Baths
+                <span className={`dropdown-arrow ${isBathsDropdownOpen ? 'active' : ''}`}>⌄</span>
+              </button>
+              <div className={`mobile-dropdown ${isBathsDropdownOpen ? 'active' : ''}`}>
+                <Link href="/baths" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  All Baths
+                </Link>
+                <Link href="/baths/tub-to-shower" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Tub To Shower Conversion
+                </Link>
+                <Link href="/baths/safety-tubs" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Safety Tubs
+                </Link>
+                <Link href="/baths/shower-doors" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Shower Doors
+                </Link>
+                <Link href="/baths/toilets" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Toilets
+                </Link>
+                <Link href="/baths/accessories" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Accessories
+                </Link>
+                <Link href="/baths/color-texture" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Color & Texture Options
+                </Link>
+              </div>
+            </div>
+            <div className="mobile-nav-item dropdown-mobile">
+              <button 
+                className="mobile-nav-toggle"
+                onClick={toggleDoorsDropdown}
+              >
+                Doors
+                <span className={`dropdown-arrow ${isDoorsDropdownOpen ? 'active' : ''}`}>⌄</span>
+              </button>
+              <div className={`mobile-dropdown ${isDoorsDropdownOpen ? 'active' : ''}`}>
+                <Link href="/doors" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  All Doors
+                </Link>
+                <Link href="/doors/entry-doors" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Entry Doors
+                </Link>
+                <Link href="/doors/storm-doors" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Storm Doors
+                </Link>
+                <Link href="/doors/patio-doors" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Patio Doors
+                </Link>
+              </div>
+            </div>
             
             {/* Mobile Action Buttons */}
             <div className="mobile-actions">
