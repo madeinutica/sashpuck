@@ -2,31 +2,69 @@
 
 import React, { useState, useEffect } from 'react';
 import { CustomerProject, sampleProjects } from '../lib/customerProjects';
+import { loadProjectsFromCSV } from '../lib/csvProjectLoader';
 
 interface CustomerMapGalleryProps {
   projects?: CustomerProject[];
   showFeaturedOnly?: boolean;
   title?: string;
   subtitle?: string;
+  csvContent?: string; // Add CSV content prop
 }
 
 export default function CustomerMapGallery({ 
   projects = sampleProjects,
   showFeaturedOnly = false,
   title = "Our Recent Projects",
-  subtitle = "See the amazing transformations we've completed across Central New York"
+  subtitle = "See the amazing transformations we've completed across Central New York",
+  csvContent
 }: CustomerMapGalleryProps) {
   const [selectedProject, setSelectedProject] = useState<CustomerProject | null>(null);
   const [mapComponent, setMapComponent] = useState<React.ComponentType<any> | null>(null);
   const [modalComponent, setModalComponent] = useState<React.ComponentType<any> | null>(null);
   const [isClient, setIsClient] = useState(false);
+  const [loadedProjects, setLoadedProjects] = useState<CustomerProject[]>(projects);
+  const [isLoadingProjects, setIsLoadingProjects] = useState(false);
   
   const displayProjects = showFeaturedOnly 
-    ? projects.filter(project => project.featured)
-    : projects;
+    ? loadedProjects.filter(project => project.featured)
+    : loadedProjects;
 
   useEffect(() => {
     setIsClient(true);
+    
+    // Load CSV data from public file if no csvContent prop provided
+    if (!csvContent) {
+      setIsLoadingProjects(true);
+      fetch('/projects.csv')
+        .then(response => response.text())
+        .then(csvText => loadProjectsFromCSV(csvText))
+        .then(csvProjects => {
+          if (csvProjects.length > 0) {
+            setLoadedProjects(csvProjects);
+          }
+          setIsLoadingProjects(false);
+        })
+        .catch(error => {
+          console.error('Failed to load projects from CSV:', error);
+          setIsLoadingProjects(false);
+        });
+    } else {
+      // Use provided CSV content
+      setIsLoadingProjects(true);
+      loadProjectsFromCSV(csvContent)
+        .then(csvProjects => {
+          if (csvProjects.length > 0) {
+            setLoadedProjects(csvProjects);
+          }
+          setIsLoadingProjects(false);
+        })
+        .catch(error => {
+          console.error('Failed to load projects from CSV:', error);
+          setIsLoadingProjects(false);
+        });
+    }
+
     // Dynamically import components only on client side
     import('./CustomerProjectsMap').then((module) => {
       setMapComponent(() => module.default);
@@ -39,7 +77,7 @@ export default function CustomerMapGallery({
     }).catch((error) => {
       console.error('Failed to load modal component:', error);
     });
-  }, []);
+  }, [csvContent]);
 
   const handleProjectSelect = (project: CustomerProject) => {
     setSelectedProject(project);
@@ -49,12 +87,12 @@ export default function CustomerMapGallery({
     setSelectedProject(null);
   };
 
-  if (!isClient) {
+  if (!isClient || isLoadingProjects) {
     return (
       <div className="customer-map-gallery">
         <div className="map-loading">
           <div className="loading-spinner"></div>
-          <p>Loading interactive map...</p>
+          <p>{isLoadingProjects ? 'Loading project data...' : 'Loading interactive map...'}</p>
         </div>
       </div>
     );
