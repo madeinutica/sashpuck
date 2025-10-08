@@ -1004,7 +1004,7 @@ export const config: Config<Props> = {
         <div style={{ 
           background: "#dc143c",
           color: "white",
-          padding: "4rem 2rem"
+          padding: "3.375rem 2rem 2.75rem 2rem"
         }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "3rem" }}>
@@ -1015,16 +1015,28 @@ export const config: Config<Props> = {
                 {subtitle}
               </p>
             </div>
-            <div style={{ 
+            <div className="service-areas-grid" style={{ 
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+              gridTemplateColumns: "repeat(6, 1fr)",
               gap: "1.5rem",
               marginBottom: "3rem"
             }}>
+              <style>{`
+                @media (max-width: 1024px) {
+                  .service-areas-grid {
+                    grid-template-columns: repeat(3, 1fr) !important;
+                  }
+                }
+                @media (max-width: 640px) {
+                  .service-areas-grid {
+                    grid-template-columns: repeat(1, 1fr) !important;
+                  }
+                }
+              `}</style>
               {areas.map((area: any, index: number) => (
                 <div key={index} style={{ 
                   textAlign: "center",
-                  padding: "1.5rem",
+                  padding: "0.875rem 1.5rem 0.25rem 1.5rem",
                   backgroundColor: "white",
                   color: "#333",
                   borderRadius: "0"

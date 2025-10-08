@@ -16,6 +16,7 @@
           "secondaryCtaText": "(315) 624-7344",
           "secondaryCtaLink": "tel:+13156247344",
           "badge": "Trusted Since 1988 | 10,000+ Projects Completed",
+          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
           "id": "HeroSection-home"
         }
       },
@@ -888,53 +889,239 @@
       {
         "type": "HeroSection",
         "props": {
-          "title": "Complete Bathroom Remodeling",
-          "subtitle": "Transform your bathroom with our comprehensive remodeling services. From tub-to-shower conversions to complete renovations, we create beautiful, functional bathrooms for Central New York homes.",
-          "ctaText": "Get Free Estimate",
+          "title": "Your Dream Bathroom Made Reality",
+          "subtitle": "Transform your bathroom into a beautiful, safe, and accessible space. From walk-in tubs to complete bathroom remodels, we create the perfect bathroom for your lifestyle.",
+          "ctaText": "Schedule Design Consultation",
           "ctaLink": "#contact",
           "secondaryCtaText": "(315) 624-7344",
           "secondaryCtaLink": "tel:315-624-7344",
-          "badge": "One Day Installation Available",
-          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "badge": "Complete in as little as 2 Days",
+          "videoUrl": "",
           "id": "HeroSection-baths"
         }
       },
       {
         "type": "StatsSection",
         "props": {
-          "title": "Bathroom Remodeling Benefits",
-          "subtitle": "Functionality, accessibility, and beauty for Central New York homes",
+          "title": "Why Choose Our Bathroom Solutions",
+          "subtitle": "Fast and long-lasting bathroom improvements designed for Central New York families",
           "stats": [
             {
-              "number": "✓",
-              "label": "Quick Installation",
-              "description": "Many projects completed in one day"
+              "number": "1",
+              "label": "2-Day Install",
+              "description": "Most projects completed in just two days"
             },
             {
-              "number": "✓",
-              "label": "Accessibility Options",
-              "description": "Safety tubs and barrier-free designs"
+              "number": "2",
+              "label": "Durable Acrylic",
+              "description": "Built to last, Easy to clean, Stain-free"
             },
             {
-              "number": "✓",
-              "label": "Custom Solutions",
-              "description": "Tailored to your space and needs"
+              "number": "3",
+              "label": "Easy Upkeep",
+              "description": "Non-porous surfaces prevent mold and mildew"
             },
             {
-              "number": "✓",
-              "label": "Quality Materials",
-              "description": "Durable, easy-to-clean surfaces"
+              "number": "4",
+              "label": "Safety Features",
+              "description": "Walk-in tubs, Grab bars, Non-slip surfaces"
+            },
+            {
+              "number": "5",
+              "label": "Style Options",
+              "description": "Multiple colors, patterns, and accessories"
             }
           ],
           "backgroundColor": "#ffffff",
-          "id": "StatsSection-baths"
+          "id": "StatsSection-baths-why-choose"
+        }
+      },
+      {
+        "type": "ServicesGrid",
+        "props": {
+          "title": "Bathroom Solutions",
+          "subtitle": "Customized remodeling options designed for your needs",
+          "services": [
+            {
+              "title": "Acrylic Bath Liners",
+              "beforeImage": "/images/baths/bath-liners-before.jpg",
+              "afterImage": "/images/baths/bath-liners-after.jpg",
+              "features": [
+                "Fit over your old bathtub",
+                "No demolition required",
+                "Multiple color options",
+                "Quick installation"
+              ],
+              "ctaText": "Explore Option",
+              "ctaLink": "/baths/accessories",
+              "description": "Quickly turn your beat-up bathtub into a stunning tub"
+            },
+            {
+              "title": "Walk-In Tubs",
+              "beforeImage": "/images/baths/walk-in-tubs-before.jpg",
+              "afterImage": "/images/baths/walk-in-tubs-after.jpg",
+              "features": [
+                "Easy entry and exit",
+                "Built-in safety features",
+                "Therapeutic options",
+                "ADA compliant"
+              ],
+              "ctaText": "Explore Option",
+              "ctaLink": "/baths/safety-tubs",
+              "description": "Make your space accessible with a tub conversion"
+            },
+            {
+              "title": "Tub-to-Shower",
+              "beforeImage": "/images/baths/tub-to-shower-before.jpg",
+              "afterImage": "/images/baths/tub-to-shower-after.jpg",
+              "features": [
+                "End-of-tub entry option",
+                "Elderly-adult friendly",
+                "Custom glass doors",
+                "Barrier-free option"
+              ],
+              "ctaText": "Explore Option",
+              "ctaLink": "/baths/tub-to-shower",
+              "description": "Simple tub-to-shower conversion with accessibility features"
+            },
+            {
+              "title": "Shower Replacement",
+              "beforeImage": "/images/baths/shower-replacement-before.jpg",
+              "afterImage": "/images/baths/shower-replacement-after.jpg",
+              "features": [
+                "Multiple color combos",
+                "Built-in storage",
+                "Custom fixtures",
+                "Low-maintenance"
+              ],
+              "ctaText": "Explore Option",
+              "ctaLink": "/baths/shower-doors",
+              "description": "Beautiful shower replacement with modern design"
+            }
+          ],
+          "id": "ServicesGrid-baths-solutions"
+        }
+      },
+      {
+        "type": "TestimonialsGrid",
+        "props": {
+          "title": "Stunning Transformations",
+          "subtitle": "See how we've transformed bathrooms throughout Central New York",
+          "testimonials": [
+            {
+              "name": "Mary Ann - Rome, NY",
+              "location": "Rome, NY",
+              "service": "Bathroom Renovation",
+              "testimonial": "Afternoon renovation before and after in Hamilton, NY",
+              "videoUrl": ""
+            },
+            {
+              "name": "Before and After",
+              "location": "Utica, NY",
+              "service": "Complete Remodel",
+              "testimonial": "After: Gorgeous before and after in Utica, NY",
+              "videoUrl": ""
+            },
+            {
+              "name": "Transformation",
+              "location": "Syracuse, NY",
+              "service": "Tub to Shower",
+              "testimonial": "Bathroom remodel before and after in Utica, NY",
+              "videoUrl": ""
+            }
+          ],
+          "id": "TestimonialsGrid-baths-transformations"
+        }
+      },
+      {
+        "type": "FeaturesWithImage",
+        "props": {
+          "title": "Safety & Accessibility Features",
+          "subtitle": "Designed with safety in mind for users of all ages and abilities",
+          "features": [
+            "Non-Slip Surfaces - Textured floors and grab bars to provide secure footing both steps into",
+            "Low-Threshold Entry - Minimal step-over height for easy entry and exit with reduced fall risks",
+            "Professional Grab Bars - Strategically placed support bars provide stability when entering and exiting your bathroom",
+            "Built-In Seating - Comfortable molded seating for those who need to sit while showering",
+            "Temperature Control - Anti-scald valves and easy-to-use controls with water temperature limits"
+          ],
+          "imageUrl": "/images/baths/safety-features.jpg",
+          "badgeText": "",
+          "backgroundColor": "#1a1a1a",
+          "id": "FeaturesWithImage-baths-safety"
+        }
+      },
+      {
+        "type": "TestimonialsGrid",
+        "props": {
+          "title": "Real Central New York Stories",
+          "subtitle": "Hear from our satisfied customers across from Central New York about their bathroom transformations",
+          "testimonials": [
+            {
+              "name": "Mary Ann - Rome, NY",
+              "location": "Rome, NY",
+              "service": "Tub-to-Shower Conversion",
+              "testimonial": "We were concerned about safety in the bathroom, so we called New York Sash.",
+              "videoUrl": ""
+            },
+            {
+              "name": "Yvonne - Laurens, NY",
+              "location": "Laurens, NY",
+              "service": "Walk-In Tub",
+              "testimonial": "The installation was professional and the results exceeded our expectations.",
+              "videoUrl": ""
+            },
+            {
+              "name": "Frankfort Project",
+              "location": "Frankfort, NY",
+              "service": "Complete Bathroom Remodel",
+              "testimonial": "Beautiful bathroom transformation for single bathroom installation. Experience and results.",
+              "videoUrl": ""
+            }
+          ],
+          "id": "TestimonialsGrid-baths-stories"
+        }
+      },
+      {
+        "type": "CompanyTimeline",
+        "props": {
+          "title": "Simple 2-Day Installation Process",
+          "subtitle": "From consultation to completion, we make bathroom remodeling easy and stress-free",
+          "timelineItems": [
+            {
+              "year": "1",
+              "title": "Free In-Home Consultation",
+              "description": "Our design consultant measures your bathroom and discusses your needs, style preferences and budget."
+            },
+            {
+              "year": "2",
+              "title": "Custom Manufacturing",
+              "description": "Your bathroom materials are custom-manufactured to ensure specifications for a perfect fit."
+            },
+            {
+              "year": "3",
+              "title": "Day 1 - Preparation",
+              "description": "Our installers arrive, protect your home, and handle all necessary preparations."
+            },
+            {
+              "year": "4",
+              "title": "Day 2 - Installation",
+              "description": "Professional installation of your new bathroom with attention to every detail for flawless integration."
+            },
+            {
+              "year": "5",
+              "title": "Final Walkthrough",
+              "description": "Thorough cleaning and walkthrough to ensure your complete satisfaction."
+            }
+          ],
+          "id": "CompanyTimeline-baths-process"
         }
       },
       {
         "type": "CallToAction",
         "props": {
-          "title": "Ready for Your Bathroom Remodel?",
-          "description": "Create the bathroom of your dreams with Central New York's bathroom remodeling experts. Get your free estimate today.",
+          "title": "Ready to Transform Your Bathroom?",
+          "description": "Call your free, no-obligation bathroom estimate today. Our design consultants will help you create the perfect solution for your Central New York home.",
           "buttonText": "Get Free Estimate",
           "buttonLink": "#contact",
           "secondaryButtonText": "(315) 624-7344",
@@ -956,53 +1143,274 @@
       {
         "type": "HeroSection",
         "props": {
-          "title": "Premium Door Solutions",
-          "subtitle": "Enhance your home's security, energy efficiency, and curb appeal with our comprehensive door offerings. From entry doors to patio doors, we have the perfect solution for Central New York homes.",
-          "ctaText": "Get Free Estimate",
+          "title": "Make a Lasting First Impression",
+          "subtitle": "Enhance your home's security, style, and energy efficiency with our premium entry doors. Combining beautiful design with advanced security features and energy efficiency for Central New York homes.",
+          "ctaText": "Design Your Door",
           "ctaLink": "#contact",
           "secondaryCtaText": "(315) 624-7344",
           "secondaryCtaLink": "tel:315-624-7344",
-          "badge": "Security & Energy Efficiency",
-          "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
+          "badge": "Security & Energy Guaranteed",
+          "videoUrl": "",
           "id": "HeroSection-doors"
         }
       },
       {
         "type": "StatsSection",
         "props": {
-          "title": "Door Installation Benefits",
-          "subtitle": "Security, efficiency, and style for Central New York homes",
+          "title": "Why Choose Our Door Systems",
+          "subtitle": "Engineered for Central New York weather with superior security, energy efficiency, and lasting beauty",
           "stats": [
             {
-              "number": "✓",
+              "number": "1",
               "label": "Enhanced Security",
-              "description": "Multi-point locking systems available"
+              "description": "Multi-point locking systems and reinforced frames"
             },
             {
-              "number": "✓",
+              "number": "2",
               "label": "Energy Efficient",
-              "description": "Insulated cores and weatherstripping"
+              "description": "Insulated cores and precision weatherstripping"
             },
             {
-              "number": "✓",
-              "label": "Custom Options",
-              "description": "Multiple materials, styles, and colors"
+              "number": "3",
+              "label": "Low Maintenance",
+              "description": "Durable materials that stand up to elements"
             },
             {
-              "number": "✓",
+              "number": "4",
+              "label": "Style Options",
+              "description": "Unlimited designs, colors, and hardware choices"
+            },
+            {
+              "number": "5",
               "label": "Professional Install",
-              "description": "Expert installation with warranty"
+              "description": "Expert installation with lifetime warranty"
             }
           ],
           "backgroundColor": "#ffffff",
-          "id": "StatsSection-doors"
+          "id": "StatsSection-doors-why-choose"
+        }
+      },
+      {
+        "type": "ServicesGrid",
+        "props": {
+          "title": "Door Types & Pricing",
+          "subtitle": "Choose from four premium door collections designed for Central New York homes",
+          "services": [
+            {
+              "title": "Fiberglass Entry Doors",
+              "beforeImage": "/images/doors/fiberglass-entry.jpg",
+              "afterImage": "/images/doors/fiberglass-entry-installed.jpg",
+              "features": [
+                "Wood grain texture",
+                "Energy efficient",
+                "Low maintenance",
+                "Dent resistant"
+              ],
+              "ctaText": "Explore Options",
+              "ctaLink": "/doors/fiberglass",
+              "description": "Fiberglass: Ranges entry door with durable construction and authentic wood appearance"
+            },
+            {
+              "title": "Steel Doors",
+              "beforeImage": "/images/doors/steel-entry.jpg",
+              "afterImage": "/images/doors/steel-entry-installed.jpg",
+              "features": [
+                "Maximum security",
+                "Energy efficient",
+                "Affordable pricing",
+                "Energy efficient"
+              ],
+              "ctaText": "Installed with Frame",
+              "ctaLink": "/doors/steel",
+              "description": "Priced entry door with maximum price and excellent insulation"
+            },
+            {
+              "title": "French Doors",
+              "beforeImage": "/images/doors/french-doors.jpg",
+              "afterImage": "/images/doors/french-doors-installed.jpg",
+              "features": [
+                "Classic elegance",
+                "Maximum light",
+                "Interior or exterior",
+                "Customizable hardware"
+              ],
+              "ctaText": "Double door system",
+              "ctaLink": "/doors/french",
+              "description": "French doors with double glass free and elegant operation"
+            },
+            {
+              "title": "Patio Doors",
+              "beforeImage": "/images/doors/patio-doors.jpg",
+              "afterImage": "/images/doors/patio-doors-installed.jpg",
+              "features": [
+                "Sliding or hinged",
+                "Large glass area",
+                "Easy operation",
+                "Smooth functionality"
+              ],
+              "ctaText": "Complete system",
+              "ctaLink": "/doors/patio",
+              "description": "Sliding patio doors with energy-efficient glass and smooth operation"
+            }
+          ],
+          "id": "ServicesGrid-doors-types"
+        }
+      },
+      {
+        "type": "FeaturesWithImage",
+        "props": {
+          "title": "Advanced Security Features",
+          "subtitle": "Multi-layered protection designed to keep your family safe",
+          "features": [
+            "Multi-Point Locking - Secure your entry at multiple contact points with reinforced strike plates for maximum security",
+            "Reinforced Frames - Heavy-duty steel reinforcement in frames and jambs provides superior strength and stability",
+            "Deadbolt Systems - Grade 1 deadbolts with 1-inch bolts provide superior protection",
+            "Peephole Options - Wide-angle peepholes and digital viewers available",
+            "Smart Lock Ready - Pre-drilled for electronic and smart lock systems"
+          ],
+          "imageUrl": "/images/doors/security-features.jpg",
+          "badgeText": "",
+          "backgroundColor": "#ffffff",
+          "id": "FeaturesWithImage-doors-security"
+        }
+      },
+      {
+        "type": "ServicesGrid",
+        "props": {
+          "title": "Decorative Glass Options",
+          "subtitle": "Add style and light to your entryway with our extensive glass collection",
+          "services": [
+            {
+              "title": "Clear Glass",
+              "beforeImage": "/images/doors/glass-clear.jpg",
+              "afterImage": "/images/doors/glass-clear.jpg",
+              "features": [
+                "Maximum light transmission",
+                "Modern aesthetic",
+                "Energy efficient",
+                "Various patterns"
+              ],
+              "ctaText": "View Options",
+              "ctaLink": "/doors/glass",
+              "description": "Crystal-glass front door with stunning maximum light"
+            },
+            {
+              "title": "Privacy Glass",
+              "beforeImage": "/images/doors/glass-privacy.jpg",
+              "afterImage": "/images/doors/glass-privacy.jpg",
+              "features": [
+                "Obscured visibility",
+                "Light transmission",
+                "Decorative patterns",
+                "Multiple styles"
+              ],
+              "ctaText": "View Options",
+              "ctaLink": "/doors/glass",
+              "description": "Patterned glass front door with obscured patterns"
+            },
+            {
+              "title": "Decorative Glass",
+              "beforeImage": "/images/doors/glass-decorative.jpg",
+              "afterImage": "/images/doors/glass-decorative.jpg",
+              "features": [
+                "Artistic designs",
+                "Privacy options",
+                "Custom patterns",
+                "Elegant aesthetics"
+              ],
+              "ctaText": "View Options",
+              "ctaLink": "/doors/glass",
+              "description": "Decorative glass door insert with art-level styling"
+            },
+            {
+              "title": "Etched Lite",
+              "beforeImage": "/images/doors/glass-etched.jpg",
+              "afterImage": "/images/doors/glass-etched.jpg",
+              "features": [
+                "Subtle elegance",
+                "Privacy balance",
+                "Sophisticated look",
+                "Multiple patterns"
+              ],
+              "ctaText": "View Options",
+              "ctaLink": "/doors/glass",
+              "description": "Embossed etched glass door insert with colonial grid accents"
+            }
+          ],
+          "id": "ServicesGrid-doors-glass"
+        }
+      },
+      {
+        "type": "TestimonialsGrid",
+        "props": {
+          "title": "Real Central New York Projects",
+          "subtitle": "See our door installations enhancing homes throughout our local communities",
+          "testimonials": [
+            {
+              "name": "Complete Exterior - North Utica, NY",
+              "location": "North Utica, NY",
+              "service": "Entry Door Installation",
+              "testimonial": "Full house transformation includes new door, windows, and siding in North Utica neighborhood. Complete exterior makeover.",
+              "videoUrl": ""
+            },
+            {
+              "name": "Multi-Service Project - Ilion, NY",
+              "location": "Ilion, NY",
+              "service": "Door and Window Replacement",
+              "testimonial": "Door and the window was for neighbor project. Complete home improvement solution.",
+              "videoUrl": ""
+            },
+            {
+              "name": "Expert Door Selection Guide",
+              "location": "Central NY",
+              "service": "Consultation",
+              "testimonial": "Learn how we help Central New York homeowners select the perfect door for their home's style and needs.",
+              "videoUrl": ""
+            }
+          ],
+          "id": "TestimonialsGrid-doors-projects"
+        }
+      },
+      {
+        "type": "CompanyTimeline",
+        "props": {
+          "title": "Professional Installation Process",
+          "subtitle": "Expert installation ensuring proper fit, security, and energy efficiency for decades of reliable performance",
+          "timelineItems": [
+            {
+              "year": "1",
+              "title": "Precise Measurement",
+              "description": "Our door specialists carefully measure your entryway and doorway to ensure exact specifications."
+            },
+            {
+              "year": "2",
+              "title": "Custom Manufacturing",
+              "description": "Your door is custom-manufactured to your exact specifications with style preferences."
+            },
+            {
+              "year": "3",
+              "title": "Expert Installation",
+              "description": "Professional installation following industry best practices, insulation, and weatherproofing."
+            },
+            {
+              "year": "4",
+              "title": "Hardware Installation",
+              "description": "Precise alignment and installation of locks, hinges, and hardware."
+            },
+            {
+              "year": "5",
+              "title": "Final Inspection",
+              "description": "Complete quality check and operation test to ensure your satisfaction."
+            }
+          ],
+          "id": "CompanyTimeline-doors-process"
         }
       },
       {
         "type": "CallToAction",
         "props": {
-          "title": "Ready for New Doors?",
-          "description": "Upgrade your home's entrance with quality doors from Central New York's door specialists. Get your free estimate today.",
+          "title": "Ready to Upgrade Your Entry?",
+          "description": "Get your free, no-obligation door estimate today. Our design consultants will help you choose the perfect entry system for your Central New York home.",
           "buttonText": "Get Free Estimate",
           "buttonLink": "#contact",
           "secondaryButtonText": "(315) 624-7344",
