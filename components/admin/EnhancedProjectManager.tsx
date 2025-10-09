@@ -1,3 +1,4 @@
+import Image from 'next/image';
 // Enhanced Project Management with Auto-Save and File Uploads
 "use client";
 
@@ -509,12 +510,12 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
                     position: 'relative',
                     display: 'inline-block'
                   }}>
-                    <img
+                    <Image
                       src={URL.createObjectURL(file)}
                       alt={`Before ${index + 1}`}
+                      width={100}
+                      height={100}
                       style={{
-                        width: '100px',
-                        height: '100px',
                         objectFit: 'cover',
                         borderRadius: '0.25rem',
                         border: '1px solid #d1d5db'
@@ -570,12 +571,12 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
                     position: 'relative',
                     display: 'inline-block'
                   }}>
-                    <img
+                    <Image
                       src={URL.createObjectURL(file)}
                       alt={`After ${index + 1}`}
+                      width={100}
+                      height={100}
                       style={{
-                        width: '100px',
-                        height: '100px',
                         objectFit: 'cover',
                         borderRadius: '0.25rem',
                         border: '1px solid #d1d5db'
@@ -631,12 +632,12 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
                     position: 'relative',
                     display: 'inline-block'
                   }}>
-                    <img
+                    <Image
                       src={URL.createObjectURL(file)}
                       alt={`Process ${index + 1}`}
+                      width={100}
+                      height={100}
                       style={{
-                        width: '100px',
-                        height: '100px',
                         objectFit: 'cover',
                         borderRadius: '0.25rem',
                         border: '1px solid #d1d5db'

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { CustomerProject } from '../../lib/customerProjects';
 import { mapAllCSVRowsToCustomerProjects, parseCSV } from '../../lib/csvProjectLoader';
 import EnhancedProjectManager from './EnhancedProjectManager';
@@ -238,14 +239,12 @@ function ProjectList({ onEditProject, onDeleteProject }: ProjectListProps) {
               {/* Project Image */}
               {project.photos.after[0] && (
                 <div style={{ height: '200px', position: 'relative' }}>
-                  <img
+                  <Image
                     src={project.photos.after[0]}
                     alt={project.title}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover'
-                    }}
+                    width={400}
+                    height={200}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                   {project.featured && (
                     <div style={{

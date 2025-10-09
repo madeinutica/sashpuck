@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { CustomerProject, serviceTypeConfig } from '../lib/customerProjects';
 
 interface CustomerProjectModalProps {
@@ -90,9 +91,10 @@ export default function CustomerProjectModal({ project, isOpen, onClose }: Custo
 
             <div className="photo-gallery">
               <div className="photo-container">
-                <img 
+                <Image 
                   src={allPhotos[currentPhotoIndex]} 
                   alt={`${project.title} - ${showBefore ? 'Before' : 'After'}`}
+                  width={600} height={400}
                   className="gallery-photo"
                 />
                 
@@ -119,7 +121,7 @@ export default function CustomerProjectModal({ project, isOpen, onClose }: Custo
                     className={`thumbnail ${index === currentPhotoIndex ? 'active' : ''}`}
                     onClick={() => setCurrentPhotoIndex(index)}
                   >
-                    <img src={photo} alt={`Thumbnail ${index + 1}`} />
+                    <Image src={photo} alt={`Thumbnail ${index + 1}`} width={100} height={75} />
                   </button>
                 ))}
               </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { CustomerProject, sampleProjects } from '../lib/customerProjects';
 import { loadProjectsFromCSV } from '../lib/csvProjectLoader';
 
@@ -134,10 +135,11 @@ export default function CustomerMapGallery({
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="featured-image">
-                  <img 
+                  <Image 
                     src={project.photos.after[0]} 
                     alt={project.title}
-                    loading="lazy"
+                    width={600} height={400}
+                    className="gallery-photo"
                   />
                 </div>
                 <div className="featured-content">
