@@ -13,12 +13,12 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "About New York Sash - Central NY's Trusted Home Improvement Company",
       description: "Over 45 years of excellence in windows, siding, bathrooms, and entry doors. Learn about our commitment to quality, service, and community.",
       images: [
-        {
-          url: "https://placehold.co/1200x630/000000/FFFFFF?text=About+New+York+Sash",
-          width: 1200,
-          height: 630,
-          alt: "About New York Sash",
-        },
+          {
+            url: "/images/misc/community-image.jpeg",
+            width: 1200,
+            height: 630,
+            alt: "Community Support",
+          },
       ],
     },
   };

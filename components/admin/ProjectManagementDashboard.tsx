@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { CustomerProject } from '../../lib/customerProjects';
+import { mapAllCSVRowsToCustomerProjects, parseCSV } from '../../lib/csvProjectLoader';
 import EnhancedProjectManager from './EnhancedProjectManager';
 
 interface ProjectListProps {
@@ -17,22 +18,21 @@ function ProjectList({ onEditProject, onDeleteProject }: ProjectListProps) {
   const [sortBy, setSortBy] = useState('newest');
 
   useEffect(() => {
-    fetchProjects();
+    // Load projects from CSV file directly
+    fetch('/projects.csv')
+      .then(res => res.text())
+      .then(csvText => {
+        const csvRows = parseCSV(csvText);
+        const mappedProjects = mapAllCSVRowsToCustomerProjects(csvRows);
+        setProjects(mappedProjects);
+      })
+      .catch(error => {
+        console.error('Error loading CSV:', error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
-
-  const fetchProjects = async () => {
-    try {
-      const response = await fetch('/api/projects');
-      const data = await response.json();
-      if (data.success) {
-        setProjects(data.projects);
-      }
-    } catch (error) {
-      console.error('Error fetching projects:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleDelete = async (projectId: string) => {
     if (!confirm('Are you sure you want to delete this project? This action cannot be undone.')) {

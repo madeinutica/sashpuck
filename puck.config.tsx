@@ -286,15 +286,15 @@ export const config: Config<Props> = {
         videoUrl: { type: "text" },
       },
       defaultProps: {
-        title: "Transform Your Home's Beauty & Comfort",
-        subtitle: "Central New York's premier provider of premium windows, siding, bathrooms, and entry doors.",
-        ctaText: "Get Free Consultation",
-        ctaLink: "/contact",
-        secondaryCtaText: "(315) 624-7344",
-        secondaryCtaLink: "tel:+13156247344",
-        backgroundImage: "",
-        badge: "Trusted Since 1988 | 10,000+ Projects Completed",
-        videoUrl: "https://www.youtube.com/embed/3wKPyfZBFCM",
+  title: "Transform Your Home's Beauty & Comfort",
+  subtitle: "Central New York's premier provider of premium windows, siding, bathrooms, and entry doors.",
+  ctaText: "Get Free Consultation",
+  ctaLink: "/contact",
+  secondaryCtaText: "(315) 624-7344",
+  secondaryCtaLink: "tel:+13156247344",
+  backgroundImage: "",
+  badge: "Trusted Since 1988 | 10,000+ Projects Completed",
+  videoUrl: "https://www.youtube.com/embed/3wKPyfZBFCM",
       },
       render: ({ title, subtitle, ctaText, ctaLink, secondaryCtaText, secondaryCtaLink, backgroundImage, badge, videoUrl }) => (
         <div 
@@ -3258,7 +3258,7 @@ export const config: Config<Props> = {
           "Emergency home repairs for seniors and veterans",
           "Participation in community festivals and events"
         ],
-        image: "https://placehold.co/600x400/000000/FFFFFF?text=Community+Support",
+  image: "/images/misc/community-image.jpeg",
       },
       render: ({ title, subtitle, description, activities, image }) => (
         <section style={{
@@ -3340,7 +3340,8 @@ export const config: Config<Props> = {
                   style={{
                     width: "100%",
                     borderRadius: "0.5rem",
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.15)"
+                    boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+                    marginBottom: "2rem"
                   }}
                   loading="lazy"
                 />

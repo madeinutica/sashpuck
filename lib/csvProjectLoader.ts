@@ -15,21 +15,75 @@ interface ProjectCSVRow {
   emails: string;
 }
 
+// Map a single CSV row to CustomerProject
+export function mapCSVRowToCustomerProject(row: ProjectCSVRow, index: number): CustomerProject {
+  return {
+    id: `${row.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${row.city.toLowerCase()}-${index}`,
+    title: row.name || `Project in ${row.city}`,
+    location: {
+      address: row.street || '',
+      city: row.city || '',
+      state: row.state || 'NY',
+      coordinates: {
+        latitude: parseFloat(row.lat) || 43.0,
+        longitude: parseFloat(row.lng) || -75.9
+      }
+    },
+    serviceType: 'windows', // You can improve this with logic if needed
+    featured: index < 10,
+    completedDate: row.created,
+    projectDetails: {
+      description: '',
+      challengesSolved: [],
+      productsUsed: [],
+      timeframe: '',
+      investment: ''
+    },
+    photos: {
+      before: [],
+      after: []
+    },
+    testimonial: {
+      customerName: '',
+      rating: 5,
+      quote: '',
+      location: `${row.city}, NY`
+    },
+    results: {}
+  };
+}
+
+// Map all CSV rows for display
+export function mapAllCSVRowsToCustomerProjects(csvRows: ProjectCSVRow[]): CustomerProject[] {
+  return csvRows.map((row, idx) => {
+    const lat = parseFloat(row.lat);
+    const lng = parseFloat(row.lng);
+    if (isNaN(lat) || isNaN(lng)) {
+      console.warn(`Project '${row.name}' in '${row.city}' has missing or invalid coordinates: lat='${row.lat}', lng='${row.lng}'`);
+    }
+    return mapCSVRowToCustomerProject(row, idx);
+  });
+}
+
 // Parse CSV string into array of objects
 function parseCSV(csvText: string): ProjectCSVRow[] {
   const lines = csvText.trim().split('\n');
   const headers = lines[0].split(',').map(h => h.replace(/"/g, ''));
-
-  return lines.slice(1).map(line => {
+  const rows: ProjectCSVRow[] = [];
+  lines.slice(1).forEach((line, idx) => {
     const values = line.split(',').map(v => v.replace(/"/g, ''));
+    if (values.length < headers.length) {
+      // Log warning for malformed/short row
+      console.warn(`CSV row ${idx + 2} has fewer columns than expected:`, line);
+    }
+    // Always include the row, filling missing fields with empty strings
     const row: any = {};
-
     headers.forEach((header, index) => {
       row[header] = values[index] || '';
     });
-
-    return row as ProjectCSVRow;
+    rows.push(row as ProjectCSVRow);
   });
+  return rows;
 }
 
 // Transform CSV data to CustomerProject format
@@ -183,6 +237,13 @@ export async function loadProjectsFromCSV(csvContent: string): Promise<CustomerP
   try {
     const csvRows = parseCSV(csvContent);
     const projects = transformCSVToProjects(csvRows);
+
+    // Log if any projects have missing required fields
+    projects.forEach((project, idx) => {
+      if (!project.title || !project.location.city) {
+        console.warn(`Project ${idx + 1} may have missing required fields:`, project);
+      }
+    });
 
     console.log(`Loaded ${projects.length} projects from CSV`);
     return projects;
