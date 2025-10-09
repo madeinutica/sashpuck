@@ -98,7 +98,7 @@ export default function ProtectedRoute({
             marginBottom: '1.5rem',
             lineHeight: '1.5'
           }}>
-            You don&apos;t have permission to access this section. Contact your administrator if you need access.
+            You don&#39;t have permission to access this section. Contact your administrator if you need access.
           </p>
           <div style={{
             background: '#f3f4f6',
