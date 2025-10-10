@@ -270,10 +270,10 @@ export default function Header() {
 
           {/* Desktop Action buttons */}
           <div className="action-buttons desktop-actions">
-            <Link href="/coming-soon" className="chat-button">
+            <Link href="/coming-soon" className="chat-button" style={{ textDecoration: "none" }}>
               Chat with AI
             </Link>
-            <Link href="/coming-soon" className="login-button">
+            <Link href="/coming-soon" className="login-button" style={{ textDecoration: "none" }}>
               Client Login
             </Link>
           </div>
@@ -437,10 +437,10 @@ export default function Header() {
             
             {/* Mobile Action Buttons */}
             <div className="mobile-actions">
-              <Link href="/coming-soon" className="mobile-chat-button" onClick={closeMobileMenu}>
+              <Link href="/coming-soon" className="mobile-chat-button" onClick={closeMobileMenu} style={{ textDecoration: "none" }}>
                 Chat with AI
               </Link>
-              <Link href="/coming-soon" className="mobile-login-button" onClick={closeMobileMenu}>
+              <Link href="/coming-soon" className="mobile-login-button" onClick={closeMobileMenu} style={{ textDecoration: "none" }}>
                 Client Login
               </Link>
               <a href="tel:315-624-7344" className="mobile-phone-button" onClick={closeMobileMenu}>
