@@ -7,7 +7,6 @@ export default function ComingSoonPage() {
       <p style={{ fontSize: "1.25rem", color: "#555", marginBottom: "2rem" }}>
         This feature is under development. Please check back soon!
       </p>
-      <span style={{ fontSize: "4rem" }}>🚧</span>
     </div>
   );
 }
