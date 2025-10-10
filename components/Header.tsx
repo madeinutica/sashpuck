@@ -270,12 +270,12 @@ export default function Header() {
 
           {/* Desktop Action buttons */}
           <div className="action-buttons desktop-actions">
-            <button className="chat-button">
+            <Link href="/coming-soon" className="chat-button">
               Chat with AI
-            </button>
-            <button className="login-button">
+            </Link>
+            <Link href="/coming-soon" className="login-button">
               Client Login
-            </button>
+            </Link>
           </div>
 
           {/* Mobile hamburger menu button */}
@@ -437,12 +437,12 @@ export default function Header() {
             
             {/* Mobile Action Buttons */}
             <div className="mobile-actions">
-              <button className="mobile-chat-button" onClick={closeMobileMenu}>
+              <Link href="/coming-soon" className="mobile-chat-button" onClick={closeMobileMenu}>
                 Chat with AI
-              </button>
-              <button className="mobile-login-button" onClick={closeMobileMenu}>
+              </Link>
+              <Link href="/coming-soon" className="mobile-login-button" onClick={closeMobileMenu}>
                 Client Login
-              </button>
+              </Link>
               <a href="tel:315-624-7344" className="mobile-phone-button" onClick={closeMobileMenu}>
                 📞 Call (315) 624-7344
               </a>
