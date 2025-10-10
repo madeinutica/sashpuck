@@ -1,7 +1,6 @@
+"use client";
 import Image from 'next/image';
 // Enhanced Project Management with Auto-Save and File Uploads
-"use client";
-
 import React, { useState, useRef } from 'react';
 import { CustomerProject } from '../../lib/customerProjects';
 import { 
