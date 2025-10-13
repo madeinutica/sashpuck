@@ -40,50 +40,8 @@ export interface CustomerProject {
   };
 }
 
-export const sampleProjects: CustomerProject[] = [
-  {
-    id: 'baldwinsville-doors-2024',
-    title: 'Patio Door Replacement - Ranch Home',
-    location: {
-      address: '742 Willow Lane',
-      city: 'Baldwinsville',
-      state: 'NY',
-      coordinates: {
-        latitude: 43.1687,
-        longitude: -76.3427
-      }
-    },
-    serviceType: 'doors',
-    featured: false,
-    completedDate: '2024-08-28',
-    projectDetails: {
-      description: 'Sliding patio door replacement for improved access and energy efficiency',
-      challengesSolved: ['Difficult operation', 'Air leaks', 'Security concerns', 'Outdated style'],
-      productsUsed: ['Energy efficient patio door', 'Low-E glass', 'Secure locking system', 'Weather sealing'],
-      timeframe: '1 day',
-      investment: '$3,500 - $4,500'
-    },
-    photos: {
-      before: [
-        '/images/logo.png'
-      ],
-      after: [
-        '/images/logo.png'
-      ]
-    },
-    testimonial: {
-      customerName: 'Steven Miller',
-      rating: 4,
-      quote: 'The new patio door operates so smoothly and looks great. Much better than our old sliding door. Professional installation.',
-      location: 'Baldwinsville, NY'
-    },
-    results: {
-      energySavings: '25% improvement in door efficiency',
-      aestheticImpact: 'Modern, clean appearance',
-      functionalImpact: 'Smooth operation and better security'
-    }
-  }
-];
+// Default empty array - data is loaded via API routes
+export const sampleProjects: CustomerProject[] = [];
 
 // Service Type Configuration
 export const serviceTypeConfig = {

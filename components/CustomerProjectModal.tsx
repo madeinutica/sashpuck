@@ -27,13 +27,6 @@ export default function CustomerProjectModal({ project, isOpen, onClose }: Custo
     setCurrentPhotoIndex((prev) => (prev - 1 + allPhotos.length) % allPhotos.length);
   };
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long'
-    });
-  };
-
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="project-modal" onClick={(e) => e.stopPropagation()}>
@@ -47,9 +40,6 @@ export default function CustomerProjectModal({ project, isOpen, onClose }: Custo
             <div className="project-meta">
               <span className="project-location">
                 📍 {project.location.city}, {project.location.state}
-              </span>
-              <span className="project-date">
-                📅 Completed {formatDate(project.completedDate)}
               </span>
               <div 
                 className="service-badge modal-badge"
@@ -96,6 +86,10 @@ export default function CustomerProjectModal({ project, isOpen, onClose }: Custo
                   alt={`${project.title} - ${showBefore ? 'Before' : 'After'}`}
                   width={600} height={400}
                   className="gallery-photo"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/images/misc/energy-icon.png'; // Fallback image
+                  }}
                 />
                 
                 {allPhotos.length > 1 && (
@@ -121,7 +115,16 @@ export default function CustomerProjectModal({ project, isOpen, onClose }: Custo
                     className={`thumbnail ${index === currentPhotoIndex ? 'active' : ''}`}
                     onClick={() => setCurrentPhotoIndex(index)}
                   >
-                    <Image src={photo} alt={`Thumbnail ${index + 1}`} width={100} height={75} />
+                    <Image 
+                      src={photo} 
+                      alt={`Thumbnail ${index + 1}`} 
+                      width={100} 
+                      height={75}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = '/images/misc/energy-icon.png'; // Fallback image
+                      }}
+                    />
                   </button>
                 ))}
               </div>

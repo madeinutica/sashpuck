@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 // Enhanced Project Management with Auto-Save and File Uploads
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { CustomerProject } from '../../lib/customerProjects';
 import { 
   createProjectTemplate, 
@@ -57,20 +57,87 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
     };
   });
 
+  // Update form state when editingProject changes
+  useEffect(() => {
+    if (editingProject) {
+      console.log('Updating form with editing project:', editingProject.id);
+      setNewProject({
+        title: editingProject.title,
+        city: editingProject.location.city,
+        serviceType: editingProject.serviceType,
+        customerName: editingProject.testimonial.customerName,
+        description: editingProject.projectDetails.description,
+        featured: editingProject.featured,
+        address: editingProject.location.address,
+        investment: editingProject.projectDetails.investment,
+        timeframe: editingProject.projectDetails.timeframe,
+        rating: editingProject.testimonial.rating,
+        challenges: editingProject.projectDetails.challengesSolved,
+        products: editingProject.projectDetails.productsUsed,
+        energySavings: editingProject.results?.energySavings || '',
+        aestheticImpact: editingProject.results?.aestheticImpact || '',
+        functionalImpact: editingProject.results?.functionalImpact || '',
+        testimonialQuote: editingProject.testimonial.quote
+      });
+    } else {
+      // Reset form for new project
+      setNewProject({
+        title: '',
+        city: '',
+        serviceType: 'windows' as const,
+        customerName: '',
+        description: '',
+        featured: false,
+        address: '',
+        investment: '',
+        timeframe: '',
+        rating: 5,
+        challenges: [''],
+        products: [''],
+        energySavings: '',
+        aestheticImpact: '',
+        functionalImpact: '',
+        testimonialQuote: ''
+      });
+    }
+  }, [editingProject]);
+
   const [uploadedPhotos, setUploadedPhotos] = useState(() => {
     if (editingProject) {
-      // Convert existing photo URLs to a format for display
       return {
-        before: [], // We'll display existing URLs separately
-        after: [],
-        process: []
+        before: editingProject.photos.before || [],
+        after: editingProject.photos.after || [],
+        process: editingProject.photos.process || []
       };
     }
     return {
-      before: [] as File[],
-      after: [] as File[],
-      process: [] as File[]
+      before: [] as string[],
+      after: [] as string[],
+      process: [] as string[]
     };
+  });
+
+  // Update photos state when editingProject changes
+  useEffect(() => {
+    if (editingProject) {
+      setUploadedPhotos({
+        before: editingProject.photos.before || [],
+        after: editingProject.photos.after || [],
+        process: editingProject.photos.process || []
+      });
+    } else {
+      setUploadedPhotos({
+        before: [],
+        after: [],
+        process: []
+      });
+    }
+  }, [editingProject]);
+
+  const [pendingUploads, setPendingUploads] = useState({
+    before: [] as File[],
+    after: [] as File[],
+    process: [] as File[]
   });
 
   const [savedProjects, setSavedProjects] = useState<CustomerProject[]>([]);
@@ -111,33 +178,54 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
 
   const handlePhotoUpload = (category: 'before' | 'after' | 'process', files: FileList | null) => {
     if (!files) return;
-    
+
     const newFiles = Array.from(files);
-    setUploadedPhotos(prev => ({
+    setPendingUploads(prev => ({
       ...prev,
       [category]: [...prev[category], ...newFiles]
     }));
   };
 
-  const removePhoto = (category: 'before' | 'after' | 'process', index: number) => {
-    setUploadedPhotos(prev => ({
-      ...prev,
-      [category]: prev[category].filter((_, i) => i !== index)
-    }));
+  const removePhoto = (category: 'before' | 'after' | 'process', index: number, isPending = false) => {
+    if (isPending) {
+      setPendingUploads(prev => ({
+        ...prev,
+        [category]: prev[category].filter((_, i) => i !== index)
+      }));
+    } else {
+      setUploadedPhotos(prev => ({
+        ...prev,
+        [category]: prev[category].filter((_, i) => i !== index)
+      }));
+    }
   };
 
   const convertFilesToUrls = async (files: File[]): Promise<string[]> => {
-    // In a real implementation, you'd upload to a service like Cloudinary, AWS S3, etc.
-    // For now, we'll create object URLs for demo purposes
-    return files.map(file => URL.createObjectURL(file));
+    const uploadPromises = files.map(async (file) => {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to upload ${file.name}`);
+      }
+
+      const result = await response.json();
+      return result.url;
+    });
+
+    return Promise.all(uploadPromises);
   };
 
-  const saveProjectToFile = async (project: CustomerProject) => {
+  const saveProjectToFile = async (project: CustomerProject, isUpdate = false) => {
     try {
-      // In a real implementation, this would save to your database or CMS
-      // For now, we'll simulate saving to the projects file
+      const method = isUpdate ? 'PUT' : 'POST';
       const response = await fetch('/api/projects', {
-        method: 'POST',
+        method: method,
         headers: {
           'Content-Type': 'application/json',
         },
@@ -163,10 +251,21 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
     setSuccessMessage('');
 
     try {
-      // Convert uploaded photos to URLs
-      const beforePhotos = await convertFilesToUrls(uploadedPhotos.before);
-      const afterPhotos = await convertFilesToUrls(uploadedPhotos.after);
-      const processPhotos = await convertFilesToUrls(uploadedPhotos.process);
+      // Upload any pending files
+      const uploadedBeforeUrls = pendingUploads.before.length > 0
+        ? await convertFilesToUrls(pendingUploads.before)
+        : [];
+      const uploadedAfterUrls = pendingUploads.after.length > 0
+        ? await convertFilesToUrls(pendingUploads.after)
+        : [];
+      const uploadedProcessUrls = pendingUploads.process.length > 0
+        ? await convertFilesToUrls(pendingUploads.process)
+        : [];
+
+      // Combine existing photos with newly uploaded ones
+      const allBeforePhotos = [...uploadedPhotos.before, ...uploadedBeforeUrls];
+      const allAfterPhotos = [...uploadedPhotos.after, ...uploadedAfterUrls];
+      const allProcessPhotos = [...uploadedPhotos.process, ...uploadedProcessUrls];
 
       let completeProject: CustomerProject;
 
@@ -190,9 +289,9 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
             investment: newProject.investment
           },
           photos: {
-            before: beforePhotos.length > 0 ? beforePhotos : editingProject.photos.before,
-            after: afterPhotos.length > 0 ? afterPhotos : editingProject.photos.after,
-            process: processPhotos.length > 0 ? processPhotos : editingProject.photos.process
+            before: allBeforePhotos.length > 0 ? allBeforePhotos : editingProject.photos.before,
+            after: allAfterPhotos.length > 0 ? allAfterPhotos : editingProject.photos.after,
+            process: allProcessPhotos.length > 0 ? allProcessPhotos : editingProject.photos.process
           },
           testimonial: {
             ...editingProject.testimonial,
@@ -206,6 +305,7 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
             functionalImpact: newProject.functionalImpact
           }
         };
+        console.log('Editing existing project:', { originalId: editingProject.id, newId: completeProject.id });
       } else {
         // Create new project
         const template = createProjectTemplate(
@@ -231,9 +331,9 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
             productsUsed: newProject.products.filter(p => p.trim() !== ''),
           },
           photos: {
-            before: beforePhotos.length > 0 ? beforePhotos : template.photos!.before,
-            after: afterPhotos.length > 0 ? afterPhotos : template.photos!.after,
-            process: processPhotos.length > 0 ? processPhotos : undefined
+            before: allBeforePhotos.length > 0 ? allBeforePhotos : template.photos!.before,
+            after: allAfterPhotos.length > 0 ? allAfterPhotos : template.photos!.after,
+            process: allProcessPhotos.length > 0 ? allProcessPhotos : undefined
           },
           testimonial: {
             ...template.testimonial!,
@@ -254,17 +354,30 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
       }
 
       // Save the project
-      const saved = await saveProjectToFile(completeProject);
+      const saved = await saveProjectToFile(completeProject, !!editingProject);
       
       if (saved) {
         setSuccessMessage(editingProject ? 'Project updated successfully!' : 'Project saved successfully! It will appear on the map shortly.');
         
+        // Clear pending uploads after successful save
+        setPendingUploads({
+          before: [],
+          after: [],
+          process: []
+        });
+        
         if (onProjectSaved) {
+          // Trigger frontend refresh by updating localStorage
+          localStorage.setItem('projectsLastUpdated', Date.now().toString());
+          
           // If we have a callback, call it after a brief delay
           setTimeout(() => {
             onProjectSaved();
           }, 1500);
         } else {
+          // Trigger frontend refresh by updating localStorage
+          localStorage.setItem('projectsLastUpdated', Date.now().toString());
+          
           // Reset form for new project creation
           setNewProject({
             title: '',
@@ -504,13 +617,13 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
             />
             {uploadedPhotos.before.length > 0 && (
               <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
-                {uploadedPhotos.before.map((file, index) => (
+                {uploadedPhotos.before.map((url, index) => (
                   <div key={index} style={{
                     position: 'relative',
                     display: 'inline-block'
                   }}>
                     <Image
-                      src={URL.createObjectURL(file)}
+                      src={url}
                       alt={`Before ${index + 1}`}
                       width={100}
                       height={100}
@@ -523,6 +636,48 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
                     <button
                       type="button"
                       onClick={() => removePhoto('before', index)}
+                      style={{
+                        position: 'absolute',
+                        top: '-5px',
+                        right: '-5px',
+                        background: '#dc2626',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '20px',
+                        height: '20px',
+                        fontSize: '12px',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            {pendingUploads.before.length > 0 && (
+              <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                {pendingUploads.before.map((file, index) => (
+                  <div key={`pending-${index}`} style={{
+                    position: 'relative',
+                    display: 'inline-block'
+                  }}>
+                    <Image
+                      src={URL.createObjectURL(file)}
+                      alt={`Before pending ${index + 1}`}
+                      width={100}
+                      height={100}
+                      style={{
+                        objectFit: 'cover',
+                        borderRadius: '0.25rem',
+                        border: '2px solid #10b981',
+                        opacity: 0.8
+                      }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removePhoto('before', index, true)}
                       style={{
                         position: 'absolute',
                         top: '-5px',
@@ -565,13 +720,13 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
             />
             {uploadedPhotos.after.length > 0 && (
               <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
-                {uploadedPhotos.after.map((file, index) => (
+                {uploadedPhotos.after.map((url, index) => (
                   <div key={index} style={{
                     position: 'relative',
                     display: 'inline-block'
                   }}>
                     <Image
-                      src={URL.createObjectURL(file)}
+                      src={url}
                       alt={`After ${index + 1}`}
                       width={100}
                       height={100}
@@ -584,6 +739,48 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
                     <button
                       type="button"
                       onClick={() => removePhoto('after', index)}
+                      style={{
+                        position: 'absolute',
+                        top: '-5px',
+                        right: '-5px',
+                        background: '#dc2626',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '20px',
+                        height: '20px',
+                        fontSize: '12px',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            {pendingUploads.after.length > 0 && (
+              <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                {pendingUploads.after.map((file, index) => (
+                  <div key={`pending-${index}`} style={{
+                    position: 'relative',
+                    display: 'inline-block'
+                  }}>
+                    <Image
+                      src={URL.createObjectURL(file)}
+                      alt={`After pending ${index + 1}`}
+                      width={100}
+                      height={100}
+                      style={{
+                        objectFit: 'cover',
+                        borderRadius: '0.25rem',
+                        border: '2px solid #10b981',
+                        opacity: 0.8
+                      }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removePhoto('after', index, true)}
                       style={{
                         position: 'absolute',
                         top: '-5px',
@@ -626,13 +823,13 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
             />
             {uploadedPhotos.process.length > 0 && (
               <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
-                {uploadedPhotos.process.map((file, index) => (
+                {uploadedPhotos.process.map((url, index) => (
                   <div key={index} style={{
                     position: 'relative',
                     display: 'inline-block'
                   }}>
                     <Image
-                      src={URL.createObjectURL(file)}
+                      src={url}
                       alt={`Process ${index + 1}`}
                       width={100}
                       height={100}
@@ -645,6 +842,48 @@ export default function EnhancedProjectManager({ editingProject, onProjectSaved 
                     <button
                       type="button"
                       onClick={() => removePhoto('process', index)}
+                      style={{
+                        position: 'absolute',
+                        top: '-5px',
+                        right: '-5px',
+                        background: '#dc2626',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '50%',
+                        width: '20px',
+                        height: '20px',
+                        fontSize: '12px',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            {pendingUploads.process.length > 0 && (
+              <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                {pendingUploads.process.map((file, index) => (
+                  <div key={`pending-${index}`} style={{
+                    position: 'relative',
+                    display: 'inline-block'
+                  }}>
+                    <Image
+                      src={URL.createObjectURL(file)}
+                      alt={`Process pending ${index + 1}`}
+                      width={100}
+                      height={100}
+                      style={{
+                        objectFit: 'cover',
+                        borderRadius: '0.25rem',
+                        border: '2px solid #10b981',
+                        opacity: 0.8
+                      }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removePhoto('process', index, true)}
                       style={{
                         position: 'absolute',
                         top: '-5px',

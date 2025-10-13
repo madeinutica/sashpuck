@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { CustomerProject } from '../../lib/customerProjects';
 import { mapAllCSVRowsToCustomerProjects, parseCSV } from '../../lib/csvProjectLoader';
@@ -9,31 +9,75 @@ import EnhancedProjectManager from './EnhancedProjectManager';
 interface ProjectListProps {
   onEditProject: (project: CustomerProject) => void;
   onDeleteProject: (projectId: string) => void;
+  onRefreshProjects: () => void;
+  refreshTrigger: number;
 }
 
-function ProjectList({ onEditProject, onDeleteProject }: ProjectListProps) {
+function ProjectList({ onEditProject, onDeleteProject, onRefreshProjects, refreshTrigger }: ProjectListProps) {
   const [projects, setProjects] = useState<CustomerProject[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterService, setFilterService] = useState('all');
   const [sortBy, setSortBy] = useState('newest');
 
+  const refreshProjects = useCallback(() => {
+    // Update localStorage to trigger frontend refresh
+    localStorage.setItem('projectsLastUpdated', Date.now().toString());
+    onRefreshProjects();
+  }, [onRefreshProjects]);
+
   useEffect(() => {
-    // Load projects from CSV file directly
-    fetch('/projects.csv')
-      .then(res => res.text())
-      .then(csvText => {
-        const csvRows = parseCSV(csvText);
-        const mappedProjects = mapAllCSVRowsToCustomerProjects(csvRows);
-        setProjects(mappedProjects);
+    // Load projects from API instead of CSV
+    fetch(`/api/projects?t=${Date.now()}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.success && data.projects) {
+          setProjects(data.projects);
+        } else {
+          // Fallback to CSV if API fails
+          fetch('/projects.csv')
+            .then(res => res.text())
+            .then(csvText => {
+              const csvRows = parseCSV(csvText);
+              const mappedProjects = mapAllCSVRowsToCustomerProjects(csvRows);
+              setProjects(mappedProjects);
+            })
+            .catch(error => {
+              console.error('Error loading CSV fallback:', error);
+            });
+        }
       })
       .catch(error => {
-        console.error('Error loading CSV:', error);
+        console.error('Error loading projects from API:', error);
+        // Fallback to CSV
+        fetch('/projects.csv')
+          .then(res => res.text())
+          .then(csvText => {
+            const csvRows = parseCSV(csvText);
+            const mappedProjects = mapAllCSVRowsToCustomerProjects(csvRows);
+            setProjects(mappedProjects);
+          })
+          .catch(csvError => {
+            console.error('Error loading CSV fallback:', csvError);
+          });
       })
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [refreshTrigger]);
+
+  // Listen for project updates from other tabs/windows
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'projectsLastUpdated') {
+        // Trigger refresh
+        refreshProjects();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, [refreshProjects]);
 
   const handleDelete = async (projectId: string) => {
     if (!confirm('Are you sure you want to delete this project? This action cannot be undone.')) {
@@ -44,9 +88,10 @@ function ProjectList({ onEditProject, onDeleteProject }: ProjectListProps) {
       const response = await fetch(`/api/projects/${projectId}`, {
         method: 'DELETE'
       });
-      
+
       if (response.ok) {
-        setProjects(prev => prev.filter(p => p.id !== projectId));
+        // Refresh projects from API after successful deletion
+        onRefreshProjects();
         onDeleteProject(projectId);
       } else {
         alert('Failed to delete project');
@@ -360,6 +405,7 @@ function ProjectList({ onEditProject, onDeleteProject }: ProjectListProps) {
 export default function ProjectManagementDashboard() {
   const [currentView, setCurrentView] = useState<'list' | 'add' | 'edit'>('list');
   const [editingProject, setEditingProject] = useState<CustomerProject | null>(null);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   const handleEditProject = (project: CustomerProject) => {
     setEditingProject(project);
@@ -371,7 +417,14 @@ export default function ProjectManagementDashboard() {
     console.log('Project deleted:', projectId);
   };
 
+  const handleRefreshProjects = () => {
+    // Update localStorage to trigger frontend refresh
+    localStorage.setItem('projectsLastUpdated', Date.now().toString());
+    setRefreshTrigger(prev => prev + 1);
+  };
+
   const handleProjectSaved = () => {
+    handleRefreshProjects();
     setCurrentView('list');
     setEditingProject(null);
   };
@@ -442,6 +495,8 @@ export default function ProjectManagementDashboard() {
         <ProjectList 
           onEditProject={handleEditProject}
           onDeleteProject={handleDeleteProject}
+          onRefreshProjects={handleRefreshProjects}
+          refreshTrigger={refreshTrigger}
         />
       )}
       

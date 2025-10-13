@@ -1,0 +1,97 @@
+[
+  {
+    "id": "baldwinsville-doors-2024",
+    "title": "Patio Door Replacement - Ranch Home",
+    "location": {
+      "address": "742 Willow Lane",
+      "city": "Baldwinsville",
+      "state": "NY",
+      "coordinates": {
+        "latitude": 43.1687,
+        "longitude": -76.3427
+      }
+    },
+    "serviceType": "doors",
+    "featured": false,
+    "completedDate": "2024-08-28",
+    "projectDetails": {
+      "description": "Sliding patio door replacement for improved access and energy efficiency",
+      "challengesSolved": [
+        "Difficult operation",
+        "Air leaks",
+        "Security concerns",
+        "Outdated style"
+      ],
+      "productsUsed": [
+        "Energy efficient patio door",
+        "Low-E glass",
+        "Secure locking system",
+        "Weather sealing"
+      ],
+      "timeframe": "1 day",
+      "investment": "$3,500 - $4,500"
+    },
+    "photos": {
+      "before": [
+        "/images/projects/4f189db5-0630-4320-848d-0402570234f8.jpg",
+        "/images/projects/08ce411a-17a1-4f21-8fe8-2243dba84052.jpg"
+      ],
+      "after": [
+        "/images/projects/29c53509-54ad-4ecd-828d-adbe9af119a1.jpg"
+      ]
+    },
+    "testimonial": {
+      "customerName": "Steven Miller",
+      "rating": 4,
+      "quote": "The new patio door operates so smoothly and looks great. Much better than our old sliding door. Professional installation.",
+      "location": "Baldwinsville, NY"
+    },
+    "results": {
+      "energySavings": "25% improvement in door efficiency",
+      "aestheticImpact": "Modern, clean appearance",
+      "functionalImpact": "Smooth operation and better security"
+    }
+  },
+  {
+    "id": "a--terrance-stone-bridgeport-0",
+    "title": "A. Terrance Stone",
+    "location": {
+      "address": "8131 Eastwood Road",
+      "city": "Utica",
+      "state": "NY",
+      "coordinates": {
+        "latitude": 43.1640947,
+        "longitude": -76.01668269999999
+      }
+    },
+    "serviceType": "windows",
+    "featured": false,
+    "completedDate": "Thursday",
+    "projectDetails": {
+      "description": "Test",
+      "challengesSolved": [],
+      "productsUsed": [],
+      "timeframe": "2 Days",
+      "investment": "10,000"
+    },
+    "photos": {
+      "before": [
+        "/images/projects/a00a9fd2-bea3-4fbf-8d3f-1585c2eba4bb.jpg"
+      ],
+      "after": [
+        "/images/projects/cf416d9f-52ae-44e2-9e9f-8487536b0c7b.jpg"
+      ]
+    },
+    "testimonial": {
+      "customerName": "A. Terrance Stone",
+      "rating": 5,
+      "quote": "",
+      "location": "Bridgeport, NY"
+    },
+    "results": {
+      "energySavings": "",
+      "aestheticImpact": "",
+      "functionalImpact": ""
+    }
+  }
+]

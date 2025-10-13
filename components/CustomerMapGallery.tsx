@@ -1,21 +1,18 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { CustomerProject, sampleProjects } from '../lib/customerProjects';
+import { CustomerProject } from '../lib/customerProjects';
 import { loadProjectsFromCSV } from '../lib/csvProjectLoader';
 
 interface CustomerMapGalleryProps {
   projects?: CustomerProject[];
-  showFeaturedOnly?: boolean;
   title?: string;
   subtitle?: string;
   csvContent?: string; // Add CSV content prop
 }
 
-export default function CustomerMapGallery({ 
-  projects = sampleProjects,
-  showFeaturedOnly = false,
+export default function CustomerMapGallery({
+  projects: initialProjects = [],
   title = "Our Recent Projects",
   subtitle = "See the amazing transformations we've completed across Central New York",
   csvContent
@@ -24,47 +21,77 @@ export default function CustomerMapGallery({
   const [mapComponent, setMapComponent] = useState<React.ComponentType<any> | null>(null);
   const [modalComponent, setModalComponent] = useState<React.ComponentType<any> | null>(null);
   const [isClient, setIsClient] = useState(false);
-  const [loadedProjects, setLoadedProjects] = useState<CustomerProject[]>(projects);
-  const [isLoadingProjects, setIsLoadingProjects] = useState(false);
-  
-  const displayProjects = showFeaturedOnly 
-    ? loadedProjects.filter(project => project.featured)
-    : loadedProjects;
+  const [loadedProjects, setLoadedProjects] = useState<CustomerProject[]>(initialProjects);
+  const [isLoadingProjects, setIsLoadingProjects] = useState(true);
 
   useEffect(() => {
     setIsClient(true);
-    
-    // Load CSV data from public file if no csvContent prop provided
-    if (!csvContent) {
+
+    const loadProjects = () => {
+      // First try to load projects from API
       setIsLoadingProjects(true);
-      fetch('/projects.csv')
-        .then(response => response.text())
-        .then(csvText => loadProjectsFromCSV(csvText))
-        .then(csvProjects => {
-          if (csvProjects.length > 0) {
-            setLoadedProjects(csvProjects);
+      fetch(`/api/projects?t=${Date.now()}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.success && data.projects && data.projects.length > 0) {
+            setLoadedProjects(data.projects);
+            setIsLoadingProjects(false);
+            return;
           }
-          setIsLoadingProjects(false);
+          // If API doesn't have projects, fall back to CSV
+          loadFromCSV();
         })
         .catch(error => {
-          console.error('Failed to load projects from CSV:', error);
-          setIsLoadingProjects(false);
+          console.error('Failed to load projects from API:', error);
+          // Fall back to CSV loading
+          loadFromCSV();
         });
-    } else {
-      // Use provided CSV content
-      setIsLoadingProjects(true);
-      loadProjectsFromCSV(csvContent)
-        .then(csvProjects => {
-          if (csvProjects.length > 0) {
-            setLoadedProjects(csvProjects);
-          }
-          setIsLoadingProjects(false);
-        })
-        .catch(error => {
-          console.error('Failed to load projects from CSV:', error);
-          setIsLoadingProjects(false);
-        });
-    }
+    };
+
+    const loadFromCSV = () => {
+      if (!csvContent) {
+        fetch('/projects.csv')
+          .then(response => response.text())
+          .then(csvText => loadProjectsFromCSV(csvText))
+          .then(csvProjects => {
+            if (csvProjects.length > 0) {
+              setLoadedProjects(csvProjects);
+            }
+            setIsLoadingProjects(false);
+          })
+          .catch(error => {
+            console.error('Failed to load projects from CSV:', error);
+            setIsLoadingProjects(false);
+          });
+      } else {
+        loadProjectsFromCSV(csvContent)
+          .then(csvProjects => {
+            if (csvProjects.length > 0) {
+              setLoadedProjects(csvProjects);
+            }
+            setIsLoadingProjects(false);
+          })
+          .catch(error => {
+            console.error('Failed to load projects from CSV:', error);
+            setIsLoadingProjects(false);
+          });
+      }
+    };
+
+    // Load projects immediately
+    loadProjects();
+
+    // Set up periodic refresh every 2 minutes to catch updates
+    const refreshInterval = setInterval(loadProjects, 2 * 60 * 1000);
+
+    // Listen for project updates from admin panel
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'projectsLastUpdated') {
+        loadProjects();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
 
     // Dynamically import components only on client side
     import('./CustomerProjectsMap').then((module) => {
@@ -78,6 +105,12 @@ export default function CustomerMapGallery({
     }).catch((error) => {
       console.error('Failed to load modal component:', error);
     });
+
+    // Cleanup
+    return () => {
+      clearInterval(refreshInterval);
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, [csvContent]);
 
   const handleProjectSelect = (project: CustomerProject) => {
@@ -111,7 +144,7 @@ export default function CustomerMapGallery({
       <div className="map-full-width">
         {mapComponent ? (
           React.createElement(mapComponent, {
-            projects: displayProjects,
+            projects: loadedProjects,
             onProjectSelect: handleProjectSelect
           })
         ) : (
@@ -122,34 +155,6 @@ export default function CustomerMapGallery({
             </div>
           </div>
         )}
-      </div>
-
-      <div className="featured-projects-container">
-        <div className="featured-projects">
-          <h3>Featured Projects</h3>
-          <div className="featured-grid">
-            {displayProjects.filter(p => p.featured).slice(0, 3).map(project => (
-              <div 
-                key={project.id} 
-                className="featured-card"
-                onClick={() => setSelectedProject(project)}
-              >
-                <div className="featured-image">
-                  <Image 
-                    src={project.photos.after[0]} 
-                    alt={project.title}
-                    width={600} height={400}
-                    className="gallery-photo"
-                  />
-                </div>
-                <div className="featured-content">
-                  <h4>{project.title}</h4>
-                  <p className="featured-location">{project.location.city}, NY</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
       
       {modalComponent && selectedProject && (

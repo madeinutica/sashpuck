@@ -27,7 +27,6 @@ export default function ConditionalLayout({ children }: ConditionalLayoutProps) 
         <CustomerMapGallery 
           title="Our Recent Projects"
           subtitle="See the amazing transformations we've completed across Central New York"
-          showFeaturedOnly={false}
         />
         <Footer />
       </>
@@ -50,7 +49,6 @@ export default function ConditionalLayout({ children }: ConditionalLayoutProps) 
       <CustomerMapGallery 
         title="Our Recent Projects"
         subtitle="See the amazing transformations we've completed across Central New York"
-        showFeaturedOnly={false}
       />
       <Footer />
     </>

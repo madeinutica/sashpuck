@@ -13,6 +13,7 @@ type Props = {
     backgroundImage?: string;
     badge?: string;
     videoUrl?: string;
+    backgroundVideo?: string;
   };
   PromoBanner: {
     imageUrl: string;
@@ -249,13 +250,6 @@ type Props = {
       image: string;
     }>;
   };
-  ContactForm: {
-    title: string;
-    subtitle: string;
-    phone: string;
-    email: string;
-    address: string;
-  };
 };
 
 export const config: Config<Props> = {
@@ -284,19 +278,21 @@ export const config: Config<Props> = {
         backgroundImage: { type: "text" },
         badge: { type: "text" },
         videoUrl: { type: "text" },
+        backgroundVideo: { type: "text" },
       },
       defaultProps: {
-  title: "Transform Your Home's Beauty & Comfort",
-  subtitle: "Central New York's premier provider of premium windows, siding, bathrooms, and entry doors.",
-  ctaText: "Get Free Consultation",
-  ctaLink: "/contact",
-  secondaryCtaText: "(315) 624-7344",
-  secondaryCtaLink: "tel:+13156247344",
-  backgroundImage: "",
-  badge: "Trusted Since 1988 | 10,000+ Projects Completed",
-  videoUrl: "https://www.youtube.com/embed/3wKPyfZBFCM",
+        title: "Transform Your Home's Beauty & Comfort",
+        subtitle: "Central New York's premier provider of premium windows, siding, bathrooms, and entry doors.",
+        ctaText: "Get Free Consultation",
+        ctaLink: "#contact",
+        secondaryCtaText: "(315) 624-7344",
+        secondaryCtaLink: "tel:+13156247344",
+        backgroundImage: "",
+        badge: "Trusted Since 1988 | 10,000+ Projects Completed",
+        videoUrl: "https://www.youtube.com/embed/3wKPyfZBFCM",
+        backgroundVideo: "",
       },
-      render: ({ title, subtitle, ctaText, ctaLink, secondaryCtaText, secondaryCtaLink, backgroundImage, badge, videoUrl }) => (
+      render: ({ title, subtitle, ctaText, ctaLink, secondaryCtaText, secondaryCtaLink, backgroundImage, badge, videoUrl, backgroundVideo }) => (
         <div 
           style={{ 
             background: backgroundImage ? `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url(${backgroundImage})` : "linear-gradient(135deg, #1a1a1a 0%, #333 100%)",
@@ -307,22 +303,29 @@ export const config: Config<Props> = {
             minHeight: "80vh",
             display: "flex",
             alignItems: "center",
-            position: "relative"
+            position: "relative",
+            overflow: "hidden"
           }}
         >
-          {/* Grid Pattern Overlay */}
-          <div style={{
-            position: "absolute",
-            inset: "0",
-            backgroundImage: `
-              linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-              radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "20px 20px, 20px 20px, 20px 20px",
-            pointerEvents: "none"
-          }}></div>
-          
+          {backgroundVideo && (
+            <video
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                zIndex: -1
+              }}
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={backgroundVideo} type="video/mp4" />
+            </video>
+          )}
           <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
             <div style={{ 
               display: "grid", 
@@ -451,7 +454,7 @@ export const config: Config<Props> = {
       defaultProps: {
         imageUrl: "/images/cta/contest-logo-25k-hig-2026-long-2048x333.png",
         altText: "$25,000 Home Improvement Giveaway",
-        link: "/contact",
+        link: "#contact",
       },
       render: ({ imageUrl, altText, link }) => (
         <div style={{
@@ -1243,7 +1246,7 @@ export const config: Config<Props> = {
         title: "Ready to Get Started?",
         description: "Contact us today for a free estimate on your next project.",
         buttonText: "Get Free Estimate",
-        buttonLink: "/contact",
+        buttonLink: "#contact",
         secondaryButtonText: "(315) 624-7344",
         secondaryButtonLink: "tel:+13156247344",
         backgroundColor: "#ffffff",
@@ -1668,7 +1671,7 @@ export const config: Config<Props> = {
         subtitle: "Transform your home with our premium fusion-welded windows. Superior energy efficiency, enhanced comfort, and timeless beauty designed specifically for Central New York homes.",
         badge: "ENERGY STAR® Certified Windows",
         ctaText: "Schedule Free Consultation",
-        ctaLink: "/contact",
+        ctaLink: "#contact",
         secondaryCtaText: "(315) 624-7344",
         secondaryCtaLink: "tel:315-624-7344",
         features: [
@@ -1713,18 +1716,6 @@ export const config: Config<Props> = {
               ? `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6))`
               : "linear-gradient(135deg, #1a1a1a 0%, #333 100%)",
           }}>
-            {/* Grid Pattern Overlay */}
-            <div style={{
-              position: "absolute",
-              inset: "0",
-              backgroundImage: `
-                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-              `,
-              backgroundSize: "20px 20px, 20px 20px, 20px 20px",
-              pointerEvents: "none"
-            }}></div>
             {backgroundImages.length > 0 && (
               <div style={{
                 display: "grid",
@@ -2054,19 +2045,7 @@ export const config: Config<Props> = {
                     marginBottom: "1rem",
                     textAlign: "center"
                   }}>
-                    {feature.icon.startsWith('/') || feature.icon.startsWith('./') ? (
-                      <img 
-                        src={feature.icon} 
-                        alt={feature.title}
-                        style={{
-                          width: "3rem",
-                          height: "3rem",
-                          objectFit: "contain"
-                        }}
-                      />
-                    ) : (
-                      feature.icon
-                    )}
+                    {feature.icon}
                   </div>
                   <h3 style={{
                     fontSize: "1.5rem",
@@ -3258,7 +3237,7 @@ export const config: Config<Props> = {
           "Emergency home repairs for seniors and veterans",
           "Participation in community festivals and events"
         ],
-  image: "/images/misc/community-image.jpeg",
+        image: "https://placehold.co/600x400/000000/FFFFFF?text=Community+Support",
       },
       render: ({ title, subtitle, description, activities, image }) => (
         <section style={{
@@ -3340,8 +3319,7 @@ export const config: Config<Props> = {
                   style={{
                     width: "100%",
                     borderRadius: "0.5rem",
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
-                    marginBottom: "2rem"
+                    boxShadow: "0 10px 25px rgba(0,0,0,0.15)"
                   }}
                   loading="lazy"
                 />
@@ -3500,7 +3478,7 @@ export const config: Config<Props> = {
         subtitle: "Transform your home's exterior with our premium siding solutions. Engineered for Central New York weather, combining lasting beauty with superior protection and energy efficiency.",
         badge: "Premium Vinyl & Insulated Siding Solutions",
         ctaText: "Get Expert Consultation",
-        ctaLink: "/contact",
+        ctaLink: "#contact",
         secondaryCtaText: "(315) 624-7344",
         secondaryCtaLink: "tel:+13156247344",
         features: [
@@ -3542,19 +3520,6 @@ export const config: Config<Props> = {
           overflow: "hidden",
           background: "linear-gradient(135deg, #1a1a1a 0%, #333 100%)"
         }}>
-          {/* Grid Pattern Overlay */}
-          <div style={{
-            position: "absolute",
-            inset: "0",
-            backgroundImage: `
-              linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-              radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: "20px 20px, 20px 20px, 20px 20px",
-            pointerEvents: "none"
-          }}></div>
-          
           {/* Content */}
           <div style={{
             position: "relative",
@@ -3777,339 +3742,6 @@ export const config: Config<Props> = {
                       </p>
                     </div>
                   ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      ),
-    },
-    ContactForm: {
-      fields: {
-        title: { type: "text" },
-        subtitle: { type: "textarea" },
-        phone: { type: "text" },
-        email: { type: "text" },
-        address: { type: "textarea" },
-      },
-      defaultProps: {
-        title: "Get Your Free Consultation",
-        subtitle: "Ready to transform your home? Fill out the form below and one of our expert consultants will contact you within 24 hours.",
-        phone: "(315) 624-7344",
-        email: "info@newyorksash.com",
-        address: "349 Oriskany Boulevard\nWhitesboro, NY 13492",
-      },
-      render: ({ title, subtitle, phone, email, address }) => (
-        <section style={{
-          padding: "5rem 2rem",
-          backgroundColor: "#f9fafb"
-        }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-              <h1 style={{ 
-                fontSize: "3rem", 
-                fontWeight: "bold", 
-                marginBottom: "1rem",
-                color: "#1a1a1a"
-              }}>
-                {title}
-              </h1>
-              <p style={{ 
-                fontSize: "1.2rem", 
-                color: "#666",
-                maxWidth: "800px",
-                margin: "0 auto"
-              }}>
-                {subtitle}
-              </p>
-            </div>
-
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "2fr 1fr",
-              gap: "3rem",
-              alignItems: "start"
-            }}>
-              <div style={{
-                backgroundColor: "white",
-                padding: "2.5rem",
-                borderRadius: "0",
-                boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
-              }}>
-                <form style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
-                    <div>
-                      <label style={{ 
-                        display: "block", 
-                        marginBottom: "0.5rem", 
-                        fontWeight: "600",
-                        color: "#333"
-                      }}>
-                        First Name *
-                      </label>
-                      <input 
-                        type="text" 
-                        required
-                        style={{
-                          width: "100%",
-                          padding: "0.75rem",
-                          border: "1px solid #d1d5db",
-                          borderRadius: "0.25rem",
-                          fontSize: "1rem"
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <label style={{ 
-                        display: "block", 
-                        marginBottom: "0.5rem", 
-                        fontWeight: "600",
-                        color: "#333"
-                      }}>
-                        Last Name *
-                      </label>
-                      <input 
-                        type="text" 
-                        required
-                        style={{
-                          width: "100%",
-                          padding: "0.75rem",
-                          border: "1px solid #d1d5db",
-                          borderRadius: "0.25rem",
-                          fontSize: "1rem"
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label style={{ 
-                      display: "block", 
-                      marginBottom: "0.5rem", 
-                      fontWeight: "600",
-                      color: "#333"
-                    }}>
-                      Email *
-                    </label>
-                    <input 
-                      type="email" 
-                      required
-                      style={{
-                        width: "100%",
-                        padding: "0.75rem",
-                        border: "1px solid #d1d5db",
-                        borderRadius: "0.25rem",
-                        fontSize: "1rem"
-                      }}
-                    />
-                  </div>
-
-                  <div>
-                    <label style={{ 
-                      display: "block", 
-                      marginBottom: "0.5rem", 
-                      fontWeight: "600",
-                      color: "#333"
-                    }}>
-                      Phone *
-                    </label>
-                    <input 
-                      type="tel" 
-                      required
-                      style={{
-                        width: "100%",
-                        padding: "0.75rem",
-                        border: "1px solid #d1d5db",
-                        borderRadius: "0.25rem",
-                        fontSize: "1rem"
-                      }}
-                    />
-                  </div>
-
-                  <div>
-                    <label style={{ 
-                      display: "block", 
-                      marginBottom: "0.5rem", 
-                      fontWeight: "600",
-                      color: "#333"
-                    }}>
-                      Address
-                    </label>
-                    <input 
-                      type="text" 
-                      style={{
-                        width: "100%",
-                        padding: "0.75rem",
-                        border: "1px solid #d1d5db",
-                        borderRadius: "0.25rem",
-                        fontSize: "1rem"
-                      }}
-                    />
-                  </div>
-
-                  <div>
-                    <label style={{ 
-                      display: "block", 
-                      marginBottom: "0.5rem", 
-                      fontWeight: "600",
-                      color: "#333"
-                    }}>
-                      Service Interested In *
-                    </label>
-                    <select 
-                      required
-                      style={{
-                        width: "100%",
-                        padding: "0.75rem",
-                        border: "1px solid #d1d5db",
-                        borderRadius: "0.25rem",
-                        fontSize: "1rem"
-                      }}
-                    >
-                      <option value="">Select a service...</option>
-                      <option value="windows">Windows</option>
-                      <option value="siding">Siding</option>
-                      <option value="bathrooms">Bathroom Remodeling</option>
-                      <option value="doors">Entry Doors</option>
-                      <option value="multiple">Multiple Services</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label style={{ 
-                      display: "block", 
-                      marginBottom: "0.5rem", 
-                      fontWeight: "600",
-                      color: "#333"
-                    }}>
-                      Message
-                    </label>
-                    <textarea 
-                      rows={4}
-                      style={{
-                        width: "100%",
-                        padding: "0.75rem",
-                        border: "1px solid #d1d5db",
-                        borderRadius: "0.25rem",
-                        fontSize: "1rem",
-                        resize: "vertical"
-                      }}
-                      placeholder="Tell us about your project..."
-                    />
-                  </div>
-
-                  <button 
-                    type="submit"
-                    style={{
-                      backgroundColor: "#dc143c",
-                      color: "white",
-                      padding: "1rem 2rem",
-                      border: "none",
-                      borderRadius: "0.25rem",
-                      fontSize: "1.1rem",
-                      fontWeight: "600",
-                      cursor: "pointer",
-                      transition: "background-color 0.3s"
-                    }}
-                  >
-                    Request Free Consultation
-                  </button>
-                </form>
-              </div>
-
-              <div style={{
-                backgroundColor: "white",
-                padding: "2rem",
-                borderRadius: "0",
-                boxShadow: "0 4px 6px rgba(0,0,0,0.1)"
-              }}>
-                <h3 style={{ 
-                  fontSize: "1.5rem", 
-                  fontWeight: "bold", 
-                  marginBottom: "1.5rem",
-                  color: "#1a1a1a"
-                }}>
-                  Contact Information
-                </h3>
-
-                <div style={{ marginBottom: "1.5rem" }}>
-                  <div style={{ 
-                    display: "flex", 
-                    alignItems: "center", 
-                    marginBottom: "0.5rem",
-                    color: "#dc143c",
-                    fontWeight: "600"
-                  }}>
-                    📞 Phone
-                  </div>
-                  <a href={`tel:${phone.replace(/[^0-9]/g, '')}`} style={{
-                    color: "#333",
-                    textDecoration: "none",
-                    fontSize: "1.1rem"
-                  }}>
-                    {phone}
-                  </a>
-                </div>
-
-                <div style={{ marginBottom: "1.5rem" }}>
-                  <div style={{ 
-                    display: "flex", 
-                    alignItems: "center", 
-                    marginBottom: "0.5rem",
-                    color: "#dc143c",
-                    fontWeight: "600"
-                  }}>
-                    ✉️ Email
-                  </div>
-                  <a href={`mailto:${email}`} style={{
-                    color: "#333",
-                    textDecoration: "none",
-                    fontSize: "1.1rem"
-                  }}>
-                    {email}
-                  </a>
-                </div>
-
-                <div>
-                  <div style={{ 
-                    display: "flex", 
-                    alignItems: "center", 
-                    marginBottom: "0.5rem",
-                    color: "#dc143c",
-                    fontWeight: "600"
-                  }}>
-                    📍 Address
-                  </div>
-                  <p style={{
-                    color: "#333",
-                    fontSize: "1.1rem",
-                    lineHeight: "1.6",
-                    margin: 0,
-                    whiteSpace: "pre-line"
-                  }}>
-                    {address}
-                  </p>
-                </div>
-
-                <div style={{
-                  marginTop: "2rem",
-                  paddingTop: "2rem",
-                  borderTop: "1px solid #e5e7eb"
-                }}>
-                  <h4 style={{ 
-                    fontSize: "1.2rem", 
-                    fontWeight: "bold", 
-                    marginBottom: "1rem",
-                    color: "#1a1a1a"
-                  }}>
-                    Business Hours
-                  </h4>
-                  <div style={{ color: "#666", lineHeight: "1.8" }}>
-                    <div><strong>Monday - Friday:</strong> 8am - 8pm</div>
-                    <div><strong>Saturday:</strong> 8am - 5pm</div>
-                    <div><strong>Sunday:</strong> Closed</div>
-                  </div>
                 </div>
               </div>
             </div>
