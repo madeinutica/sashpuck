@@ -114,6 +114,9 @@ export default function Header() {
                 <Link href="/team" className="dropdown-item" onClick={closeAboutDropdown}>
                   Meet Our Team
                 </Link>
+                <Link href="/showroom" className="dropdown-item" onClick={closeAboutDropdown}>
+                  Showroom
+                </Link>
               </div>
             </div>
             <div 
@@ -279,6 +282,9 @@ export default function Header() {
                 </Link>
                 <Link href="/team" className="mobile-dropdown-item" onClick={closeMobileMenu}>
                   Meet Our Team
+                </Link>
+                <Link href="/showroom" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                  Showroom
                 </Link>
               </div>
             </div>
