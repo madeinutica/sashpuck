@@ -92,32 +92,7 @@ export default function Header() {
         <div className="nav-content">
           {/* Logo */}
           <Link href="/" className="logo" onClick={closeMobileMenu}>
-            <svg width="240" height="65" viewBox="0 0 180 50" fill="none">
-              {/* Grid pattern for SASH logo */}
-              <rect x="5" y="8" width="6" height="6" fill="#D32F2F"/>
-              <rect x="13" y="8" width="6" height="6" fill="#333"/>
-              <rect x="21" y="8" width="6" height="6" fill="#333"/>
-              <rect x="29" y="8" width="6" height="6" fill="#333"/>
-              
-              <rect x="5" y="16" width="6" height="6" fill="#D32F2F"/>
-              <rect x="13" y="16" width="6" height="6" fill="#333"/>
-              <rect x="21" y="16" width="6" height="6" fill="#333"/>
-              <rect x="29" y="16" width="6" height="6" fill="#333"/>
-              
-              <rect x="5" y="24" width="6" height="6" fill="#D32F2F"/>
-              <rect x="13" y="24" width="6" height="6" fill="#333"/>
-              <rect x="21" y="24" width="6" height="6" fill="#333"/>
-              <rect x="29" y="24" width="6" height="6" fill="#333"/>
-              
-              <rect x="5" y="32" width="6" height="6" fill="#333"/>
-              <rect x="13" y="32" width="6" height="6" fill="#333"/>
-              <rect x="21" y="32" width="6" height="6" fill="#333"/>
-              <rect x="29" y="32" width="6" height="6" fill="#333"/>
-              
-              {/* Text */}
-              <text x="45" y="18" fontSize="11" fontWeight="500" fill="#666" letterSpacing="1px">NEW YORK</text>
-              <text x="45" y="35" fontSize="22" fontWeight="bold" fill="#333" letterSpacing="2px">SASH</text>
-            </svg>
+            <img src="/images/misc/logo.png" alt="New York Sash Logo" style={{ height: "65px", width: "auto" }} />
           </Link>
 
           {/* Desktop Navigation menu */}
