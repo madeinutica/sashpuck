@@ -17,7 +17,9 @@
           "secondaryCtaLink": "tel:+13156247344",
           "badge": "Trusted Since 1988 | 10,000+ Projects Completed",
           "videoUrl": "https://www.youtube.com/embed/3wKPyfZBFCM",
-          "backgroundImage": "/images/misc/community-image.jpeg",
+          
+          "background": "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px), radial-gradient(circle at 20px 20px, rgba(255,255,255,0.1) 1px, transparent 1px)",
+          "backgroundSize": "20px 20px, 20px 20px, 20px 20px",
           "id": "HeroSection-home"
         }
       },
@@ -57,6 +59,7 @@
               "description": "Serving Central New York"
             }
           ],
+          "background": "linear-gradient(135deg, #1a1a1a 0%, #333 100%), linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px), radial-gradient(circle at 20px 20px, rgba(255,255,255,0.1) 1px, transparent 1px)",
           "backgroundColor": "#1a1a1a",
           "id": "StatsSection-home"
         }
@@ -69,8 +72,8 @@
           "services": [
             {
               "title": "Windows",
-                "beforeImage": "/images/before-after/Windows-before-and-after-2.png",
-                "afterImage": "/images/before-after/Windows-before-and-after-2.png",
+              "beforeImage": "/images/before-after/Windows-before-and-after-2.png",
+              "afterImage": "/images/before-after/Windows-before-and-after-2.png",
               "features": [
                 "Fusion welded frames",
                 "LowE with Argon gas",
@@ -83,8 +86,8 @@
             },
             {
               "title": "Siding",
-                "beforeImage": "/images/before-after/before-and-after-siding.png",
-                "afterImage": "/images/before-after/before-and-after-siding.png",
+              "beforeImage": "/images/before-after/before-and-after-siding.png",
+              "afterImage": "/images/before-after/before-and-after-siding.png",
               "features": [
                 "Insulated vinyl siding",
                 "Maintenance-free",
@@ -97,8 +100,8 @@
             },
             {
               "title": "Bathroom Remodeling",
-                "beforeImage": "/images/before-after/bathremodel_ukena.jpg",
-                "afterImage": "/images/before-after/bathremodel_ukena.jpg",
+              "beforeImage": "/images/before-after/bathremodel_ukena.jpg",
+              "afterImage": "/images/before-after/bathremodel_ukena.jpg",
               "features": [
                 "Acrylic bath liners",
                 "Walk-in tubs",
@@ -111,8 +114,8 @@
             },
             {
               "title": "Entry Doors",
-                "beforeImage": "/images/before-after/door-before-and-after.jpg",
-                "afterImage": "/images/before-after/door-before-and-after.jpg",
+              "beforeImage": "/images/before-after/door-before-and-after.jpg",
+              "afterImage": "/images/before-after/door-before-and-after.jpg",
               "features": [
                 "Fiberglass & steel",
                 "Decorative glass options",
@@ -124,7 +127,8 @@
               "description": "Secure, stylish entry doors that make a great first impression."
             }
           ],
-          "id": "ServicesGrid-home"
+          "background": "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px), radial-gradient(circle at 20px 20px, rgba(255,255,255,0.1) 1px, transparent 1px)",
+          "backgroundSize": "20px 20px, 20px 20px, 20px 20px"
         }
       },
       {
