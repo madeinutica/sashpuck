@@ -1,8 +1,97 @@
 "use client";
 
+import { useState, FormEvent } from 'react';
+
 export default function WinForm() {
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    howDidYouHear: ''
+  });
+  
+  // Form submission state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+  
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+    
+    try {
+      // Send the data to our API endpoint
+      const response = await fetch('/api/win-entries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (!response.ok) throw new Error('Failed to submit entry');
+      
+      // Success!
+      setSubmitStatus('success');
+      
+      // Reset form after success
+      setFormData({
+        name: '',
+        email: '',
+        howDidYouHear: ''
+      });
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'An unknown error occurred');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
+      {/* Success message */}
+      {submitStatus === 'success' && (
+        <div style={{
+          background: '#ecfdf5',
+          border: '1px solid #10b981',
+          borderRadius: '0',
+          padding: '1rem',
+          marginBottom: '2rem',
+          color: '#047857',
+          textAlign: 'center'
+        }}>
+          Thank you for your submission! Your entry has been received.
+        </div>
+      )}
+      
+      {/* Error message */}
+      {submitStatus === 'error' && (
+        <div style={{
+          background: '#fef2f2',
+          border: '1px solid #ef4444',
+          borderRadius: '0',
+          padding: '1rem',
+          marginBottom: '2rem',
+          color: '#b91c1c',
+          textAlign: 'center'
+        }}>
+          {errorMessage || 'There was an error submitting your form. Please try again.'}
+        </div>
+      )}
+      
       <div style={{ marginBottom: "1.5rem" }}>
         <label style={{ 
           display: "block", 
@@ -14,7 +103,10 @@ export default function WinForm() {
           Full Name*
         </label>
         <input 
-          type="text" 
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
           required
           style={{ 
             width: "100%", 
@@ -37,7 +129,10 @@ export default function WinForm() {
           Email Address*
         </label>
         <input 
-          type="email" 
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
           required
           style={{ 
             width: "100%", 
@@ -47,92 +142,6 @@ export default function WinForm() {
             fontSize: "1rem"
           }} 
         />
-      </div>
-
-      <div style={{ marginBottom: "1.5rem" }}>
-        <label style={{ 
-          display: "block", 
-          fontSize: "0.9rem", 
-          fontWeight: "500", 
-          color: "#374151", 
-          marginBottom: "0.5rem" 
-        }}>
-          Phone Number*
-        </label>
-        <input 
-          type="tel" 
-          required
-          style={{ 
-            width: "100%", 
-            padding: "0.75rem 1rem", 
-            border: "1px solid #d1d5db", 
-            borderRadius: "0", 
-            fontSize: "1rem"
-          }} 
-        />
-      </div>
-
-      <div style={{ marginBottom: "1.5rem" }}>
-        <label style={{ 
-          display: "block", 
-          fontSize: "0.9rem", 
-          fontWeight: "500", 
-          color: "#374151", 
-          marginBottom: "0.5rem" 
-        }}>
-          Address
-        </label>
-        <input 
-          type="text"
-          style={{ 
-            width: "100%", 
-            padding: "0.75rem 1rem", 
-            border: "1px solid #d1d5db", 
-            borderRadius: "0", 
-            fontSize: "1rem",
-            marginBottom: "0.75rem"
-          }} 
-          placeholder="Street Address"
-        />
-        <div style={{ 
-          display: "grid", 
-          gridTemplateColumns: "1fr 1fr 1fr", 
-          gap: "0.75rem" 
-        }}>
-          <input 
-            type="text" 
-            placeholder="City"
-            style={{ 
-              width: "100%", 
-              padding: "0.75rem 1rem", 
-              border: "1px solid #d1d5db", 
-              borderRadius: "0", 
-              fontSize: "1rem"
-            }}
-          />
-          <input 
-            type="text" 
-            placeholder="State"
-            style={{ 
-              width: "100%", 
-              padding: "0.75rem 1rem", 
-              border: "1px solid #d1d5db", 
-              borderRadius: "0", 
-              fontSize: "1rem"
-            }}
-          />
-          <input 
-            type="text" 
-            placeholder="ZIP"
-            style={{ 
-              width: "100%", 
-              padding: "0.75rem 1rem", 
-              border: "1px solid #d1d5db", 
-              borderRadius: "0", 
-              fontSize: "1rem"
-            }}
-          />
-        </div>
       </div>
 
       <div style={{ marginBottom: "1.5rem" }}>
@@ -146,6 +155,9 @@ export default function WinForm() {
           How did you hear about us?*
         </label>
         <textarea
+          name="howDidYouHear"
+          value={formData.howDidYouHear}
+          onChange={handleInputChange}
           required
           rows={4}
           style={{ 
@@ -160,97 +172,25 @@ export default function WinForm() {
         ></textarea>
       </div>
 
-      <div style={{ marginBottom: "1.5rem" }}>
-        <label style={{ 
-          display: "block", 
-          fontSize: "0.9rem", 
-          fontWeight: "500", 
-          color: "#374151", 
-          marginBottom: "0.5rem" 
-        }}>
-          Are you interested in any of our products or services?
-        </label>
-        <div style={{ 
-          display: "grid", 
-          gridTemplateColumns: "1fr 1fr", 
-          gap: "0.75rem" 
-        }}>
-          <label style={{ 
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            fontSize: "0.9rem",
-            color: "#4b5563"
-          }}>
-            <input type="checkbox" /> Windows
-          </label>
-          <label style={{ 
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            fontSize: "0.9rem",
-            color: "#4b5563"
-          }}>
-            <input type="checkbox" /> Doors
-          </label>
-          <label style={{ 
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            fontSize: "0.9rem",
-            color: "#4b5563"
-          }}>
-            <input type="checkbox" /> Siding
-          </label>
-          <label style={{ 
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            fontSize: "0.9rem",
-            color: "#4b5563"
-          }}>
-            <input type="checkbox" /> Bathrooms
-          </label>
-        </div>
-      </div>
-
-      <div style={{ marginBottom: "2rem" }}>
-        <label style={{ 
-          display: "flex",
-          alignItems: "flex-start",
-          gap: "0.5rem",
-          fontSize: "0.9rem",
-          color: "#4b5563"
-        }}>
-          <input 
-            type="checkbox" 
-            style={{ marginTop: "0.25rem" }}
-            required
-          />
-          <span>
-            I agree to receive communications from New York Sash. I understand I can unsubscribe at any time. View our <a href="/privacy" style={{ color: "#ff4444", textDecoration: "underline" }}>Privacy Policy</a>.
-          </span>
-        </label>
-      </div>
-
       <div style={{ textAlign: "center" }}>
         <button
           type="submit"
+          disabled={isSubmitting}
           style={{ 
-            background: "#ff4444", 
+            background: isSubmitting ? "#cccccc" : "#ff4444", 
             color: "white", 
             padding: "0.875rem 2.5rem", 
             border: "none", 
             borderRadius: "0", 
             fontSize: "1rem", 
             fontWeight: "600",
-            cursor: "pointer",
+            cursor: isSubmitting ? "not-allowed" : "pointer",
             transition: "background-color 0.2s ease"
           }}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#cc3333"}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#ff4444"}
+          onMouseOver={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = "#cc3333")}
+          onMouseOut={(e) => !isSubmitting && (e.currentTarget.style.backgroundColor = "#ff4444")}
         >
-          Submit Entry
+          {isSubmitting ? "Submitting..." : "Submit Entry"}
         </button>
       </div>
     </form>
