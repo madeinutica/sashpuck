@@ -82,7 +82,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       
       setUser(newUser);
       setSession(newSession);
-      localStorage.setItem('adminSession', JSON.stringify(newSession));
+      
+      // Force a reload to re-run middleware and server components with the new session
+      window.location.reload();
+      
       return { success: true };
     } else {
       return { success: false, error: data.error };
