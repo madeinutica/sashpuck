@@ -68,7 +68,7 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
         setMapError('Failed to initialize map');
       }
     }
-  }, [mapLoaded, projects, mapError]);
+  }, [mapLoaded, projects, mapError, addProjectMarkers, fitMapToBounds]);
 
   const addProjectMarkers = () => {
     if (!map.current) return;
