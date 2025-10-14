@@ -21,30 +21,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   // Check for existing session on mount
   useEffect(() => {
-    const savedSession = localStorage.getItem('adminSession');
-    if (savedSession) {
-      try {
-        const parsedSession: Session = JSON.parse(savedSession);
-        if (isSessionValid(parsedSession)) {
-          setSession(parsedSession);
-          setUser({
-            id: parsedSession.userId,
-            username: parsedSession.username,
-            role: parsedSession.role,
-            permissions: [] // Will be loaded based on role
-          });
-          
-          // Update last activity
-          parsedSession.lastActivity = Date.now();
-          localStorage.setItem('adminSession', JSON.stringify(parsedSession));
-        } else {
-          localStorage.removeItem('adminSession');
-        }
-      } catch (error) {
-        localStorage.removeItem('adminSession');
+    const fetchSession = async () => {
+      const response = await fetch('/api/session');
+      const data = await response.json();
+
+      if (data.isLoggedIn && isSessionValid(data.session)) {
+        setSession(data.session);
+        setUser(data.user);
       }
-    }
-    setIsLoading(false);
+      setIsLoading(false);
+    };
+
+    fetchSession();
   }, []);
 
   // Update session activity periodically
@@ -88,7 +76,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         role: userConfig.role,
         loginTime: Date.now(),
         lastActivity: Date.now(),
-        sessionId: generateSessionId()
+        sessionId: generateSessionId(),
+        isLoggedIn: true
       };
       
       setUser(newUser);

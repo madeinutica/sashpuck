@@ -89,6 +89,7 @@ export interface Session {
   loginTime: number;
   lastActivity: number;
   sessionId: string;
+  isLoggedIn: boolean;
 }
 
 // Generate session ID
