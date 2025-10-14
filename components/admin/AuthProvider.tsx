@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from 'next/navigation';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { AdminUser, Session, generateSessionId, isSessionValid, adminUsers, hasPermission } from '../../lib/adminAuth';
 
@@ -15,6 +16,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const [user, setUser] = useState<AdminUser | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -41,7 +43,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const interval = setInterval(() => {
         if (isSessionValid(session)) {
           session.lastActivity = Date.now();
-          localStorage.setItem('adminSession', JSON.stringify(session));
+          // No need to set localStorage, cookie is the source of truth
           setSession({ ...session });
         } else {
           logout();
@@ -83,9 +85,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setUser(newUser);
       setSession(newSession);
       
-      // Force a reload to re-run middleware and server components with the new session
-      window.location.reload();
-      
+      // Use router to navigate for a smoother experience
+      router.push('/admin');
+
       return { success: true };
     } else {
       return { success: false, error: data.error };
@@ -96,7 +98,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     await fetch('/api/logout', { method: 'POST' });
     setUser(null);
     setSession(null);
-    localStorage.removeItem('adminSession');
+    router.push('/'); // Redirect to home after logout
   };
 
   const checkPermission = (permission: string): boolean => {
