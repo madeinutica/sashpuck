@@ -69,8 +69,8 @@
           "services": [
             {
               "title": "Windows",
-              "beforeImage": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&crop=center",
-              "afterImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&crop=center",
+                "beforeImage": "/images/before-after/Windows-before-and-after-2.png",
+                "afterImage": "/images/before-after/Windows-before-and-after-2.png",
               "features": [
                 "Fusion welded frames",
                 "LowE with Argon gas",
@@ -83,8 +83,8 @@
             },
             {
               "title": "Siding",
-              "beforeImage": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=300&fit=crop&crop=center",
-              "afterImage": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&h=300&fit=crop&crop=center",
+                "beforeImage": "/images/before-after/before-and-after-siding.png",
+                "afterImage": "/images/before-after/before-and-after-siding.png",
               "features": [
                 "Insulated vinyl siding",
                 "Maintenance-free",
@@ -97,8 +97,8 @@
             },
             {
               "title": "Bathroom Remodeling",
-              "beforeImage": "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&h=300&fit=crop&crop=center",
-              "afterImage": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop&crop=center",
+                "beforeImage": "/images/before-after/bathremodel_ukena.jpg",
+                "afterImage": "/images/before-after/bathremodel_ukena.jpg",
               "features": [
                 "Acrylic bath liners",
                 "Walk-in tubs",
@@ -111,8 +111,8 @@
             },
             {
               "title": "Entry Doors",
-              "beforeImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center",
-              "afterImage": "https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=400&h=300&fit=crop&crop=center",
+                "beforeImage": "/images/before-after/door-before-and-after.jpg",
+                "afterImage": "/images/before-after/door-before-and-after.jpg",
               "features": [
                 "Fiberglass & steel",
                 "Decorative glass options",
