@@ -94,6 +94,8 @@ export default function Footer() {
             <Link href="/privacy">Privacy</Link>
             <span>|</span>
             <Link href="/support">Support</Link>
+            <span>|</span>
+            <Link href="/accessibility">Accessibility</Link>
           </div>
         </div>
       </div>
