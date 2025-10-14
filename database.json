@@ -368,22 +368,22 @@
           "subtitle": "Our commitment to excellence has earned us industry recognition and the trust of our customers.",
           "certifications": [
             {
-              "image": "https://placehold.co/150x100/000000/FFFFFF?text=BBB+A%2B",
+              "image": "/images/misc/Better_Business_Bureau.svg.png",
               "title": "Better Business Bureau",
               "description": "A+ Rating"
             },
             {
-              "image": "https://placehold.co/150x100/000000/FFFFFF?text=ENERGY+STAR",
+              "image": "/images/misc/Energy-Star-Logo.png",
               "title": "ENERGY STAR",
               "description": "Certified Partner"
             },
             {
-              "image": "https://placehold.co/150x100/000000/FFFFFF?text=Licensed",
+              "image": "/images/misc/lic-ins.png",
               "title": "Licensed",
               "description": "Fully Licensed Contractor"
             },
             {
-              "image": "https://placehold.co/150x100/000000/FFFFFF?text=Insured",
+              "image": "/images/misc/lic-ins.png",
               "title": "Insured",
               "description": "Comprehensive Coverage"
             }
