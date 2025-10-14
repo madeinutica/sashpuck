@@ -41,34 +41,22 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
     }
   }, [setMapLoaded, setMapError]);
 
-  // Initialize map
-  useEffect(() => {
-    if (mapLoaded && mapContainer.current && !map.current && !mapError) {
-      try {
-        window.mapboxgl.accessToken = mapConfig.apiKey;
-        
-        map.current = new window.mapboxgl.Map({
-          container: mapContainer.current,
-          style: 'mapbox://styles/mapbox/light-v11',
-          center: [mapConfig.center.longitude, mapConfig.center.latitude],
-          zoom: mapConfig.zoom
-        });
+  const fitMapToBounds = useCallback(() => {
+    if (!map.current || projects.length === 0) return;
 
-        map.current.on('load', () => {
-          addProjectMarkers();
-          fitMapToBounds();
-        });
+    const bounds = new window.mapboxgl.LngLatBounds();
+    projects.forEach(project => {
+      bounds.extend([
+        project.location.coordinates.longitude,
+        project.location.coordinates.latitude
+      ]);
+    });
 
-        map.current.on('error', (e: any) => {
-          console.error('Map error:', e);
-          setMapError('Failed to load map');
-        });
-      } catch (error) {
-        console.error('Error initializing map:', error);
-        setMapError('Failed to initialize map');
-      }
-    }
-  }, [mapLoaded, projects, mapError, addProjectMarkers, fitMapToBounds]);
+    map.current.fitBounds(bounds, {
+      padding: 50,
+      maxZoom: 12
+    });
+  }, [projects]);
 
   const addProjectMarkers = useCallback(() => {
     if (!map.current) return;
@@ -119,22 +107,34 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
     });
   }, [projects, onProjectSelect]);
 
-  const fitMapToBounds = useCallback(() => {
-    if (!map.current || projects.length === 0) return;
+  // Initialize map
+  useEffect(() => {
+    if (mapLoaded && mapContainer.current && !map.current && !mapError) {
+      try {
+        window.mapboxgl.accessToken = mapConfig.apiKey;
+        
+        map.current = new window.mapboxgl.Map({
+          container: mapContainer.current,
+          style: 'mapbox://styles/mapbox/light-v11',
+          center: [mapConfig.center.longitude, mapConfig.center.latitude],
+          zoom: mapConfig.zoom
+        });
 
-    const bounds = new window.mapboxgl.LngLatBounds();
-    projects.forEach(project => {
-      bounds.extend([
-        project.location.coordinates.longitude,
-        project.location.coordinates.latitude
-      ]);
-    });
+        map.current.on('load', () => {
+          addProjectMarkers();
+          fitMapToBounds();
+        });
 
-    map.current.fitBounds(bounds, {
-      padding: 50,
-      maxZoom: 12
-    });
-  }, [projects]);
+        map.current.on('error', (e: any) => {
+          console.error('Map error:', e);
+          setMapError('Failed to load map');
+        });
+      } catch (error) {
+        console.error('Error initializing map:', error);
+        setMapError('Failed to initialize map');
+      }
+    }
+  }, [mapLoaded, projects, mapError, addProjectMarkers, fitMapToBounds]);
 
   const getServiceStats = () => {
     const stats = Object.keys(serviceTypeConfig).map(serviceType => {
