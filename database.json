@@ -138,21 +138,21 @@
               "location": "Syracuse, NY",
               "service": "Window Replacement",
               "testimonial": "New York Sash did an amazing job replacing all the windows in our home. The quality is exceptional and the installation team was professional and clean. Our energy bills have already decreased significantly!",
-              "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+              "videoUrl": ""
             },
             {
               "name": "Mike Rodriguez",
               "location": "Utica, NY",
               "service": "Bathroom Remodel",
               "testimonial": "We're thrilled with our new bathroom! The team at New York Sash transformed our outdated space into a beautiful, functional room. The attention to detail was impressive.",
-              "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+              "videoUrl": ""
             },
             {
               "name": "Jennifer Davis",
               "location": "Rome, NY",
               "service": "Siding Installation",
               "testimonial": "Our home looks brand new after the siding installation. The crew was punctual, respectful, and did excellent work. Highly recommend New York Sash for any home improvement project.",
-              "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+              "videoUrl": ""
             }
           ],
           "id": "TestimonialsGrid-home"
@@ -1440,7 +1440,7 @@
           "secondaryCtaText": "(315) 624-7344",
           "secondaryCtaLink": "tel:315-624-7344",
           "badge": "Hands-On Product Experience",
-          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+          "videoUrl": "",
           "id": "HeroSection-showroom"
         }
       },
@@ -1477,7 +1477,7 @@
           "secondaryCtaText": "(315) 624-7344",
           "secondaryCtaLink": "tel:315-624-7344",
           "badge": "Your Local Home Improvement Experts",
-          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+          "videoUrl": "",
           "id": "HeroSection-team"
         }
       },
@@ -1514,7 +1514,7 @@
           "secondaryCtaText": "(315) 624-7344",
           "secondaryCtaLink": "tel:315-624-7344",
           "badge": "Growing Team, Growing Opportunities",
-          "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+          "videoUrl": "",
           "id": "HeroSection-careers"
         }
       },
