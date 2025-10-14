@@ -13,13 +13,15 @@ export async function middleware(req: NextRequest) {
         req.nextUrl.pathname.length - 5
       );
       const pathWithEditPrefix = `/puck${pathWithoutEdit}`;
-
       return NextResponse.rewrite(new URL(pathWithEditPrefix, req.url));
     }
 
-    // Disable "/puck/[...puckPath]"
+    // Only allow /puck routes for logged-in users (session cookie check)
     if (req.nextUrl.pathname.startsWith("/puck")) {
-      return NextResponse.redirect(new URL("/", req.url));
+      const session = req.cookies.get("adminSession");
+      if (!session) {
+        return NextResponse.redirect(new URL("/", req.url));
+      }
     }
   }
 
