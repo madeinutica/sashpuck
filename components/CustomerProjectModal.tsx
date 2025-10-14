@@ -161,9 +161,6 @@ export default function CustomerProjectModal({ project, isOpen, onClose }: Custo
               <div className="spec-item">
                 <strong>Timeline:</strong> {project.projectDetails.timeframe}
               </div>
-              <div className="spec-item">
-                <strong>Investment Range:</strong> {project.projectDetails.investment}
-              </div>
             </div>
 
             {project.results && (
