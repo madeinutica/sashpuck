@@ -65,58 +65,39 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [session]);
 
   const login = async (username: string, password: string): Promise<{ success: boolean; error?: string }> => {
-    const userConfig = adminUsers[username];
-    
-    if (!userConfig) {
-      return { success: false, error: 'Invalid username or password' };
-    }
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password }),
+    });
 
-    // Check if user is locked out
-    if (userConfig.lockedUntil && Date.now() < userConfig.lockedUntil) {
-      const remainingTime = Math.ceil((userConfig.lockedUntil - Date.now()) / 1000 / 60);
-      return { success: false, error: `Account locked. Try again in ${remainingTime} minutes.` };
-    }
+    const data = await response.json();
 
-    // Simple password check (in production, use proper password hashing)
-    if (password !== userConfig.passwordHash) {
-      // Track failed attempts
-      userConfig.loginAttempts = (userConfig.loginAttempts || 0) + 1;
-      userConfig.lastAttempt = Date.now();
+    if (data.success) {
+      // The cookie is set by the server, now we just need to update the local state
+      const userConfig = adminUsers[username];
+      const newUser: AdminUser = {
+        id: username,
+        username,
+        role: userConfig.role,
+        permissions: userConfig.permissions
+      };
+      const newSession: Session = {
+        userId: username,
+        username,
+        role: userConfig.role,
+        loginTime: Date.now(),
+        lastActivity: Date.now(),
+        sessionId: generateSessionId()
+      };
       
-      if (userConfig.loginAttempts >= 3) {
-        userConfig.lockedUntil = Date.now() + (15 * 60 * 1000); // 15 minutes
-        return { success: false, error: 'Too many failed attempts. Account locked for 15 minutes.' };
-      }
-      
-      return { success: false, error: 'Invalid username or password' };
+      setUser(newUser);
+      setSession(newSession);
+      localStorage.setItem('adminSession', JSON.stringify(newSession));
+      return { success: true };
+    } else {
+      return { success: false, error: data.error };
     }
-
-    // Reset failed attempts on successful login
-    userConfig.loginAttempts = 0;
-    delete userConfig.lockedUntil;
-
-    // Create session
-    const newSession: Session = {
-      userId: username,
-      username,
-      role: userConfig.role,
-      loginTime: Date.now(),
-      lastActivity: Date.now(),
-      sessionId: generateSessionId()
-    };
-
-    const newUser: AdminUser = {
-      id: username,
-      username,
-      role: userConfig.role,
-      permissions: userConfig.permissions
-    };
-
-    setSession(newSession);
-    setUser(newUser);
-    localStorage.setItem('adminSession', JSON.stringify(newSession));
-
-    return { success: true };
   };
 
   const logout = () => {
