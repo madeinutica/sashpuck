@@ -89,7 +89,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const logout = () => {
+  const logout = async () => {
+    await fetch('/api/logout', { method: 'POST' });
     setUser(null);
     setSession(null);
     localStorage.removeItem('adminSession');
