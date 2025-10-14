@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function TubToShowerPage() {
-  const data = getPage('/baths/tub-to-shower');
+  const data = await getPage('/baths/tub-to-shower');
   
   if (!data) {
     return notFound();

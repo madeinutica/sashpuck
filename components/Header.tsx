@@ -241,6 +241,10 @@ export default function Header() {
                 </Link>
               </div>
             </div>
+            <Link href="/showroom" className="nav-item" onClick={closeMobileMenu}>Showroom</Link>
+            <Link href="/careers" className="nav-item" onClick={closeMobileMenu}>Careers</Link>
+            <Link href="/contact" className="nav-item" onClick={closeMobileMenu}>Contact</Link>
+            <Link href="/win" className="nav-item" onClick={closeMobileMenu}>Win</Link>
           </nav>
 
           {/* Desktop Action buttons */}

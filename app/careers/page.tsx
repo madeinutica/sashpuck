@@ -17,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function CareersPage() {
-  const data = getPage("/careers");
+export default async function CareersPage() {
+  const data = await getPage("/careers");
 
   if (!data) {
     return <div>Page not found</div>;

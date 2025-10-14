@@ -4,7 +4,7 @@ import { getPage } from '../../../lib/get-page';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = getPage('/siding/board-batten');
+  const data = await getPage('/siding/board-batten');
   return {
     title: data?.root?.props?.title || 'Board & Batten Vertical Vinyl Siding | New York Sash | Central NY',
     description: 'Modern board & batten vertical vinyl siding from New York Sash. Contemporary farmhouse style with low maintenance. Expert installation for Central New York homes.',
@@ -13,8 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function BoardBattenPage() {
-  const data = getPage('/siding/board-batten');
-  
+  const data = await getPage('/siding/board-batten');
+
   if (!data) {
     return notFound();
   }

@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function ColorTexturePage() {
-  const data = getPage('/baths/color-texture');
+  const data = await getPage('/baths/color-texture');
   
   if (!data) {
     return notFound();

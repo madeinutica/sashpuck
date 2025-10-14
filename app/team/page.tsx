@@ -17,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function TeamPage() {
-  const data = getPage("/team");
+export default async function TeamPage() {
+  const data = await getPage("/team");
 
   if (!data) {
     return <div>Page not found</div>;

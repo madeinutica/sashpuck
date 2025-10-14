@@ -17,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function DoorsPage() {
-  const data = getPage("/doors");
+export default async function DoorsPage() {
+  const data = await getPage("/doors");
 
   if (!data) {
     return <div>Page not found</div>;

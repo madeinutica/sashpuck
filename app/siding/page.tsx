@@ -17,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function SidingPage() {
-  const data = getPage("/siding");
+export default async function SidingPage() {
+  const data = await getPage("/siding");
 
   if (!data) {
     return <div>Page not found</div>;

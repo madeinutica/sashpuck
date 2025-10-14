@@ -1,22 +1,18 @@
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
-import fs from "fs";
+import { supabase } from "../../../lib/supabase";
 
 export async function POST(request: Request) {
   const payload = await request.json();
 
-  const existingData = JSON.parse(
-    fs.existsSync("database.json")
-      ? fs.readFileSync("database.json", "utf-8")
-      : "{}"
-  );
+  const { error } = await supabase
+    .from("pages")
+    .upsert({ path: payload.path, data: payload.data });
 
-  const updatedData = {
-    ...existingData,
-    [payload.path]: payload.data,
-  };
-
-  fs.writeFileSync("database.json", JSON.stringify(updatedData));
+  if (error) {
+    console.error(error);
+    return NextResponse.json({ status: "error", message: error.message });
+  }
 
   // Purge Next.js cache
   revalidatePath(payload.path);

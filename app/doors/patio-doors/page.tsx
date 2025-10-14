@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function PatioDoorsPage() {
-  const data = getPage('/doors/patio-doors');
+  const data = await getPage('/doors/patio-doors');
   
   if (!data) {
     return notFound();

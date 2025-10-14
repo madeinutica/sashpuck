@@ -17,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function WindowsPage() {
-  const data = getPage("/windows");
+export default async function WindowsPage() {
+  const data = await getPage("/windows");
 
   if (!data) {
     return <div>Page not found</div>;

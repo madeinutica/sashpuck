@@ -1,14 +1,22 @@
 import { Data } from "@measured/puck";
-import fs from "fs";
-import path from "path";
+import { supabase } from "./supabase";
 
 // Replace with call to your database
-export const getPage = (p: string) => {
-  const dbPath = path.join(process.cwd(), "database.json");
+export const getPage = async (path: string): Promise<Data | null> => {
+  const { data, error } = await supabase
+    .from("pages")
+    .select("data")
+    .eq("path", path)
+    .single();
 
-  const allData: Record<string, Data> | null = fs.existsSync(dbPath)
-    ? JSON.parse(fs.readFileSync(dbPath, "utf-8"))
-    : null;
+  if (error) {
+    if (error.code === "PGRST116") {
+      // PGRST116: "The result contains 0 rows" - this is not an error for us
+      return null;
+    }
+    console.error(error);
+    return null;
+  }
 
-  return allData ? allData[p] : null;
+  return data.data;
 };

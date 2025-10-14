@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function StormDoorsPage() {
-  const data = getPage('/doors/storm-doors');
+  const data = await getPage('/doors/storm-doors');
   
   if (!data) {
     return notFound();

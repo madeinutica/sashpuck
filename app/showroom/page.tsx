@@ -17,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function ShowroomPage() {
-  const data = getPage("/showroom");
+export default async function ShowroomPage() {
+  const data = await getPage("/showroom");
 
   if (!data) {
     return <div>Page not found</div>;

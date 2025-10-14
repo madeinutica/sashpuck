@@ -4,7 +4,7 @@ import { getPage } from '../../../lib/get-page';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = getPage('/siding/stacked-stone');
+  const data = await getPage('/siding/stacked-stone');
   return {
     title: data?.root?.props?.title || 'Stacked Stone Siding | New York Sash | Central NY',
     description: 'Beautiful stacked stone exterior siding from New York Sash. Natural stone appearance with modern durability. Professional installation throughout Central New York.',
@@ -13,8 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function StackedStonePage() {
-  const data = getPage('/siding/stacked-stone');
-  
+  const data = await getPage('/siding/stacked-stone');
+
   if (!data) {
     return notFound();
   }

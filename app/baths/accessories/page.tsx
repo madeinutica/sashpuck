@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AccessoriesPage() {
-  const data = getPage('/baths/accessories');
+  const data = await getPage('/baths/accessories');
   
   if (!data) {
     return notFound();
