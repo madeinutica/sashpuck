@@ -111,14 +111,8 @@ export default function Header() {
                 <Link href="/about" className="dropdown-item" onClick={closeAboutDropdown}>
                   About Us
                 </Link>
-                <Link href="/showroom" className="dropdown-item" onClick={closeAboutDropdown}>
-                  Showroom
-                </Link>
                 <Link href="/team" className="dropdown-item" onClick={closeAboutDropdown}>
                   Meet Our Team
-                </Link>
-                <Link href="/careers" className="dropdown-item" onClick={closeAboutDropdown}>
-                  Job Openings
                 </Link>
               </div>
             </div>
@@ -242,10 +236,6 @@ export default function Header() {
                 </Link>
               </div>
             </div>
-            <Link href="/showroom" className="nav-item" onClick={closeMobileMenu}>Showroom</Link>
-            <Link href="/careers" className="nav-item" onClick={closeMobileMenu}>Careers</Link>
-            <Link href="/contact" className="nav-item" onClick={closeMobileMenu}>Contact</Link>
-            <Link href="/win" className="nav-item" onClick={closeMobileMenu}>Win</Link>
           </nav>
 
           {/* Desktop Action buttons */}
@@ -287,14 +277,8 @@ export default function Header() {
                 <Link href="/about" className="mobile-dropdown-item" onClick={closeMobileMenu}>
                   About Us
                 </Link>
-                <Link href="/showroom" className="mobile-dropdown-item" onClick={closeMobileMenu}>
-                  Showroom
-                </Link>
                 <Link href="/team" className="mobile-dropdown-item" onClick={closeMobileMenu}>
                   Meet Our Team
-                </Link>
-                <Link href="/careers" className="mobile-dropdown-item" onClick={closeMobileMenu}>
-                  Job Openings
                 </Link>
               </div>
             </div>
