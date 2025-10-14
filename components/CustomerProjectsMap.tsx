@@ -39,7 +39,7 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
     } else if (window.mapboxgl) {
       setMapLoaded(true);
     }
-  }, []);
+  }, [setMapLoaded, setMapError]);
 
   // Initialize map
   useEffect(() => {

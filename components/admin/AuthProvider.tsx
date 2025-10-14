@@ -35,7 +35,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
 
     fetchSession();
-  }, []);
+  }, [setSession, setUser, setIsLoading]);
 
   // Update session activity periodically
   useEffect(() => {
@@ -52,7 +52,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       return () => clearInterval(interval);
     }
-  }, [session]);
+  }, [session, logout]);
 
   const login = async (username: string, password: string): Promise<{ success: boolean; error?: string }> => {
     const response = await fetch('/api/login', {

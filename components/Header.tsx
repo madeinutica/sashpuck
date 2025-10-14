@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from "next/image";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -92,7 +93,7 @@ export default function Header() {
         <div className="nav-content">
           {/* Logo */}
           <Link href="/" className="logo" onClick={closeMobileMenu}>
-            <img src="/images/misc/logo.png" alt="New York Sash Logo" style={{ height: "65px", width: "auto" }} />
+            <Image src="/images/misc/logo.png" alt="New York Sash Logo" width={65} height={65} style={{ width: "auto" }} />
           </Link>
 
           {/* Desktop Navigation menu */}
