@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { AdminUser, Session, generateSessionId, isSessionValid, adminUsers, hasPermission } from '../../lib/adminAuth';
 
 interface AuthContextType {
@@ -38,6 +38,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [setSession, setUser, setIsLoading]);
 
   // Update session activity periodically
+  const logout = useCallback(async () => {
+    await fetch('/api/logout', { method: 'POST' });
+    setUser(null);
+    setSession(null);
+    router.push('/'); // Redirect to home after logout
+  }, [setUser, setSession, router]);
+
   useEffect(() => {
     if (session) {
       const interval = setInterval(() => {
@@ -92,13 +99,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } else {
       return { success: false, error: data.error };
     }
-  };
-
-  const logout = async () => {
-    await fetch('/api/logout', { method: 'POST' });
-    setUser(null);
-    setSession(null);
-    router.push('/'); // Redirect to home after logout
   };
 
   const checkPermission = (permission: string): boolean => {

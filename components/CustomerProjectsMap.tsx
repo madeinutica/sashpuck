@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { CustomerProject, serviceTypeConfig, mapConfig } from '../lib/customerProjects';
 
 // Mapbox GL JS types (simplified)
@@ -70,7 +70,7 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
     }
   }, [mapLoaded, projects, mapError, addProjectMarkers, fitMapToBounds]);
 
-  const addProjectMarkers = () => {
+  const addProjectMarkers = useCallback(() => {
     if (!map.current) return;
 
     projects.forEach((project) => {
@@ -117,9 +117,9 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
         .setLngLat([project.location.coordinates.longitude, project.location.coordinates.latitude])
         .addTo(map.current);
     });
-  };
+  }, [projects, onProjectSelect]);
 
-  const fitMapToBounds = () => {
+  const fitMapToBounds = useCallback(() => {
     if (!map.current || projects.length === 0) return;
 
     const bounds = new window.mapboxgl.LngLatBounds();
@@ -134,7 +134,7 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
       padding: 50,
       maxZoom: 12
     });
-  };
+  }, [projects]);
 
   const getServiceStats = () => {
     const stats = Object.keys(serviceTypeConfig).map(serviceType => {
