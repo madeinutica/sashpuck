@@ -283,8 +283,8 @@ export const config: Config<Props> = {
       defaultProps: {
         title: "Transform Your Home's Beauty & Comfort",
         subtitle: "Central New York's premier provider of premium windows, siding, bathrooms, and entry doors.",
-        ctaText: "Get Free Consultation",
-        ctaLink: "#contact",
+  ctaText: "Get Free Consultation",
+  ctaLink: "/contact",
         secondaryCtaText: "(315) 624-7344",
         secondaryCtaLink: "tel:+13156247344",
         backgroundImage: "",

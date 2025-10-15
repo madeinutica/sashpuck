@@ -211,9 +211,9 @@ export default function CustomerProjectModal({ project, isOpen, onClose }: Custo
               <button className="cta-button primary">
                 📞 Call (315) 624-7344
               </button>
-              <button className="cta-button secondary">
+              <a href="/contact" className="cta-button secondary">
                 📅 Schedule Free Consultation
-              </button>
+              </a>
             </div>
           </div>
         </div>

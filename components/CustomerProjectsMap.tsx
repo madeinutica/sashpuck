@@ -42,7 +42,7 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
   }, [setMapLoaded, setMapError]);
 
   const fitMapToBounds = useCallback(() => {
-    if (!map.current || projects.length === 0) return;
+  if (!map.current || !Array.isArray(projects) || projects.length === 0) return;
 
     const bounds = new window.mapboxgl.LngLatBounds();
     projects.forEach(project => {
@@ -62,7 +62,7 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
   const addProjectMarkers = useCallback(() => {
     if (!map.current) return;
 
-    projects.forEach((project) => {
+  (Array.isArray(projects) ? projects : []).forEach((project) => {
       const lng = project.location?.coordinates?.longitude;
       const lat = project.location?.coordinates?.latitude;
       if (typeof lng === 'number' && typeof lat === 'number' && !isNaN(lng) && !isNaN(lat)) {
@@ -142,8 +142,9 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
   }, [mapLoaded, projects, mapError, addProjectMarkers, fitMapToBounds]);
 
   const getServiceStats = () => {
+    const safeProjects = Array.isArray(projects) ? projects : [];
     const stats = Object.keys(serviceTypeConfig).map(serviceType => {
-      const count = projects.filter(p => p.serviceType === serviceType).length;
+      const count = safeProjects.filter(p => p.serviceType === serviceType).length;
       return {
         type: serviceType,
         count,

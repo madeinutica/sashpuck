@@ -10,13 +10,13 @@ export async function GET() {
   });
 }
 
-export async function POST(request: NextRequest) {
-  console.log('=== WIN ENTRIES API CALLED ===');
-  console.log('Request method:', request.method);
-  console.log('Request URL:', request.url);
-  
+export async function POST(req: Request) {
   try {
-    const data = await request.json();
+    console.log('=== WIN ENTRIES API CALLED ===');
+    console.log('Request method:', req.method);
+    console.log('Request URL:', req.url);
+
+    const data = await req.json();
     console.log('Request data received:', data);
 
     // Validate required fields
@@ -48,22 +48,23 @@ export async function POST(request: NextRequest) {
       return Response.json({
         success: false,
         message: 'Failed to save entry to database',
-        error: error.message
+        error: error.message || error
       }, { status: 500 });
     }
 
-    console.log('Form submission saved to Supabase:', entry);
-
+    console.log('✅ Entry saved:', entry);
     return Response.json({
       success: true,
-      message: 'Entry received and saved successfully'
-    }, { status: 200 });
-
-  } catch (error) {
-    console.error('Error processing win form submission:', error);
+      message: 'Entry saved successfully',
+      entry
+    });
+  } catch (err) {
+    console.error('API route error:', err);
     return Response.json({
       success: false,
-      message: 'Failed to process entry'
+      message: 'Internal Server Error',
+      error: err instanceof Error ? err.message : String(err)
     }, { status: 500 });
   }
 }
+

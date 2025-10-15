@@ -33,7 +33,7 @@ export default function CustomerMapGallery({
       fetch(`/api/projects?t=${Date.now()}`)
         .then(response => response.json())
         .then(data => {
-          if (data.success && data.projects && data.projects.length > 0) {
+          if (data.success && Array.isArray(data.projects) && data.projects.length > 0) {
             setLoadedProjects(data.projects);
             setIsLoadingProjects(false);
             return;
@@ -54,7 +54,7 @@ export default function CustomerMapGallery({
           .then(response => response.text())
           .then(csvText => loadProjectsFromCSV(csvText))
           .then(csvProjects => {
-            if (csvProjects.length > 0) {
+            if (Array.isArray(csvProjects) && csvProjects.length > 0) {
               setLoadedProjects(csvProjects);
             }
             setIsLoadingProjects(false);
@@ -66,7 +66,7 @@ export default function CustomerMapGallery({
       } else {
         loadProjectsFromCSV(csvContent)
           .then(csvProjects => {
-            if (csvProjects.length > 0) {
+            if (Array.isArray(csvProjects) && csvProjects.length > 0) {
               setLoadedProjects(csvProjects);
             }
             setIsLoadingProjects(false);

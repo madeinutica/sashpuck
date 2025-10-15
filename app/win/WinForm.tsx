@@ -30,7 +30,7 @@ export default function WinForm() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorMessage('');
-    
+    console.log('WinForm: handleSubmit called with', formData);
     try {
       // Send the data to our API endpoint
       const response = await fetch('/api/win-entries', {
@@ -38,23 +38,21 @@ export default function WinForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
+      console.log('WinForm: API response status', response.status);
+      const responseBody = await response.text();
+      console.log('WinForm: API response body', responseBody);
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error('API Response Error:', response.status, errorText);
-        throw new Error(`Failed to submit entry: ${response.status} - ${errorText}`);
+        console.error('API Response Error:', response.status, responseBody);
+        throw new Error(`Failed to submit entry: ${response.status} - ${responseBody}`);
       }
-      
       // Success!
       setSubmitStatus('success');
-      
       // Reset form after success
       setFormData({
         name: '',
         email: '',
         howDidYouHear: ''
       });
-      
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
