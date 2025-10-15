@@ -92,8 +92,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setUser(newUser);
       setSession(newSession);
       
-      // Use router to navigate for a smoother experience
-      router.push('/admin');
+      // Don't automatically redirect - let the calling component handle it
+      // This prevents unwanted redirects when accessing specific admin pages
 
       return { success: true };
     } else {

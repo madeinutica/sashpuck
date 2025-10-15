@@ -40,6 +40,28 @@ export default async function Page({
   const data = await getPage(path);
 
   if (!data) {
+    // For the home page, provide a default fallback instead of 404
+    if (path === "/") {
+      const defaultData = {
+        content: [
+          {
+            type: "HeroSection",
+            props: {
+              title: "Welcome to New York Sash",
+              subtitle: "Your trusted partner for windows, doors, siding, and bathroom remodeling.",
+              ctaText: "Get Started",
+              ctaLink: "/contact"
+            }
+          }
+        ],
+        root: {
+          props: {
+            title: "New York Sash - Windows, Doors, Siding & Bath Remodeling"
+          }
+        }
+      };
+      return <Client data={defaultData} />;
+    }
     return notFound();
   }
 

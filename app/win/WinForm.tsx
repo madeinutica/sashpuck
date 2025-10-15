@@ -39,7 +39,11 @@ export default function WinForm() {
         body: JSON.stringify(formData)
       });
       
-      if (!response.ok) throw new Error('Failed to submit entry');
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('API Response Error:', response.status, errorText);
+        throw new Error(`Failed to submit entry: ${response.status} - ${errorText}`);
+      }
       
       // Success!
       setSubmitStatus('success');

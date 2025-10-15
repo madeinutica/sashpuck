@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useAuth } from './AuthProvider';
 
 interface AdminLayoutProps {
@@ -10,6 +11,7 @@ interface AdminLayoutProps {
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const [activeSection, setActiveSection] = useState('projects');
   const { user, logout } = useAuth();
+  const router = useRouter();
 
   const menuItems = [
     {
@@ -20,10 +22,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       available: true
     },
     {
-      id: 'win-entries',
-      label: 'Win Contest Entries',
-      icon: '🎉',
-      description: 'View and manage contest form submissions',
+      id: 'forms',
+      label: 'Forms Management',
+      icon: '📋',
+      description: 'Manage all website form submissions',
       available: true
     },
     {
@@ -94,14 +96,14 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     if (item.available && !item.comingSoon) {
       if (item.id === 'projects') {
         setActiveSection(item.id);
-      } else if (item.id === 'win-entries') {
-        window.location.href = '/admin/win-entries';
+      } else if (item.id === 'forms') {
+        router.push('/admin/forms');
       } else {
         setActiveSection(item.id);
       }
     } else if (item.comingSoon) {
       // Navigate to the coming soon page
-      window.location.href = `/admin/${item.id}`;
+      router.push(`/admin/${item.id}`);
     }
   };
 

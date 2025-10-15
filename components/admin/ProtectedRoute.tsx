@@ -33,24 +33,31 @@ export default function ProtectedRoute({
           alignItems: 'center',
           gap: '1rem'
         }}>
-          <div style={{
-            width: '40px',
-            height: '40px',
-            border: '3px solid #e5e7eb',
-            borderTop: '3px solid #ff4444',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite'
-          }} />
+          <div 
+            className="auth-spinner"
+            style={{
+              width: '40px',
+              height: '40px',
+              border: '3px solid #e5e7eb',
+              borderTop: '3px solid #ff4444',
+              borderRadius: '50%'
+            }} 
+          />
           <p style={{ color: '#6b7280', fontSize: '0.875rem' }}>
             Checking authentication...
           </p>
         </div>
-        <style jsx>{`
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-        `}</style>
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .auth-spinner {
+              animation: spin 1s linear infinite;
+            }
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          `
+        }} />
       </div>
     );
   }
