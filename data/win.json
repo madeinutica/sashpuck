@@ -1,0 +1,17 @@
+{
+  "blocks": [
+    {
+      "type": "HeadingBlock",
+      "props": {
+        "title": "Enter the New York Sash Win Contest!"
+      }
+    },
+    {
+      "type": "TextBlock",
+      "props": {
+        "content": "Fill out the form below for your chance to win!",
+        "alignment": "center"
+      }
+    }
+  ]
+}
