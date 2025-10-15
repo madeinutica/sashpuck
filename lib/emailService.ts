@@ -11,15 +11,30 @@ class EmailService {
   private transporter: nodemailer.Transporter;
 
   constructor() {
-    this.transporter = nodemailer.createTransport({
+    // Dynamic configuration based on environment variables
+    const smtpConfig: any = {
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: false, // true for 465, false for other ports
+      secure: process.env.SMTP_SECURE === 'true' || parseInt(process.env.SMTP_PORT || '587') === 465,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
-    });
+    };
+
+    // Add optional settings for different providers
+    if (process.env.SMTP_TLS_REJECT_UNAUTHORIZED === 'false') {
+      smtpConfig.tls = {
+        rejectUnauthorized: false
+      };
+    }
+
+    // Handle providers that don't use standard authentication
+    if (process.env.SMTP_AUTH_METHOD) {
+      smtpConfig.authMethod = process.env.SMTP_AUTH_METHOD;
+    }
+
+    this.transporter = nodemailer.createTransport(smtpConfig);
   }
 
   async sendWinEntryNotification(data: EmailData): Promise<boolean> {
