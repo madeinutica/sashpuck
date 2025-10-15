@@ -20,6 +20,13 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       available: true
     },
     {
+      id: 'win-entries',
+      label: 'Win Contest Entries',
+      icon: '🎉',
+      description: 'View and manage contest form submissions',
+      available: true
+    },
+    {
       id: 'pages',
       label: 'Page Content',
       icon: '📄',
@@ -85,7 +92,13 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     }
     
     if (item.available && !item.comingSoon) {
-      setActiveSection(item.id);
+      if (item.id === 'projects') {
+        setActiveSection(item.id);
+      } else if (item.id === 'win-entries') {
+        window.location.href = '/admin/win-entries';
+      } else {
+        setActiveSection(item.id);
+      }
     } else if (item.comingSoon) {
       // Navigate to the coming soon page
       window.location.href = `/admin/${item.id}`;
