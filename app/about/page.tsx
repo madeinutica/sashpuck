@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: "New York Sash about, Central NY home improvement, company history, team, values, certifications",
     openGraph: {
       title: "About New York Sash - Central NY's Trusted Home Improvement Company",
-      description: "Over 45 years of excellence in windows, siding, bathrooms, and entry doors. Learn about our commitment to quality, service, and community.",
+      description: "Over 35 years of excellence in windows, siding, bathrooms, and entry doors. Learn about our commitment to quality, service, and community.",
       images: [
           {
             url: "/images/misc/community-image.jpeg",

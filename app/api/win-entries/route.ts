@@ -1,27 +1,46 @@
+import { supabase } from '../../../lib/supabase';
+
 export async function POST(request) {
   try {
     const data = await request.json();
-    
-    // In a real application, you would:
-    // 1. Validate the data
-    // 2. Save to database (Supabase, etc.)
-    // 3. Send confirmation email
-    // 4. Log the entry
-    
-    // For demo purposes, we'll just log and return success
-    console.log('Form submission received:', data);
-    
-    // Simulate processing time
-    await new Promise(resolve => setTimeout(resolve, 500));
-    
-    return Response.json({ 
+
+    // Validate required fields
+    if (!data.name || !data.email || !data.howDidYouHear) {
+      return Response.json({
+        success: false,
+        message: 'Missing required fields'
+      }, { status: 400 });
+    }
+
+    // Save to Supabase
+    const { data: entry, error } = await supabase
+      .from('win_entries')
+      .insert([{
+        name: data.name,
+        email: data.email,
+        how_did_hear: data.howDidYouHear,
+        submitted_at: new Date().toISOString()
+      }])
+      .select();
+
+    if (error) {
+      console.error('Supabase error:', error);
+      return Response.json({
+        success: false,
+        message: 'Failed to save entry to database'
+      }, { status: 500 });
+    }
+
+    console.log('Form submission saved to Supabase:', entry);
+
+    return Response.json({
       success: true,
-      message: 'Entry received successfully'
+      message: 'Entry received and saved successfully'
     }, { status: 200 });
-    
+
   } catch (error) {
     console.error('Error processing win form submission:', error);
-    return Response.json({ 
+    return Response.json({
       success: false,
       message: 'Failed to process entry'
     }, { status: 500 });
