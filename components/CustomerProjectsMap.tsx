@@ -46,10 +46,11 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
 
     const bounds = new window.mapboxgl.LngLatBounds();
     projects.forEach(project => {
-      bounds.extend([
-        project.location.coordinates.longitude,
-        project.location.coordinates.latitude
-      ]);
+      const lng = project.location?.coordinates?.longitude;
+      const lat = project.location?.coordinates?.latitude;
+      if (typeof lng === 'number' && typeof lat === 'number' && !isNaN(lng) && !isNaN(lat)) {
+        bounds.extend([lng, lat]);
+      }
     });
 
     map.current.fitBounds(bounds, {
@@ -62,48 +63,52 @@ export default function CustomerProjectsMap({ projects, onProjectSelect }: Custo
     if (!map.current) return;
 
     projects.forEach((project) => {
-      // Create simple red pin marker (just the pointer)
-      const markerElement = document.createElement('div');
-      markerElement.className = 'custom-marker';
-      markerElement.style.cssText = `
-        width: 0;
-        height: 0;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-        border-top: 20px solid #ff4444;
-        cursor: pointer;
-        position: relative;
-        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        ${project.featured ? 'filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)) drop-shadow(0 0 0 2px #ffffff);' : ''}
-      `;
+      const lng = project.location?.coordinates?.longitude;
+      const lat = project.location?.coordinates?.latitude;
+      if (typeof lng === 'number' && typeof lat === 'number' && !isNaN(lng) && !isNaN(lat)) {
+        // Create simple red pin marker (just the pointer)
+        const markerElement = document.createElement('div');
+        markerElement.className = 'custom-marker';
+        markerElement.style.cssText = `
+          width: 0;
+          height: 0;
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-top: 20px solid #ff4444;
+          cursor: pointer;
+          position: relative;
+          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+          ${project.featured ? 'filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)) drop-shadow(0 0 0 2px #ffffff);' : ''}
+        `;
 
-      // Hover effects (no transform change to prevent movement)
-      markerElement.addEventListener('mouseenter', () => {
-        markerElement.style.filter = project.featured 
-          ? 'brightness(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.3)) drop-shadow(0 0 0 2px #ffffff)'
-          : 'brightness(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.3))';
-        setHoveredProject(project);
-      });
+        // Hover effects (no transform change to prevent movement)
+        markerElement.addEventListener('mouseenter', () => {
+          markerElement.style.filter = project.featured 
+            ? 'brightness(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.3)) drop-shadow(0 0 0 2px #ffffff)'
+            : 'brightness(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.3))';
+          setHoveredProject(project);
+        });
 
-      markerElement.addEventListener('mouseleave', () => {
-        markerElement.style.filter = project.featured 
-          ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.3)) drop-shadow(0 0 0 2px #ffffff)'
-          : 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))';
-        setHoveredProject(null);
-      });
+        markerElement.addEventListener('mouseleave', () => {
+          markerElement.style.filter = project.featured 
+            ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.3)) drop-shadow(0 0 0 2px #ffffff)'
+            : 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))';
+          setHoveredProject(null);
+        });
 
-      // Click handler
-      markerElement.addEventListener('click', () => {
-        setSelectedProject(project);
-        if (onProjectSelect) {
-          onProjectSelect(project);
-        }
-      });
+        // Click handler
+        markerElement.addEventListener('click', () => {
+          setSelectedProject(project);
+          if (onProjectSelect) {
+            onProjectSelect(project);
+          }
+        });
 
-      // Add marker to map
-      new window.mapboxgl.Marker(markerElement)
-        .setLngLat([project.location.coordinates.longitude, project.location.coordinates.latitude])
-        .addTo(map.current);
+        // Add marker to map
+        new window.mapboxgl.Marker(markerElement)
+          .setLngLat([lng, lat])
+          .addTo(map.current);
+      }
     });
   }, [projects, onProjectSelect]);
 

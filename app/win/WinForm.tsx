@@ -64,6 +64,8 @@ export default function WinForm() {
     }
   };
 
+  // Debug: log submitStatus changes
+  console.log('WinForm submitStatus:', submitStatus);
   return (
     <form onSubmit={handleSubmit}>
       {/* Success message */}
