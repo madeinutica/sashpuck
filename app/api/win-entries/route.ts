@@ -1,6 +1,8 @@
 import { supabase } from '../../../lib/supabase';
+import { emailService } from '../../../lib/emailService';
+import { NextRequest } from 'next/server';
 
-export async function POST(request) {
+export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
 
@@ -12,6 +14,8 @@ export async function POST(request) {
       }, { status: 400 });
     }
 
+    const submittedAt = new Date().toISOString();
+
     // Save to Supabase
     const { data: entry, error } = await supabase
       .from('win_entries')
@@ -19,7 +23,7 @@ export async function POST(request) {
         name: data.name,
         email: data.email,
         how_did_hear: data.howDidYouHear,
-        submitted_at: new Date().toISOString()
+        submitted_at: submittedAt
       }])
       .select();
 
@@ -32,6 +36,25 @@ export async function POST(request) {
     }
 
     console.log('Form submission saved to Supabase:', entry);
+
+    // Send email notification
+    try {
+      const emailSent = await emailService.sendWinEntryNotification({
+        name: data.name,
+        email: data.email,
+        howDidYouHear: data.howDidYouHear,
+        submittedAt: submittedAt
+      });
+
+      if (emailSent) {
+        console.log('Email notification sent successfully');
+      } else {
+        console.warn('Email notification failed to send');
+      }
+    } catch (emailError) {
+      console.error('Email service error:', emailError);
+      // Don't fail the entire request if email fails
+    }
 
     return Response.json({
       success: true,
