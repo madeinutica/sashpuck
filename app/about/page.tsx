@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const data = (await getPage("/about")) || { content: [] };
+  const data = (await getPage("/about")) || { root: { props: {} }, zones: {}, content: [] };
 
   return <Render config={config} data={data} />;
 }
