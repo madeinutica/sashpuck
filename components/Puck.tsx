@@ -1,5 +1,5 @@
 
-import { Puck } from "@measured/puck";
+import { Render } from "@measured/puck";
 import puckConfig from "../puck.config";
 import fs from "fs";
 import path from "path";
@@ -16,5 +16,5 @@ export default function PuckCMS() {
   }
   // Puck expects { content: [...] }
   const data = { content: blocks };
-  return <Puck config={puckConfig} data={data} />;
+  return <Render config={puckConfig} data={data} />;
 }
