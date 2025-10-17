@@ -25,11 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const data = await getPage("/about");
-
-  if (!data) {
-    return notFound();
-  }
+  const data = (await getPage("/about")) || { content: [] };
 
   return <Render config={config} data={data} />;
 }
