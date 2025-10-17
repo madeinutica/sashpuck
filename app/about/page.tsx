@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AboutPage() {
   const rawData = await getPage("/about");
-  const data =
+  let data =
     rawData &&
     typeof rawData === "object" &&
     "root" in rawData &&
@@ -34,6 +34,16 @@ export default async function AboutPage() {
     "content" in rawData
       ? rawData
       : { root: { props: {} }, zones: {}, content: [] };
+
+  // Filter out invalid content items
+  if (Array.isArray(data.content)) {
+    data = {
+      ...data,
+      content: data.content.filter(
+        (item) => item && typeof item === "object" && "type" in item && "props" in item
+      ),
+    };
+  }
 
   return <Render config={config} data={data} />;
 }
