@@ -1,19 +1,18 @@
 import { Metadata } from "next";
-
 import WinForm from "./WinForm";
 import PuckCMS from "../../components/Puck";
-import { getPage } from "../../lib/get-page";
 
 export const metadata: Metadata = {
   title: "Win - New York Sash Contest Entry",
 };
 
-export default async function WinPage() {
-  const data = (await getPage("/win")) || { content: [] };
+export default function WinPage() {
   return (
     <div style={{ padding: "3rem 1rem" }}>
       <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-        <PuckCMS data={data} />
+  {/* Puck CMS blocks for win page */}
+  <PuckCMS />
+        {/* Win contest entry form */}
         <WinForm />
       </div>
     </div>
